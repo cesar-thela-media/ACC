@@ -94,3 +94,66 @@ Admin (/admin):
 Professional, warm, grounded. Sentence case always — never ALL CAPS headings.
 Write for therapists, not for the general public. Assume licensure, clinical vocabulary.
 Sarah's tagline: "Deepen your work. Find your community."
+
+---
+
+## Workflow Orchestration
+
+### 1. Plan Mode Default
+- Enter plan mode for ANY non-trivial task (3+ steps or architectural decisions)
+- If something goes sideways, STOP and re-plan immediately
+- Use plan mode for verification steps, not just building
+- Write detailed specs upfront to reduce ambiguity
+
+### 2. Subagent Strategy
+- Spin up as many subagents as needed to finish the task — don't hold back
+- Use subagents liberally to keep main context window clean
+- Offload research, exploration, and parallel analysis to subagents
+- For complex problems, throw more compute at it via subagents
+- One task per subagent for focused execution
+- For every feature/code completion, spawn a review subagent to check for bugs
+  and edge cases when relevant
+- For UI work: use Playwright to scroll, click buttons, take screenshots, and
+  fix/retry until the goal is achieved — ONLY trigger Playwright after significant
+  UI progress has been made, NOT after every small change (Playwright is
+  token-heavy, use it deliberately)
+
+### 3. Self-Improvement Loop
+- After ANY correction: update tasks/lessons.md with the pattern
+- Write rules for yourself that prevent the same mistake
+- Ruthlessly iterate on these lessons until mistake rate drops
+- Review lessons at session start for relevant project
+
+### 4. Verification Before Done
+- Never mark a task complete without proving it works
+- Diff behavior between main and your changes when relevant
+- Ask yourself: "Would a staff engineer approve this?"
+- Run tests, check logs, demonstrate correctness
+
+### 5. Demand Elegance (Balanced)
+- For non-trivial changes: pause and ask "is there a more elegant way?"
+- If a fix feels hacky: implement the elegant solution
+- Skip this for simple, obvious fixes — don't over-engineer
+- Challenge your own work before presenting it
+
+### 6. Autonomous Bug Fixing
+- When given a bug report: just fix it. Don't ask for hand-holding
+- Point at logs, errors, failing tests — then resolve them
+- Zero context switching required from the user
+
+---
+
+## Task Management
+1. Plan First: tasks/todo.md with checkable items
+2. Verify Plan: check in before starting implementation
+3. Track Progress: mark items complete as you go
+4. Explain Changes: high-level summary at each step
+5. Document Results: add review section to tasks/todo.md
+6. Capture Lessons: update tasks/lessons.md after corrections
+
+---
+
+## Core Principles
+- Simplicity First: minimal code impact
+- No Laziness: root causes, no temp fixes, senior standards
+- Minimal Impact: only touch what's necessary
