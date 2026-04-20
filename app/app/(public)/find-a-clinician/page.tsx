@@ -1,0 +1,320 @@
+"use client";
+
+import { useState } from "react";
+import { ClinicianCard } from "@/components/cards/ClinicianCard";
+
+const ALL_CLINICIANS = [
+  {
+    name: "Dr. Maya Okonkwo",
+    credentials: "LCSW",
+    tagline: "Trauma-informed care for adults navigating complex grief, loss, and identity transitions.",
+    specialties: ["Trauma", "Grief", "Identity"],
+    format: "Virtual only",
+    modality: "Individual therapy",
+    acceptingClients: true,
+  },
+  {
+    name: "James Whitfield",
+    credentials: "LPC",
+    tagline: "Helping couples and individuals rebuild trust and intimacy after relational rupture.",
+    specialties: ["Couples", "Attachment", "Gottman"],
+    format: "Hybrid",
+    modality: "Couples therapy",
+    acceptingClients: false,
+  },
+  {
+    name: "Sofia Reyes",
+    credentials: "LMFT",
+    tagline: "Culturally responsive family therapy for first-generation and bilingual families.",
+    specialties: ["Family", "Bilingual", "Anxiety"],
+    format: "Hybrid",
+    modality: "Family therapy",
+    acceptingClients: true,
+  },
+  {
+    name: "Dr. Claire Hutchinson",
+    credentials: "PhD",
+    tagline: "Specialist in OCD, anxiety disorders, and exposure-based treatments using ERP.",
+    specialties: ["OCD", "Anxiety", "ERP"],
+    format: "Virtual only",
+    modality: "Individual therapy",
+    acceptingClients: true,
+  },
+  {
+    name: "Marcus Lee",
+    credentials: "LPC",
+    tagline: "Somatic and mindfulness-based therapy for adults managing chronic stress and burnout.",
+    specialties: ["Somatic", "Burnout", "Mindfulness"],
+    format: "In-person only",
+    modality: "Individual therapy",
+    acceptingClients: true,
+  },
+  {
+    name: "Priya Nair",
+    credentials: "LCSW",
+    tagline: "Perinatal mental health specialist supporting mothers and families through the fourth trimester and beyond.",
+    specialties: ["Perinatal", "Postpartum", "Women"],
+    format: "Hybrid",
+    modality: "Individual therapy",
+    acceptingClients: false,
+  },
+  {
+    name: "Thomas Garza",
+    credentials: "LMFT",
+    tagline: "Working with LGBTQ+ individuals and couples on identity, relationships, and chosen family.",
+    specialties: ["LGBTQ+", "Couples", "Identity"],
+    format: "Virtual only",
+    modality: "Couples therapy",
+    acceptingClients: true,
+  },
+  {
+    name: "Rachel Bloom",
+    credentials: "LPC",
+    tagline: "Adolescent and young adult therapy specializing in school transitions and emerging adulthood.",
+    specialties: ["Adolescents", "Young Adults", "Transitions"],
+    format: "Hybrid",
+    modality: "Individual therapy",
+    acceptingClients: true,
+  },
+  {
+    name: "Dr. Ade Kolade",
+    credentials: "PsyD",
+    tagline: "Culturally affirming therapy for Black men and professionals navigating workplace stress and racial identity.",
+    specialties: ["Cultural Identity", "Men", "Workplace"],
+    format: "Virtual only",
+    modality: "Individual therapy",
+    acceptingClients: true,
+  },
+];
+
+const allSpecialties = Array.from(
+  new Set(ALL_CLINICIANS.flatMap((c) => c.specialties))
+).sort();
+
+const formats = ["Virtual only", "In-person only", "Hybrid"];
+
+export default function FindAClinicianPage() {
+  const [search, setSearch] = useState("");
+  const [selectedSpecialty, setSelectedSpecialty] = useState("");
+  const [selectedFormat, setSelectedFormat] = useState("");
+  const [acceptingOnly, setAcceptingOnly] = useState(false);
+
+  const filtered = ALL_CLINICIANS.filter((c) => {
+    if (
+      search &&
+      !c.name.toLowerCase().includes(search.toLowerCase()) &&
+      !c.tagline.toLowerCase().includes(search.toLowerCase()) &&
+      !c.specialties.some((s) =>
+        s.toLowerCase().includes(search.toLowerCase())
+      )
+    )
+      return false;
+    if (selectedSpecialty && !c.specialties.includes(selectedSpecialty))
+      return false;
+    if (selectedFormat && c.format !== selectedFormat) return false;
+    if (acceptingOnly && !c.acceptingClients) return false;
+    return true;
+  });
+
+  return (
+    <>
+      {/* HERO */}
+      <section
+        className="pt-32 pb-12"
+        style={{ background: "var(--color-cream-100)" }}
+      >
+        <div className="max-w-6xl mx-auto px-6">
+          <p
+            className="text-xs font-medium uppercase tracking-widest mb-5"
+            style={{ color: "var(--color-sage-600)" }}
+          >
+            Find a clinician
+          </p>
+          <h1
+            className="leading-tight mb-6 max-w-xl"
+            style={{
+              fontFamily: "var(--font-serif), Georgia, serif",
+              fontSize: "clamp(2rem, 4vw, 3rem)",
+              fontWeight: 400,
+              color: "var(--color-sage-900)",
+            }}
+          >
+            Trusted therapists in the Austin area.
+          </h1>
+          <p
+            className="text-base leading-relaxed max-w-xl"
+            style={{ color: "var(--color-text-secondary)" }}
+          >
+            Every clinician listed here is a vetted member of the Austin
+            Clinician Circle. Search by specialty, format, or availability.
+          </p>
+        </div>
+      </section>
+
+      <section
+        className="py-10"
+        style={{ background: "var(--color-cream-100)" }}
+      >
+        <div className="max-w-6xl mx-auto px-6 flex flex-col lg:flex-row gap-10">
+          {/* FILTERS */}
+          <aside className="lg:w-56 shrink-0 flex flex-col gap-7">
+            <div>
+              <input
+                type="text"
+                placeholder="Search name or specialty..."
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                className="w-full px-4 py-2.5 text-sm rounded-lg border outline-none"
+                style={{
+                  borderColor: "var(--color-cream-400)",
+                  background: "#fff",
+                  color: "var(--color-text-primary)",
+                }}
+              />
+            </div>
+
+            <div>
+              <p
+                className="text-xs font-medium uppercase tracking-widest mb-3"
+                style={{ color: "var(--color-text-tertiary)" }}
+              >
+                Specialty
+              </p>
+              <div className="flex flex-col gap-1.5">
+                <button
+                  onClick={() => setSelectedSpecialty("")}
+                  className="text-left text-sm px-1 py-0.5 transition-colors"
+                  style={{
+                    color:
+                      selectedSpecialty === ""
+                        ? "var(--color-sage-700)"
+                        : "var(--color-text-secondary)",
+                    fontWeight: selectedSpecialty === "" ? 600 : 400,
+                  }}
+                >
+                  All specialties
+                </button>
+                {allSpecialties.map((s) => (
+                  <button
+                    key={s}
+                    onClick={() =>
+                      setSelectedSpecialty(s === selectedSpecialty ? "" : s)
+                    }
+                    className="text-left text-sm px-1 py-0.5 transition-colors"
+                    style={{
+                      color:
+                        selectedSpecialty === s
+                          ? "var(--color-sage-700)"
+                          : "var(--color-text-secondary)",
+                      fontWeight: selectedSpecialty === s ? 600 : 400,
+                    }}
+                  >
+                    {s}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <p
+                className="text-xs font-medium uppercase tracking-widest mb-3"
+                style={{ color: "var(--color-text-tertiary)" }}
+              >
+                Format
+              </p>
+              <div className="flex flex-col gap-1.5">
+                <button
+                  onClick={() => setSelectedFormat("")}
+                  className="text-left text-sm px-1 py-0.5 transition-colors"
+                  style={{
+                    color:
+                      selectedFormat === ""
+                        ? "var(--color-sage-700)"
+                        : "var(--color-text-secondary)",
+                    fontWeight: selectedFormat === "" ? 600 : 400,
+                  }}
+                >
+                  All formats
+                </button>
+                {formats.map((f) => (
+                  <button
+                    key={f}
+                    onClick={() =>
+                      setSelectedFormat(f === selectedFormat ? "" : f)
+                    }
+                    className="text-left text-sm px-1 py-0.5 transition-colors"
+                    style={{
+                      color:
+                        selectedFormat === f
+                          ? "var(--color-sage-700)"
+                          : "var(--color-text-secondary)",
+                      fontWeight: selectedFormat === f ? 600 : 400,
+                    }}
+                  >
+                    {f}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <label className="flex items-center gap-2.5 cursor-pointer">
+                <div
+                  onClick={() => setAcceptingOnly((v) => !v)}
+                  className="w-9 h-5 rounded-full transition-colors flex items-center px-0.5 cursor-pointer"
+                  style={{
+                    background: acceptingOnly
+                      ? "var(--color-sage-700)"
+                      : "var(--color-cream-400)",
+                  }}
+                >
+                  <div
+                    className="w-4 h-4 rounded-full bg-white shadow transition-transform"
+                    style={{
+                      transform: acceptingOnly
+                        ? "translateX(16px)"
+                        : "translateX(0)",
+                    }}
+                  />
+                </div>
+                <span
+                  className="text-sm"
+                  style={{ color: "var(--color-text-secondary)" }}
+                >
+                  Accepting clients
+                </span>
+              </label>
+            </div>
+          </aside>
+
+          {/* GRID */}
+          <div className="flex-1">
+            <p
+              className="text-xs mb-5"
+              style={{ color: "var(--color-text-tertiary)" }}
+            >
+              {filtered.length} clinician{filtered.length !== 1 ? "s" : ""}{" "}
+              found
+            </p>
+            {filtered.length === 0 ? (
+              <div
+                className="py-20 text-center"
+                style={{ color: "var(--color-text-tertiary)" }}
+              >
+                <p className="text-sm">
+                  No clinicians match your current filters.
+                </p>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
+                {filtered.map((c) => (
+                  <ClinicianCard key={c.name} {...c} />
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
