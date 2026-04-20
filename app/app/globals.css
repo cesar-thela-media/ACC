@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Fonts */
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
+
+  /* Sage palette */
+  --color-sage-50:  #F3F6F4;
+  --color-sage-100: #E8EDE9;
+  --color-sage-500: #6B8572;
+  --color-sage-600: #5A7060;
+  --color-sage-700: #4A5D4E;
+  --color-sage-800: #3B4D3F;
+  --color-sage-900: #2F3E33;
+
+  /* Cream palette */
+  --color-cream-100: #FAF8F5;
+  --color-cream-200: #F2EDE4;
+  --color-cream-300: #E8E0D4;
+  --color-cream-400: #D4C9B9;
+
+  /* Text */
+  --color-text-primary:       #2D2D2D;
+  --color-text-secondary:     #5C5C5C;
+  --color-text-tertiary:      #8A8A8A;
+
+  /* Accents */
+  --color-gold:        #C9A96E;
+  --color-terracotta:  #C07A5A;
+  --color-error:       #B54B4B;
+
+  /* Radius */
+  --radius-sm:   6px;
+  --radius-md:   10px;
+  --radius-lg:   16px;
+  --radius-xl:   24px;
+  --radius-full: 9999px;
+}
+
+body {
+  background-color: var(--color-cream-100);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans), Inter, sans-serif;
+}
