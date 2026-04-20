@@ -4,13 +4,6 @@ import { VideoPlayer } from "@/components/VideoPlayer";
 
 /* ─── DATA ─────────────────────────────────────────────────────────────── */
 
-const stats = [
-  { value: "24", label: "Active members" },
-  { value: "48+", label: "Clinical resources" },
-  { value: "3", label: "CEU events / month" },
-  { value: "100%", label: "Licensed clinicians" },
-];
-
 const benefits = [
   {
     icon: "◉",
@@ -129,34 +122,45 @@ export default function HomePage() {
     <>
       {/* ── HERO ──────────────────────────────────────────────────────────── */}
       <section
-        className="relative min-h-screen flex flex-col justify-between pt-16 overflow-hidden"
+        className="relative h-screen flex flex-col pt-[104px] overflow-hidden"
         style={{ background: "var(--color-sage-900)" }}
       >
-        {/* Ambient background photo */}
+        {/* Hero background photo */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=60&auto=format"
+          src="/hero-bg.jpg"
           alt=""
           aria-hidden="true"
+          fetchPriority="high"
+          decoding="async"
           className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none"
-          style={{ opacity: 0.07, mixBlendMode: "luminosity" }}
+          style={{ opacity: 1, objectPosition: "center 30%" }}
         />
 
-        {/* Dark gradient overlay */}
+        {/* Primary darkening overlay — sage-900 base so text always reads */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "linear-gradient(135deg, rgba(47,62,51,0.98) 0%, rgba(47,62,51,0.93) 100%)",
+              "linear-gradient(to right, rgba(47,62,51,0.88) 0%, rgba(47,62,51,0.70) 55%, rgba(47,62,51,0.40) 100%)",
           }}
         />
 
-        {/* Gold radial accent */}
+        {/* Bottom fade — blends photo into the stats bar below */}
+        <div
+          className="absolute bottom-0 left-0 right-0 h-64 pointer-events-none"
+          style={{
+            background:
+              "linear-gradient(to top, rgba(47,62,51,0.97) 0%, rgba(47,62,51,0.0) 100%)",
+          }}
+        />
+
+        {/* Gold radial accent — adds warmth over the photo */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
             backgroundImage:
-              "radial-gradient(circle at 72% 38%, rgba(201,169,110,0.08) 0%, transparent 55%)",
+              "radial-gradient(circle at 72% 38%, rgba(201,169,110,0.12) 0%, transparent 55%)",
           }}
         />
 
@@ -174,36 +178,10 @@ export default function HomePage() {
           style={{ border: "1px solid rgba(201,169,110,0.05)" }}
         />
 
-        {/* Floating event badge */}
-        <div
-          className="absolute top-28 right-10 hidden xl:flex items-center gap-3 px-5 py-3.5 rounded-2xl animate-float z-10"
-          style={{
-            background: "rgba(255,255,255,0.05)",
-            border: "1px solid rgba(255,255,255,0.1)",
-            backdropFilter: "blur(16px)",
-          }}
-        >
-          <span
-            className="w-2.5 h-2.5 rounded-full shrink-0 animate-pulse-dot"
-            style={{ background: "var(--color-terracotta)" }}
-          />
-          <div>
-            <p
-              className="text-xs font-medium"
-              style={{ color: "rgba(255,255,255,0.9)" }}
-            >
-              Next consultation
-            </p>
-            <p className="text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>
-              Thursday, May 7 · 12:00 PM CT
-            </p>
-          </div>
-        </div>
-
         {/* Main content */}
         <div className="flex-1 flex items-center relative z-10">
-          <div className="max-w-6xl mx-auto px-6 py-20 md:py-32 w-full">
-            <div className="max-w-3xl">
+          <div className="max-w-6xl mx-auto px-6 py-8 md:py-10 w-full">
+            <div>
               <p
                 className="text-xs font-medium uppercase tracking-widest mb-8 inline-flex items-center gap-2"
                 style={{
@@ -222,8 +200,8 @@ export default function HomePage() {
               <h1
                 className="leading-[1.05] mb-8"
                 style={{
-                  fontFamily: "var(--font-serif), Georgia, serif",
-                  fontSize: "clamp(3.25rem, 8vw, 6rem)",
+                  fontFamily: "var(--font-serif), Manrope, sans-serif",
+                  fontSize: "clamp(2.25rem, 5vw, 4rem)",
                   fontWeight: 400,
                   color: "#fff",
                   letterSpacing: "-0.01em",
@@ -285,103 +263,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Stats bar */}
-        <div
-          className="relative z-10 border-t"
-          style={{ borderColor: "rgba(255,255,255,0.08)" }}
-        >
-          <div className="max-w-6xl mx-auto px-6">
-            <div className="grid grid-cols-2 md:grid-cols-4">
-              {stats.map((s, i) => (
-                <div
-                  key={s.label}
-                  className="px-6 py-7"
-                  data-aos="fade-in"
-                  data-delay={String((i + 1) * 100)}
-                  style={{
-                    borderLeft:
-                      i > 0 ? "1px solid rgba(255,255,255,0.08)" : "none",
-                    paddingLeft: i === 0 ? 0 : undefined,
-                  }}
-                >
-                  <p
-                    className="text-3xl font-light mb-1"
-                    style={{
-                      fontFamily: "var(--font-serif), Georgia, serif",
-                      color: "var(--color-gold)",
-                    }}
-                  >
-                    {s.value}
-                  </p>
-                  <p
-                    className="text-xs"
-                    style={{ color: "rgba(255,255,255,0.4)" }}
-                  >
-                    {s.label}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Scroll indicator */}
-        <div
-          className="absolute bottom-36 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 z-10"
-          style={{ animation: "fadeIn 1s 1.3s both" }}
-        >
-          <span
-            className="text-xs uppercase tracking-widest"
-            style={{ color: "rgba(255,255,255,0.2)" }}
-          >
-            Scroll
-          </span>
-          <svg
-            width="16"
-            height="22"
-            viewBox="0 0 16 22"
-            fill="none"
-            style={{
-              color: "rgba(255,255,255,0.2)",
-              animation: "float 2.5s ease-in-out infinite",
-            }}
-          >
-            <path
-              d="M8 2v14M3 12l5 5 5-5"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </div>
       </section>
-
-      {/* ── FOUNDING MEMBER BLUSH BANNER ─────────────────────────────────── */}
-      <div
-        className="relative overflow-hidden"
-        style={{ background: "var(--color-blush)" }}
-      >
-        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between flex-wrap gap-3">
-          <div className="flex items-center gap-3">
-            <span
-              className="w-2 h-2 rounded-full animate-pulse-dot"
-              style={{ background: "#755754" }}
-            />
-            <p className="text-sm font-medium" style={{ color: "#755754" }}>
-              Now accepting founding members —{" "}
-              <strong>24 of 40 spots filled.</strong> Applications reviewed weekly.
-            </p>
-          </div>
-          <Link
-            href="/join"
-            className="text-xs font-semibold underline shrink-0"
-            style={{ color: "#755754", textUnderlineOffset: "3px" }}
-          >
-            Apply now →
-          </Link>
-        </div>
-      </div>
 
       {/* ── PROBLEM / PROMISE ─────────────────────────────────────────────── */}
       <section className="py-28" style={{ background: "var(--color-cream-200)" }}>
@@ -398,7 +280,7 @@ export default function HomePage() {
             data-aos="fade-in-up"
             data-delay="100"
             style={{
-              fontFamily: "var(--font-serif), Georgia, serif",
+              fontFamily: "var(--font-serif), Manrope, sans-serif",
               fontSize: "clamp(2rem, 5vw, 3.25rem)",
               fontWeight: 400,
               color: "var(--color-sage-900)",
@@ -476,7 +358,7 @@ export default function HomePage() {
             <h2
               className="max-w-xl"
               style={{
-                fontFamily: "var(--font-serif), Georgia, serif",
+                fontFamily: "var(--font-serif), Manrope, sans-serif",
                 fontSize: "clamp(2rem, 4vw, 2.75rem)",
                 fontWeight: 400,
                 color: "var(--color-sage-900)",
@@ -533,9 +415,9 @@ export default function HomePage() {
             <div className="aspect-[4/5] rounded-2xl w-full overflow-hidden">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80&auto=format"
+                src="/sarah-arnold.jpeg"
                 alt="Sarah Arnold, LPC-S — founder of Austin Clinician Circle"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-top"
               />
             </div>
             {/* Floating quote badge */}
@@ -546,7 +428,7 @@ export default function HomePage() {
               <p
                 className="text-sm font-medium leading-snug"
                 style={{
-                  fontFamily: "var(--font-serif), Georgia, serif",
+                  fontFamily: "var(--font-serif), Manrope, sans-serif",
                   color: "#fff",
                   fontSize: "1rem",
                   fontStyle: "italic",
@@ -569,7 +451,7 @@ export default function HomePage() {
             <h2
               className="mb-6"
               style={{
-                fontFamily: "var(--font-serif), Georgia, serif",
+                fontFamily: "var(--font-serif), Manrope, sans-serif",
                 fontSize: "clamp(2rem, 4vw, 2.75rem)",
                 fontWeight: 400,
                 color: "#fff",
@@ -621,7 +503,7 @@ export default function HomePage() {
             </p>
             <h2
               style={{
-                fontFamily: "var(--font-serif), Georgia, serif",
+                fontFamily: "var(--font-serif), Manrope, sans-serif",
                 fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)",
                 fontWeight: 400,
                 color: "var(--color-sage-900)",
@@ -651,7 +533,7 @@ export default function HomePage() {
             data-aos="fade-in-up"
             data-delay="100"
             style={{
-              fontFamily: "var(--font-serif), Georgia, serif",
+              fontFamily: "var(--font-serif), Manrope, sans-serif",
               fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)",
               fontWeight: 400,
               color: "var(--color-sage-900)",
@@ -752,7 +634,7 @@ export default function HomePage() {
             </p>
             <h2
               style={{
-                fontFamily: "var(--font-serif), Georgia, serif",
+                fontFamily: "var(--font-serif), Manrope, sans-serif",
                 fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)",
                 fontWeight: 400,
                 color: "var(--color-sage-900)",
@@ -789,7 +671,7 @@ export default function HomePage() {
                   <span
                     className="text-2xl font-light"
                     style={{
-                      fontFamily: "var(--font-serif), Georgia, serif",
+                      fontFamily: "var(--font-serif), Manrope, sans-serif",
                       color: "var(--color-gold)",
                     }}
                   >
@@ -845,7 +727,7 @@ export default function HomePage() {
               <h2
                 className="max-w-sm"
                 style={{
-                  fontFamily: "var(--font-serif), Georgia, serif",
+                  fontFamily: "var(--font-serif), Manrope, sans-serif",
                   fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)",
                   fontWeight: 400,
                   color: "var(--color-sage-900)",
@@ -895,7 +777,7 @@ export default function HomePage() {
             data-aos="fade-in-up"
             data-delay="100"
             style={{
-              fontFamily: "var(--font-serif), Georgia, serif",
+              fontFamily: "var(--font-serif), Manrope, sans-serif",
               fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)",
               fontWeight: 400,
               color: "var(--color-sage-900)",
@@ -919,7 +801,7 @@ export default function HomePage() {
                 <span
                   className="font-light"
                   style={{
-                    fontFamily: "var(--font-serif), Georgia, serif",
+                    fontFamily: "var(--font-serif), Manrope, sans-serif",
                     fontSize: "3.5rem",
                     color: "var(--color-sage-700)",
                     lineHeight: 1,
@@ -1049,7 +931,7 @@ export default function HomePage() {
             data-aos="fade-in-up"
             data-delay="100"
             style={{
-              fontFamily: "var(--font-serif), Georgia, serif",
+              fontFamily: "var(--font-serif), Manrope, sans-serif",
               fontSize: "clamp(2.25rem, 5vw, 3.5rem)",
               fontWeight: 400,
               color: "#fff",

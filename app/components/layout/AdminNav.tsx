@@ -32,7 +32,7 @@ export function AdminNav() {
         <span
           className="text-sm font-semibold"
           style={{
-            fontFamily: "var(--font-serif), Georgia, serif",
+            fontFamily: "var(--font-serif), Manrope, sans-serif",
             color: "#fff",
           }}
         >

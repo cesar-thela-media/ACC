@@ -30,7 +30,7 @@ export default function AdminOverviewPage() {
         </p>
         <h1
           style={{
-            fontFamily: "var(--font-serif), Georgia, serif",
+            fontFamily: "var(--font-serif), Manrope, sans-serif",
             fontSize: "2rem",
             fontWeight: 400,
             color: "var(--color-sage-900)",
@@ -48,7 +48,7 @@ export default function AdminOverviewPage() {
               <p
                 className="text-3xl font-light"
                 style={{
-                  fontFamily: "var(--font-serif), Georgia, serif",
+                  fontFamily: "var(--font-serif), Manrope, sans-serif",
                   color: s.urgent ? "var(--color-error)" : "var(--color-sage-700)",
                 }}
               >

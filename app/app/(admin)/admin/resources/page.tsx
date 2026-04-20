@@ -42,7 +42,7 @@ export default function AdminResourcesPage() {
       <div className="flex items-start justify-between gap-4">
         <div>
           <p className="text-xs font-medium uppercase tracking-widest mb-2" style={{ color: "var(--color-sage-600)" }}>Admin</p>
-          <h1 style={{ fontFamily: "var(--font-serif), Georgia, serif", fontSize: "2rem", fontWeight: 400, color: "var(--color-sage-900)" }}>
+          <h1 style={{ fontFamily: "var(--font-serif), Manrope, sans-serif", fontSize: "2rem", fontWeight: 400, color: "var(--color-sage-900)" }}>
             Resources
           </h1>
         </div>

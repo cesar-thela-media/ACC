@@ -95,7 +95,7 @@ export function VideoPlayer() {
               <p
                 className="text-xl font-light"
                 style={{
-                  fontFamily: "var(--font-serif), Georgia, serif",
+                  fontFamily: "var(--font-serif), Manrope, sans-serif",
                   color: "#fff",
                   letterSpacing: "-0.01em",
                 }}
@@ -146,7 +146,7 @@ export function VideoPlayer() {
           <p
             className="text-2xl font-light"
             style={{
-              fontFamily: "var(--font-serif), Georgia, serif",
+              fontFamily: "var(--font-serif), Manrope, sans-serif",
               color: "#fff",
             }}
           >

@@ -33,7 +33,7 @@ export default function WhoWeArePage() {
           <h1
             className="leading-tight mb-8 max-w-2xl"
             style={{
-              fontFamily: "var(--font-serif), Georgia, serif",
+              fontFamily: "var(--font-serif), Manrope, sans-serif",
               fontSize: "clamp(2.5rem, 5vw, 3.75rem)",
               fontWeight: 400,
               color: "var(--color-sage-900)",
@@ -58,10 +58,14 @@ export default function WhoWeArePage() {
         style={{ background: "var(--color-cream-200)" }}
       >
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
-          <div
-            className="aspect-square rounded-2xl max-w-sm w-full sticky top-24"
-            style={{ background: "var(--color-sage-100)" }}
-          />
+          <div className="aspect-square rounded-2xl max-w-sm w-full sticky top-24 overflow-hidden">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/sarah-arnold.jpeg"
+              alt="Sarah Arnold, LPC-S"
+              className="w-full h-full object-cover object-top"
+            />
+          </div>
           <div>
             <p
               className="text-xs font-medium uppercase tracking-widest mb-5"
@@ -72,7 +76,7 @@ export default function WhoWeArePage() {
             <h2
               className="mb-6"
               style={{
-                fontFamily: "var(--font-serif), Georgia, serif",
+                fontFamily: "var(--font-serif), Manrope, sans-serif",
                 fontSize: "clamp(1.75rem, 3vw, 2.25rem)",
                 fontWeight: 400,
                 color: "var(--color-sage-900)",
@@ -144,7 +148,7 @@ export default function WhoWeArePage() {
           <h2
             className="mb-10"
             style={{
-              fontFamily: "var(--font-serif), Georgia, serif",
+              fontFamily: "var(--font-serif), Manrope, sans-serif",
               fontSize: "clamp(1.75rem, 3vw, 2.25rem)",
               fontWeight: 400,
               color: "var(--color-sage-900)",
@@ -196,7 +200,7 @@ export default function WhoWeArePage() {
           <h2
             className="mb-14"
             style={{
-              fontFamily: "var(--font-serif), Georgia, serif",
+              fontFamily: "var(--font-serif), Manrope, sans-serif",
               fontSize: "clamp(1.75rem, 3vw, 2.25rem)",
               fontWeight: 400,
               color: "var(--color-sage-900)",
@@ -234,7 +238,7 @@ export default function WhoWeArePage() {
           <h2
             className="mb-6"
             style={{
-              fontFamily: "var(--font-serif), Georgia, serif",
+              fontFamily: "var(--font-serif), Manrope, sans-serif",
               fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
               fontWeight: 400,
               color: "#fff",

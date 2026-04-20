@@ -1,3 +1,5 @@
+"use client";
+
 import { Badge } from "@/components/ui/Badge";
 
 interface ClinicianCardProps {
@@ -44,7 +46,7 @@ export function ClinicianCard({
           }}
         >
           {photo ? (
-            <img src={photo} alt={name} className="w-full h-full object-cover" />
+            <img src={photo} alt={name} loading="lazy" decoding="async" className="w-full h-full object-cover" />
           ) : (
             name.charAt(0)
           )}

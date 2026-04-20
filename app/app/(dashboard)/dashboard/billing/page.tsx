@@ -15,7 +15,7 @@ export default function BillingPage() {
     <div className="flex flex-col gap-10 max-w-2xl">
       <div>
         <p className="text-xs font-medium uppercase tracking-widest mb-2" style={{ color: "var(--color-sage-600)" }}>Billing</p>
-        <h1 style={{ fontFamily: "var(--font-serif), Georgia, serif", fontSize: "2rem", fontWeight: 400, color: "var(--color-sage-900)" }}>
+        <h1 style={{ fontFamily: "var(--font-serif), Manrope, sans-serif", fontSize: "2rem", fontWeight: 400, color: "var(--color-sage-900)" }}>
           Subscription & billing
         </h1>
       </div>
@@ -39,7 +39,7 @@ export default function BillingPage() {
           style={{ background: "var(--color-cream-100)", border: "1px solid var(--color-cream-300)" }}
         >
           <div>
-            <p className="text-2xl font-light" style={{ fontFamily: "var(--font-serif), Georgia, serif", color: "var(--color-sage-700)" }}>
+            <p className="text-2xl font-light" style={{ fontFamily: "var(--font-serif), Manrope, sans-serif", color: "var(--color-sage-700)" }}>
               $129
               <span className="text-sm font-normal ml-1" style={{ color: "var(--color-text-tertiary)" }}>/month</span>
             </p>

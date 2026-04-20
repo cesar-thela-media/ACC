@@ -101,7 +101,7 @@ export default function JoinPage() {
           <h1
             className="mb-4"
             style={{
-              fontFamily: "var(--font-serif), Georgia, serif",
+              fontFamily: "var(--font-serif), Manrope, sans-serif",
               fontSize: "2rem",
               fontWeight: 400,
               color: "var(--color-sage-900)",
@@ -137,7 +137,7 @@ export default function JoinPage() {
         <h1
           className="mb-10"
           style={{
-            fontFamily: "var(--font-serif), Georgia, serif",
+            fontFamily: "var(--font-serif), Manrope, sans-serif",
             fontSize: "clamp(2rem, 4vw, 2.75rem)",
             fontWeight: 400,
             color: "var(--color-sage-900)",

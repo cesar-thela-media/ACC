@@ -1,0 +1,7 @@
+.next/
+.playwright-mcp/
+images/
+node_modules/
+.env*
+*.pem
+.DS_Store

@@ -15,7 +15,7 @@ export default function AuthLayout({
           href="/"
           className="text-base font-semibold tracking-wide"
           style={{
-            fontFamily: "var(--font-serif), Georgia, serif",
+            fontFamily: "var(--font-serif), Manrope, sans-serif",
             color: "var(--color-sage-800)",
           }}
         >

@@ -52,7 +52,7 @@ export default function SignUpPage() {
         <h1
           className="mb-2"
           style={{
-            fontFamily: "var(--font-serif), Georgia, serif",
+            fontFamily: "var(--font-serif), Manrope, sans-serif",
             fontSize: "2rem",
             fontWeight: 400,
             color: "var(--color-sage-900)",

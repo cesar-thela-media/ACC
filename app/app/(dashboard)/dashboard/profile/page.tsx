@@ -35,7 +35,7 @@ export default function ProfilePage() {
     <div className="flex flex-col gap-8 max-w-2xl">
       <div>
         <p className="text-xs font-medium uppercase tracking-widest mb-2" style={{ color: "var(--color-sage-600)" }}>Profile</p>
-        <h1 style={{ fontFamily: "var(--font-serif), Georgia, serif", fontSize: "2rem", fontWeight: 400, color: "var(--color-sage-900)" }}>
+        <h1 style={{ fontFamily: "var(--font-serif), Manrope, sans-serif", fontSize: "2rem", fontWeight: 400, color: "var(--color-sage-900)" }}>
           Edit your profile
         </h1>
         <p className="text-sm mt-1" style={{ color: "var(--color-text-secondary)" }}>

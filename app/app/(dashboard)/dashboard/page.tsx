@@ -49,7 +49,7 @@ export default function DashboardPage() {
         </p>
         <h1
           style={{
-            fontFamily: "var(--font-serif), Georgia, serif",
+            fontFamily: "var(--font-serif), Manrope, sans-serif",
             fontSize: "2rem",
             fontWeight: 400,
             color: "var(--color-sage-900)",
@@ -66,7 +66,7 @@ export default function DashboardPage() {
             <p
               className="text-3xl font-light"
               style={{
-                fontFamily: "var(--font-serif), Georgia, serif",
+                fontFamily: "var(--font-serif), Manrope, sans-serif",
                 color: "var(--color-sage-700)",
               }}
             >
@@ -180,7 +180,7 @@ export default function DashboardPage() {
           <p
             className="text-base font-semibold"
             style={{
-              fontFamily: "var(--font-serif), Georgia, serif",
+              fontFamily: "var(--font-serif), Manrope, sans-serif",
               color: "#4a2020",
               fontSize: "1.25rem",
             }}

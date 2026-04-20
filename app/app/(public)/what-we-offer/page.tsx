@@ -110,7 +110,7 @@ export default function WhatWeOfferPage() {
           <h1
             className="leading-tight mb-8 max-w-2xl"
             style={{
-              fontFamily: "var(--font-serif), Georgia, serif",
+              fontFamily: "var(--font-serif), Manrope, sans-serif",
               fontSize: "clamp(2.5rem, 5vw, 3.75rem)",
               fontWeight: 400,
               color: "var(--color-sage-900)",
@@ -194,7 +194,7 @@ export default function WhatWeOfferPage() {
               <h2
                 className="mb-6"
                 style={{
-                  fontFamily: "var(--font-serif), Georgia, serif",
+                  fontFamily: "var(--font-serif), Manrope, sans-serif",
                   fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
                   fontWeight: 400,
                   color: "var(--color-sage-900)",
@@ -244,7 +244,7 @@ export default function WhatWeOfferPage() {
           <h2
             className="mb-14"
             style={{
-              fontFamily: "var(--font-serif), Georgia, serif",
+              fontFamily: "var(--font-serif), Manrope, sans-serif",
               fontSize: "clamp(1.75rem, 3vw, 2.25rem)",
               fontWeight: 400,
               color: "var(--color-sage-900)",

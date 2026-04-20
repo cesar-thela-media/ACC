@@ -133,7 +133,7 @@ export default function FindAClinicianPage() {
           <h1
             className="leading-tight mb-6 max-w-xl"
             style={{
-              fontFamily: "var(--font-serif), Georgia, serif",
+              fontFamily: "var(--font-serif), Manrope, sans-serif",
               fontSize: "clamp(2rem, 4vw, 3rem)",
               fontWeight: 400,
               color: "var(--color-sage-900)",
