@@ -8,14 +8,14 @@ import {
 } from "@react-pdf/renderer";
 
 // ─── Palette ──────────────────────────────────────────────────────────────
-const SAGE_900 = "#2F3E33";
-const SAGE_700 = "#4A5D4E";
-const SAGE_600 = "#5A7060";
-const SAGE_100 = "#E4EBE6";
-const GOLD = "#C9A96E";
-const CREAM = "#F8FAF3";
-const TEXT = "#191C18";
-const TEXT_SEC = "#444841";
+const SAGE_900 = "#1B1B1B";
+const SAGE_700 = "#DC673B";
+const SAGE_600 = "#E98359";
+const SAGE_100 = "#FDE1D5";
+const GOLD = "#F9D251";
+const CREAM = "#FFF9F5";
+const TEXT = "#1B1B1B";
+const TEXT_SEC = "#5C463B";
 
 const s = StyleSheet.create({
   page: {
@@ -181,7 +181,7 @@ const s = StyleSheet.create({
 
   // Callout box
   callout: {
-    backgroundColor: "#EFF3ED",
+    backgroundColor: "#FFF4EC",
     borderLeftWidth: 3,
     borderLeftColor: SAGE_600,
     paddingHorizontal: 14,
@@ -198,9 +198,9 @@ const s = StyleSheet.create({
 
   // Gold highlight box
   goldBox: {
-    backgroundColor: "#FDF6EC",
+    backgroundColor: "#FFF7DB",
     borderWidth: 1,
-    borderColor: "#E8D5B0",
+    borderColor: "#F3D36D",
     borderRadius: 6,
     paddingHorizontal: 16,
     paddingVertical: 12,
@@ -216,7 +216,7 @@ const s = StyleSheet.create({
   },
   goldBoxText: {
     fontSize: 9.5,
-    color: "#6B5C3E",
+    color: "#1B1B1B",
     lineHeight: 1.6,
   },
 

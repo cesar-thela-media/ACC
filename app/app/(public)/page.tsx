@@ -142,7 +142,7 @@ export default function HomePage() {
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "linear-gradient(to right, rgba(47,62,51,0.88) 0%, rgba(47,62,51,0.70) 55%, rgba(47,62,51,0.40) 100%)",
+              "linear-gradient(to right, rgba(27,27,27,0.88) 0%, rgba(27,27,27,0.70) 55%, rgba(27,27,27,0.40) 100%)",
           }}
         />
 
@@ -151,7 +151,7 @@ export default function HomePage() {
           className="absolute bottom-0 left-0 right-0 h-64 pointer-events-none"
           style={{
             background:
-              "linear-gradient(to top, rgba(47,62,51,0.97) 0%, rgba(47,62,51,0.0) 100%)",
+              "linear-gradient(to top, rgba(27,27,27,0.97) 0%, rgba(27,27,27,0.0) 100%)",
           }}
         />
 
@@ -160,22 +160,22 @@ export default function HomePage() {
           className="absolute inset-0 pointer-events-none"
           style={{
             backgroundImage:
-              "radial-gradient(circle at 72% 38%, rgba(201,169,110,0.12) 0%, transparent 55%)",
+              "radial-gradient(circle at 72% 38%, rgba(249,210,81,0.12) 0%, transparent 55%)",
           }}
         />
 
         {/* Decorative rings */}
         <div
           className="absolute -top-24 -right-24 w-[28rem] h-[28rem] rounded-full pointer-events-none"
-          style={{ border: "1px solid rgba(201,169,110,0.09)" }}
+          style={{ border: "1px solid rgba(249,210,81,0.09)" }}
         />
         <div
           className="absolute top-16 right-24 w-64 h-64 rounded-full pointer-events-none"
-          style={{ border: "1px solid rgba(201,169,110,0.06)" }}
+          style={{ border: "1px solid rgba(249,210,81,0.06)" }}
         />
         <div
           className="absolute -bottom-40 -left-40 w-[40rem] h-[40rem] rounded-full pointer-events-none"
-          style={{ border: "1px solid rgba(201,169,110,0.05)" }}
+          style={{ border: "1px solid rgba(249,210,81,0.05)" }}
         />
 
         {/* Main content */}
@@ -213,7 +213,7 @@ export default function HomePage() {
                 <br />
                 <em
                   style={{
-                    color: "var(--color-gold)",
+                    color: "var(--color-sage-700)",
                     fontStyle: "italic",
                   }}
                 >
@@ -266,29 +266,27 @@ export default function HomePage() {
       </section>
 
       {/* ── PROBLEM / PROMISE ─────────────────────────────────────────────── */}
-      <section className="py-28" style={{ background: "var(--color-cream-200)" }}>
+      <section className="py-28" style={{ background: "var(--color-sage-700)" }}>
         <div className="max-w-4xl mx-auto px-6 text-center">
           <p
             className="text-xs font-medium uppercase tracking-widest mb-6"
             data-aos="fade-in"
-            style={{ color: "var(--color-terracotta)" }}
+            style={{ color: "rgba(255,255,255,0.72)" }}
           >
             Why ACC exists
           </p>
           <h2
-            className="mb-8 leading-tight"
+              className="section-title-strong mb-8 leading-tight"
             data-aos="fade-in-up"
             data-delay="100"
             style={{
-              fontFamily: "var(--font-serif), Manrope, sans-serif",
               fontSize: "clamp(2rem, 5vw, 3.25rem)",
-              fontWeight: 400,
-              color: "var(--color-sage-900)",
+              color: "#fff",
             }}
           >
             Private practice can feel isolating.
             <br />
-            <span style={{ color: "var(--color-sage-600)" }}>
+            <span style={{ color: "var(--color-gold)" }}>
               You don&apos;t have to do this alone.
             </span>
           </h2>
@@ -296,7 +294,7 @@ export default function HomePage() {
             className="text-base leading-relaxed max-w-2xl mx-auto mb-5"
             data-aos="fade-in"
             data-delay="200"
-            style={{ color: "var(--color-text-secondary)" }}
+            style={{ color: "rgba(255,255,255,0.82)" }}
           >
             When you leave an agency or group practice, you gain autonomy — and
             lose the built-in consultation, community, and collegial feedback that
@@ -307,7 +305,7 @@ export default function HomePage() {
             className="text-base leading-relaxed max-w-2xl mx-auto mb-12"
             data-aos="fade-in"
             data-delay="300"
-            style={{ color: "var(--color-text-secondary)" }}
+            style={{ color: "rgba(255,255,255,0.82)" }}
           >
             ACC exists to change that. We&apos;re a curated circle of licensed
             Austin-area clinicians who meet regularly, share resources, and hold
@@ -317,27 +315,30 @@ export default function HomePage() {
             className="inline-flex items-center gap-3 px-6 py-3 rounded-full"
             data-aos="fade-in"
             data-delay="400"
-            style={{ background: "var(--color-cream-300)" }}
+            style={{
+              background: "rgba(27,27,27,0.16)",
+              border: "1px solid rgba(255,255,255,0.14)",
+            }}
           >
             <span
               className="text-sm"
-              style={{ color: "var(--color-text-secondary)" }}
+              style={{ color: "rgba(255,255,255,0.72)" }}
             >
               Founded by
             </span>
             <span
               className="text-sm font-semibold"
-              style={{ color: "var(--color-sage-800)" }}
+              style={{ color: "#fff" }}
             >
               Sarah Arnold, LPC-S
             </span>
             <span
               className="w-px h-4"
-              style={{ background: "var(--color-cream-400)" }}
+              style={{ background: "rgba(255,255,255,0.24)" }}
             />
             <span
               className="text-sm"
-              style={{ color: "var(--color-text-tertiary)" }}
+              style={{ color: "rgba(255,255,255,0.68)" }}
             >
               Restored Family Counseling · Austin, TX
             </span>
@@ -356,11 +357,9 @@ export default function HomePage() {
               Membership includes
             </p>
             <h2
-              className="max-w-xl"
+              className="section-title-strong max-w-xl"
               style={{
-                fontFamily: "var(--font-serif), Manrope, sans-serif",
                 fontSize: "clamp(2rem, 4vw, 2.75rem)",
-                fontWeight: 400,
                 color: "var(--color-sage-900)",
               }}
             >
@@ -449,11 +448,9 @@ export default function HomePage() {
               Founded by
             </p>
             <h2
-              className="mb-6"
+              className="section-title-strong mb-6"
               style={{
-                fontFamily: "var(--font-serif), Manrope, sans-serif",
                 fontSize: "clamp(2rem, 4vw, 2.75rem)",
-                fontWeight: 400,
                 color: "#fff",
               }}
             >
@@ -502,10 +499,9 @@ export default function HomePage() {
               Hear from the founder
             </p>
             <h2
+              className="section-title-strong"
               style={{
-                fontFamily: "var(--font-serif), Manrope, sans-serif",
                 fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)",
-                fontWeight: 400,
                 color: "var(--color-sage-900)",
               }}
             >
@@ -529,13 +525,11 @@ export default function HomePage() {
             From the community
           </p>
           <h2
-            className="mb-16 max-w-lg"
+            className="section-title-strong mb-16 max-w-lg"
             data-aos="fade-in-up"
             data-delay="100"
             style={{
-              fontFamily: "var(--font-serif), Manrope, sans-serif",
               fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)",
-              fontWeight: 400,
               color: "var(--color-sage-900)",
             }}
           >
@@ -552,7 +546,7 @@ export default function HomePage() {
                 style={{
                   background: "#fff",
                   borderLeft: "3px solid var(--color-terracotta)",
-                  boxShadow: "0 4px 20px rgba(47,62,51,0.06)",
+                  boxShadow: "0 4px 20px rgba(27,27,27,0.06)",
                 }}
               >
                 {/* Stars */}
@@ -633,10 +627,9 @@ export default function HomePage() {
               Getting started
             </p>
             <h2
+              className="section-title-strong"
               style={{
-                fontFamily: "var(--font-serif), Manrope, sans-serif",
                 fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)",
-                fontWeight: 400,
                 color: "var(--color-sage-900)",
               }}
             >
@@ -725,11 +718,9 @@ export default function HomePage() {
                 Member directory
               </p>
               <h2
-                className="max-w-sm"
+                className="section-title-strong max-w-sm"
                 style={{
-                  fontFamily: "var(--font-serif), Manrope, sans-serif",
                   fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)",
-                  fontWeight: 400,
                   color: "var(--color-sage-900)",
                 }}
               >
@@ -773,13 +764,11 @@ export default function HomePage() {
             Membership
           </p>
           <h2
-            className="mb-12"
+            className="section-title-strong mb-12"
             data-aos="fade-in-up"
             data-delay="100"
             style={{
-              fontFamily: "var(--font-serif), Manrope, sans-serif",
               fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)",
-              fontWeight: 400,
               color: "var(--color-sage-900)",
             }}
           >
@@ -793,7 +782,7 @@ export default function HomePage() {
             style={{
               background: "#fff",
               borderColor: "var(--color-cream-300)",
-              boxShadow: "0 8px 48px rgba(47,62,51,0.08)",
+              boxShadow: "0 8px 48px rgba(27,27,27,0.08)",
             }}
           >
             <div className="flex items-center justify-between mb-2">
@@ -890,7 +879,7 @@ export default function HomePage() {
           className="absolute inset-0 pointer-events-none"
           style={{
             backgroundImage:
-              "radial-gradient(circle at 28% 60%, rgba(192,122,90,0.09) 0%, transparent 52%)",
+              "radial-gradient(circle at 28% 60%, rgba(220,103,59,0.09) 0%, transparent 52%)",
           }}
         />
 
@@ -927,13 +916,11 @@ export default function HomePage() {
           </div>
 
           <h2
-            className="mb-8 leading-tight"
+            className="section-title-strong mb-8 leading-tight"
             data-aos="fade-in-up"
             data-delay="100"
             style={{
-              fontFamily: "var(--font-serif), Manrope, sans-serif",
               fontSize: "clamp(2.25rem, 5vw, 3.5rem)",
-              fontWeight: 400,
               color: "#fff",
             }}
           >

@@ -18,7 +18,7 @@ const baseStyles =
   "w-full bg-white border rounded-xl px-4 py-3 text-sm outline-none transition-all duration-300 placeholder:text-[var(--color-text-tertiary)]";
 
 const normalBorder =
-  "border-[rgba(197,200,190,0.6)] focus:border-[var(--color-sage-600)] focus:bg-[#F3F7EE]";
+  "border-[rgba(217,181,162,0.6)] focus:border-[var(--color-sage-600)] focus:bg-[var(--color-cream-200)]";
 const errorBorder =
   "border-[var(--color-error)] focus:border-[var(--color-error)]";
 
@@ -29,7 +29,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
         {label && (
           <label
             className="text-sm font-medium"
-            style={{ color: "var(--color-text-primary)" }}
+            style={{ color: "var(--input-label-color, var(--color-text-primary))" }}
           >
             {label}
           </label>
@@ -37,7 +37,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
         <input
           ref={ref}
           className={`${baseStyles} ${error ? errorBorder : normalBorder} ${className}`}
-          style={{ color: "var(--color-text-primary)" }}
+          style={{ color: "var(--input-text-color, var(--color-text-primary))" }}
           {...props}
         />
         {error && (
@@ -46,7 +46,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           </p>
         )}
         {hint && !error && (
-          <p className="text-xs" style={{ color: "var(--color-text-tertiary)" }}>
+          <p className="text-xs" style={{ color: "var(--input-hint-color, var(--color-text-tertiary))" }}>
             {hint}
           </p>
         )}
@@ -63,7 +63,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
         {label && (
           <label
             className="text-sm font-medium"
-            style={{ color: "var(--color-text-primary)" }}
+            style={{ color: "var(--input-label-color, var(--color-text-primary))" }}
           >
             {label}
           </label>
@@ -71,7 +71,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
         <textarea
           ref={ref}
           className={`${baseStyles} ${error ? errorBorder : normalBorder} resize-none ${className}`}
-          style={{ color: "var(--color-text-primary)" }}
+          style={{ color: "var(--input-text-color, var(--color-text-primary))" }}
           {...props}
         />
         {error && (
@@ -80,7 +80,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
           </p>
         )}
         {hint && !error && (
-          <p className="text-xs" style={{ color: "var(--color-text-tertiary)" }}>
+          <p className="text-xs" style={{ color: "var(--input-hint-color, var(--color-text-tertiary))" }}>
             {hint}
           </p>
         )}

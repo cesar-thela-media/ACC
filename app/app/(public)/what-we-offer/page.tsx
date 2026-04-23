@@ -100,7 +100,7 @@ export default function WhatWeOfferPage() {
         className="pt-32 pb-20"
         style={{ background: "var(--color-cream-100)" }}
       >
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="max-w-4xl mx-auto px-6 text-center">
           <p
             className="text-xs font-medium uppercase tracking-widest mb-5"
             style={{ color: "var(--color-sage-600)" }}
@@ -108,7 +108,7 @@ export default function WhatWeOfferPage() {
             What we offer
           </p>
           <h1
-            className="leading-tight mb-8 max-w-2xl"
+            className="leading-tight mb-8 max-w-2xl mx-auto"
             style={{
               fontFamily: "var(--font-serif), Manrope, sans-serif",
               fontSize: "clamp(2.5rem, 5vw, 3.75rem)",
@@ -119,7 +119,7 @@ export default function WhatWeOfferPage() {
             Everything a thriving private practice needs.
           </h1>
           <p
-            className="text-lg leading-relaxed max-w-2xl"
+            className="text-lg leading-relaxed max-w-2xl mx-auto"
             style={{ color: "var(--color-text-secondary)" }}
           >
             One membership gives you full access to clinical support, professional
@@ -141,7 +141,7 @@ export default function WhatWeOfferPage() {
           }}
         >
           <div className="max-w-6xl mx-auto px-6">
-            <div className="flex items-center gap-3 mb-12">
+            <div className="flex flex-col items-center gap-3 mb-12 text-center">
               <span
                 className="text-2xl"
                 style={{ color: "var(--color-sage-500)" }}
@@ -157,7 +157,7 @@ export default function WhatWeOfferPage() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {section.items.map((item) => (
-                <div key={item.title}>
+                <div key={item.title} className="text-center">
                   <h3
                     className="text-base font-semibold mb-3"
                     style={{ color: "var(--color-sage-800)" }}
@@ -184,7 +184,7 @@ export default function WhatWeOfferPage() {
       >
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <div>
+            <div className="text-center md:text-left">
               <p
                 className="text-xs font-medium uppercase tracking-widest mb-5"
                 style={{ color: "var(--color-sage-600)" }}
@@ -192,11 +192,9 @@ export default function WhatWeOfferPage() {
                 Membership
               </p>
               <h2
-                className="mb-6"
+                className="section-title-strong mb-6"
                 style={{
-                  fontFamily: "var(--font-serif), Manrope, sans-serif",
                   fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
-                  fontWeight: 400,
                   color: "var(--color-sage-900)",
                 }}
               >
@@ -234,7 +232,7 @@ export default function WhatWeOfferPage() {
         className="py-24"
         style={{ background: "var(--color-cream-100)" }}
       >
-        <div className="max-w-3xl mx-auto px-6">
+        <div className="max-w-3xl mx-auto px-6 text-center">
           <p
             className="text-xs font-medium uppercase tracking-widest mb-5"
             style={{ color: "var(--color-sage-600)" }}
@@ -242,17 +240,15 @@ export default function WhatWeOfferPage() {
             Questions
           </p>
           <h2
-            className="mb-14"
+            className="section-title-strong mb-14"
             style={{
-              fontFamily: "var(--font-serif), Manrope, sans-serif",
               fontSize: "clamp(1.75rem, 3vw, 2.25rem)",
-              fontWeight: 400,
               color: "var(--color-sage-900)",
             }}
           >
             Frequently asked questions.
           </h2>
-          <div className="flex flex-col divide-y" style={{ borderColor: "var(--color-cream-300)" }}>
+          <div className="flex flex-col divide-y text-left" style={{ borderColor: "var(--color-cream-300)" }}>
             {faqs.map((faq) => (
               <div key={faq.q} className="py-7">
                 <h3

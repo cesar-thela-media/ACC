@@ -15,7 +15,7 @@ export default function BillingPage() {
     <div className="flex flex-col gap-10 max-w-2xl">
       <div>
         <p className="text-xs font-medium uppercase tracking-widest mb-2" style={{ color: "var(--color-sage-600)" }}>Billing</p>
-        <h1 style={{ fontFamily: "var(--font-serif), Manrope, sans-serif", fontSize: "2rem", fontWeight: 400, color: "var(--color-sage-900)" }}>
+        <h1 style={{ fontFamily: "var(--font-serif), Manrope, sans-serif", fontSize: "2rem", fontWeight: 400, color: "#fff" }}>
           Subscription & billing
         </h1>
       </div>
@@ -57,7 +57,7 @@ export default function BillingPage() {
           <div className="flex items-center gap-3 mt-1">
             <div
               className="px-3 py-1 rounded text-xs font-semibold"
-              style={{ background: "#1a1a2e", color: "#fff" }}
+              style={{ background: "#1B1B1B", color: "#fff" }}
             >
               VISA
             </div>
@@ -94,7 +94,7 @@ export default function BillingPage() {
 
       {/* Invoice history */}
       <div>
-        <h2 className="text-base font-semibold mb-4" style={{ color: "var(--color-sage-800)" }}>Invoice history</h2>
+        <h2 className="text-base font-semibold mb-4" style={{ color: "#fff" }}>Invoice history</h2>
         <Card className="overflow-hidden" style={{ padding: 0 }}>
           <table className="w-full text-sm">
             <thead>
@@ -133,12 +133,12 @@ export default function BillingPage() {
       {/* Cancel */}
       <div
         className="rounded-2xl border px-6 py-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
-        style={{ borderColor: "var(--color-cream-300)" }}
+        style={{ borderColor: "var(--color-cream-300)", background: "#fff" }}
       >
         <div>
           <p className="text-sm font-semibold" style={{ color: "var(--color-text-primary)" }}>Cancel membership</p>
           <p className="text-xs mt-0.5" style={{ color: "var(--color-text-tertiary)" }}>
-            You'll retain access through May 1, 2026. This action cannot be undone.
+            You&apos;ll retain access through May 1, 2026. This action cannot be undone.
           </p>
         </div>
         <Button variant="destructive" size="sm">Cancel membership</Button>

@@ -39,7 +39,7 @@ export default function SignInPage() {
         className="mb-8 p-4 rounded-2xl"
         style={{
           background: "var(--color-sage-50)",
-          border: "1px solid rgba(74,93,78,0.12)",
+          border: "1px solid rgba(220,103,59,0.12)",
         }}
       >
         <p

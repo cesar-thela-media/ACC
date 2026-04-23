@@ -1,7 +1,14 @@
 import type { Metadata } from "next";
-import { Manrope, Plus_Jakarta_Sans } from "next/font/google";
+import { Inter, Manrope, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { AosInit } from "@/components/AosInit";
+
+const inter = Inter({
+  variable: "--font-strong",
+  subsets: ["latin"],
+  weight: ["700", "800"],
+  display: "swap",
+});
 
 const manrope = Manrope({
   variable: "--font-serif",
@@ -31,7 +38,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${manrope.variable} ${jakarta.variable} h-full antialiased`}
+      className={`${inter.variable} ${manrope.variable} ${jakarta.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <AosInit />

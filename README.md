@@ -65,9 +65,9 @@ docker compose down -v
 
 ## Design
 
-Warm sage/cream palette — complementing restoredfamily.com.
+Warm terracotta/cream palette — complementing restoredfamily.com.
 Typography: Cormorant Garamond (headings) + Plus Jakarta Sans (body).
-Colors: sage `#4A5D4E`, cream `#F2EDE4`, warm white `#FAF8F5`.
+Colors: terracotta `#DC673B`, cream `#FFF1E8`, warm white `#FFF9F5`, accent yellow `#F9D251`.
 
 ---
 

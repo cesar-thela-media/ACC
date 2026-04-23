@@ -22,24 +22,24 @@ Fonts: Cormorant Garamond (serif, headings) + Plus Jakarta Sans (sans, body)
 Loaded via next/font/google as CSS variables: --font-serif, --font-sans
 
 Colors (always use CSS variables, never raw hex):
-- --color-sage-900: #2F3E33  (dark nav, footer)
-- --color-sage-800: #3B4D3F
-- --color-sage-700: #4A5D4E  (primary brand, buttons, links)
-- --color-sage-600: #5A7060
-- --color-sage-500: #6B8572
-- --color-sage-100: #E8EDE9
-- --color-sage-50:  #F3F6F4
-- --color-cream-100: #FAF8F5  (page background)
-- --color-cream-200: #F2EDE4  (section alt background)
-- --color-cream-300: #E8E0D4  (borders, dividers)
-- --color-cream-400: #D4C9B9
-- --color-text-primary: #2D2D2D
-- --color-text-secondary: #5C5C5C
-- --color-text-tertiary: #8A8A8A
+- --color-sage-900: #1B1B1B  (dark nav, footer)
+- --color-sage-800: #C1572F
+- --color-sage-700: #DC673B  (primary brand, buttons, links)
+- --color-sage-600: #E98359
+- --color-sage-500: #F1A27F
+- --color-sage-100: #FDE1D5
+- --color-sage-50:  #FFF5EE
+- --color-cream-100: #FFF9F5  (page background)
+- --color-cream-200: #FFF1E8  (section alt background)
+- --color-cream-300: #F3D8CA  (borders, dividers)
+- --color-cream-400: #D9B5A2
+- --color-text-primary: #1B1B1B
+- --color-text-secondary: #5C463B
+- --color-text-tertiary: #8B6F61
 - --color-text-inverse: #FFFFFF
 - --color-error: #B54B4B
-- --color-success: #4A7C59
-- --color-gold: #C9A96E
+- --color-success: #DC673B
+- --color-gold: #F9D251
 
 Borders: rounded-full for buttons/pills, rounded-2xl for cards
 Shadows: soft warm — shadow-md for cards, shadow-lg for modals

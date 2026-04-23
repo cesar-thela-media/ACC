@@ -15,7 +15,7 @@ export function VideoPlayer() {
       className="relative w-full rounded-2xl overflow-hidden cursor-pointer group"
       style={{
         aspectRatio: "16 / 9",
-        boxShadow: "0 24px 64px rgba(47,62,51,0.18)",
+        boxShadow: "0 24px 64px rgba(27,27,27,0.18)",
         background: "var(--color-sage-900)",
       }}
       onClick={() => !played && setPlayed(true)}
@@ -25,7 +25,7 @@ export function VideoPlayer() {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(135deg, var(--color-sage-900) 0%, #1b2e20 100%)",
+            "linear-gradient(135deg, var(--color-sage-900) 0%, #8C3F22 100%)",
         }}
       />
 
@@ -45,7 +45,7 @@ export function VideoPlayer() {
         className="absolute inset-0"
         style={{
           backgroundImage:
-            "radial-gradient(ellipse at 25% 55%, rgba(201,169,110,0.1) 0%, transparent 55%)",
+            "radial-gradient(ellipse at 25% 55%, rgba(249,210,81,0.1) 0%, transparent 55%)",
         }}
       />
 
@@ -54,7 +54,7 @@ export function VideoPlayer() {
         className="absolute inset-0"
         style={{
           backgroundImage:
-            "radial-gradient(ellipse at 80% 30%, rgba(192,122,90,0.07) 0%, transparent 45%)",
+            "radial-gradient(ellipse at 80% 30%, rgba(220,103,59,0.07) 0%, transparent 45%)",
         }}
       />
 
