@@ -165,15 +165,18 @@ export default function DashboardPage() {
         </Card>
       </div>
 
-      {/* Weekly milestone — blush callout */}
+      {/* Weekly milestone — warm accent callout */}
       <div
         className="rounded-2xl p-6 flex items-center justify-between gap-6"
-        style={{ background: "var(--color-blush)" }}
+        style={{
+          background: "rgba(var(--color-accent-highlight-rgb), 0.16)",
+          border: "1px solid rgba(var(--color-accent-highlight-rgb), 0.24)",
+        }}
       >
         <div className="flex flex-col gap-1">
           <p
             className="text-xs font-medium uppercase tracking-widest"
-            style={{ color: "var(--color-text-primary)" }}
+            style={{ color: "var(--color-sage-700)" }}
           >
             Weekly ritual
           </p>
@@ -193,7 +196,10 @@ export default function DashboardPage() {
         </div>
         <div
           className="w-14 h-14 rounded-full flex items-center justify-center text-2xl shrink-0"
-          style={{ background: "var(--color-blush-dark)" }}
+          style={{
+            background: "rgba(255,255,255,0.45)",
+            color: "var(--color-sage-700)",
+          }}
         >
           ◈
         </div>

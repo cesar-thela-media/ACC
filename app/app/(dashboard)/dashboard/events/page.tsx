@@ -68,11 +68,11 @@ const EVENTS = [
   },
 ];
 
-const categoryColor: Record<string, "default" | "success" | "warning" | "gold"> = {
+const categoryColor: Record<string, "default" | "success" | "warning" | "accent" | "highlight"> = {
   Consultation: "default",
-  Workshop: "gold",
+  Workshop: "accent",
   CEU: "success",
-  "Self-Care": "warning",
+  "Self-Care": "highlight",
 };
 
 export default function EventsPage() {

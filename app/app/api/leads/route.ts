@@ -104,7 +104,7 @@ function buildDeliveryEmail(firstName: string) {
         <table width="560" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(74,93,78,0.08);">
           <!-- Header -->
           <tr>
-            <td style="background:#2F3E33;padding:36px 40px;">
+            <td style="background:#1B1B1B;padding:36px 40px;">
               <p style="margin:0 0 8px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.4);">Austin Clinician Circle</p>
               <h1 style="margin:0;font-size:24px;font-weight:400;color:#ffffff;line-height:1.2;">Your playbook is attached, ${firstName}.</h1>
             </td>
@@ -113,7 +113,7 @@ function buildDeliveryEmail(firstName: string) {
           <tr>
             <td style="padding:36px 40px;">
               <p style="margin:0 0 16px;font-size:15px;color:#444841;line-height:1.65;">
-                Thanks for downloading <strong style="color:#191C18;">The Private Practice Playbook</strong>. The PDF is attached to this email — you can open it now or save it for later.
+                Thanks for downloading <strong style="color:#1B1B1B;">The Private Practice Playbook</strong>. The PDF is attached to this email — you can open it now or save it for later.
               </p>
               <p style="margin:0 0 16px;font-size:15px;color:#444841;line-height:1.65;">
                 Inside you'll find four frameworks for building a sustainable practice: fee-setting, referral networks, burnout prevention, and community. I wrote it based on ten years in private practice and the patterns I see in the clinicians who thrive long-term.
@@ -125,7 +125,7 @@ function buildDeliveryEmail(firstName: string) {
               <hr style="border:none;border-top:1px solid #DFE3DA;margin:0 0 28px;" />
               <!-- CTA -->
               <p style="margin:0 0 12px;font-size:13px;color:#5A7060;font-weight:600;letter-spacing:1px;text-transform:uppercase;">One more thing</p>
-              <p style="margin:0 0 16px;font-size:15px;color:#191C18;font-weight:500;">We're accepting founding members right now.</p>
+              <p style="margin:0 0 16px;font-size:15px;color:#1B1B1B;font-weight:500;">We're accepting founding members right now.</p>
               <p style="margin:0 0 20px;font-size:14px;color:#444841;line-height:1.65;">
                 Austin Clinician Circle is a virtual membership network for licensed therapists — monthly case consultation, a vetted referral network, 48+ clinical resources, and CEU trainings. We're launching with a founding cohort of 40 therapists.
               </p>
@@ -160,14 +160,14 @@ function buildNotificationEmail(firstName: string, email: string) {
   <table width="480" cellpadding="0" cellspacing="0" style="background:#fff;border-radius:12px;padding:28px 32px;box-shadow:0 2px 12px rgba(74,93,78,0.06);">
     <tr><td>
         <p style="margin:0 0 4px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#75796E;">New lead</p>
-        <h2 style="margin:0 0 20px;font-size:20px;font-weight:600;color:#191C18;">${firstName}</h2>
+        <h2 style="margin:0 0 20px;font-size:20px;font-weight:600;color:#1B1B1B;">${firstName}</h2>
         <table cellpadding="0" cellspacing="0" style="width:100%;border-top:1px solid #DFE3DA;">
         <tr><td style="padding:10px 0;border-bottom:1px solid #DFE3DA;font-size:13px;color:#75796E;width:120px;">Email</td>
-          <td style="padding:10px 0;border-bottom:1px solid #DFE3DA;font-size:13px;color:#191C18;"><a href="mailto:${email}" style="color:#4A5D4E;">${email}</a></td></tr>
+          <td style="padding:10px 0;border-bottom:1px solid #DFE3DA;font-size:13px;color:#1B1B1B;"><a href="mailto:${email}" style="color:#4A5D4E;">${email}</a></td></tr>
         <tr><td style="padding:10px 0;border-bottom:1px solid #DFE3DA;font-size:13px;color:#75796E;">Source</td>
-          <td style="padding:10px 0;border-bottom:1px solid #DFE3DA;font-size:13px;color:#191C18;">Coming soon — playbook download</td></tr>
+          <td style="padding:10px 0;border-bottom:1px solid #DFE3DA;font-size:13px;color:#1B1B1B;">Coming soon — playbook download</td></tr>
         <tr><td style="padding:10px 0;font-size:13px;color:#75796E;">Time (CT)</td>
-          <td style="padding:10px 0;font-size:13px;color:#191C18;">${now}</td></tr>
+          <td style="padding:10px 0;font-size:13px;color:#1B1B1B;">${now}</td></tr>
       </table>
     </td></tr>
   </table>

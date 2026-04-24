@@ -65,7 +65,7 @@ export default function ComingSoonPage() {
         className="fixed inset-0 pointer-events-none"
         style={{
           backgroundImage:
-            "radial-gradient(circle at 70% 20%, rgba(201,169,110,0.08) 0%, transparent 55%), radial-gradient(circle at 20% 80%, rgba(74,93,78,0.22) 0%, transparent 50%)",
+            "radial-gradient(circle at 70% 20%, rgba(var(--color-accent-highlight-rgb), 0.08) 0%, transparent 55%), radial-gradient(circle at 20% 80%, rgba(74,93,78,0.22) 0%, transparent 50%)",
         }}
       />
 
@@ -86,9 +86,9 @@ export default function ComingSoonPage() {
           {/* ── Left: copy ── */}
           <div>
             {/* Eyebrow */}
-            <div className="inline-flex items-center gap-2 mb-6 px-3.5 py-1.5 rounded-full" style={{ background: "rgba(249,210,81,0.12)", border: "1px solid rgba(249,210,81,0.25)" }}>
-              <span className="w-1.5 h-1.5 rounded-full" style={{ background: "var(--color-gold)" }} />
-              <span className="text-xs font-semibold uppercase tracking-widest" style={{ color: "var(--color-gold)" }}>
+            <div className="inline-flex items-center gap-2 mb-6 px-3.5 py-1.5 rounded-full" style={{ background: "rgba(var(--color-accent-secondary-rgb), 0.14)", border: "1px solid rgba(var(--color-accent-secondary-rgb), 0.28)" }}>
+              <span className="w-1.5 h-1.5 rounded-full" style={{ background: "var(--color-accent-highlight)" }} />
+              <span className="text-xs font-semibold uppercase tracking-widest" style={{ color: "var(--color-accent-highlight)" }}>
                 Free guide for Austin therapists
               </span>
             </div>
@@ -105,7 +105,7 @@ export default function ComingSoonPage() {
             >
               Stop building your
               <br />
-              <em style={{ color: "var(--color-gold)", fontStyle: "italic" }}>
+              <em style={{ color: "var(--color-sage-100)", fontStyle: "italic" }}>
                 practice alone.
               </em>
             </h1>
@@ -123,7 +123,7 @@ export default function ComingSoonPage() {
                 <li key={item} className="flex items-start gap-3">
                   <span
                     className="mt-0.5 shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs"
-                    style={{ background: "rgba(249,210,81,0.15)", color: "var(--color-gold)" }}
+                    style={{ background: "rgba(var(--color-accent-highlight-rgb), 0.18)", color: "var(--color-sage-700)" }}
                   >
                     ✓
                   </span>
@@ -192,7 +192,7 @@ export default function ComingSoonPage() {
                         border: "1px solid rgba(255,255,255,0.12)",
                         color: "#fff",
                       }}
-                      onFocus={(e) => (e.currentTarget.style.borderColor = "rgba(249,210,81,0.5)")}
+                      onFocus={(e) => (e.currentTarget.style.borderColor = "rgba(var(--color-accent-secondary-rgb), 0.5)")}
                       onBlur={(e) => (e.currentTarget.style.borderColor = "rgba(255,255,255,0.12)")}
                     />
                   </div>
@@ -213,7 +213,7 @@ export default function ComingSoonPage() {
                         border: "1px solid rgba(255,255,255,0.12)",
                         color: "#fff",
                       }}
-                      onFocus={(e) => (e.currentTarget.style.borderColor = "rgba(249,210,81,0.5)")}
+                      onFocus={(e) => (e.currentTarget.style.borderColor = "rgba(var(--color-accent-secondary-rgb), 0.5)")}
                       onBlur={(e) => (e.currentTarget.style.borderColor = "rgba(255,255,255,0.12)")}
                     />
                   </div>
@@ -270,8 +270,8 @@ export default function ComingSoonPage() {
 
                 {/* Tripwire offer */}
                 <div className="flex flex-col gap-3">
-                  <div className="inline-flex items-center gap-2 self-start px-3 py-1 rounded-full" style={{ background: "rgba(249,210,81,0.12)", border: "1px solid rgba(249,210,81,0.3)" }}>
-                    <span className="text-xs font-semibold uppercase tracking-widest" style={{ color: "var(--color-gold)" }}>
+                  <div className="inline-flex items-center gap-2 self-start px-3 py-1 rounded-full" style={{ background: "rgba(var(--color-accent-highlight-rgb), 0.14)", border: "1px solid rgba(var(--color-accent-highlight-rgb), 0.32)" }}>
+                    <span className="text-xs font-semibold uppercase tracking-widest" style={{ color: "var(--color-accent-highlight)" }}>
                       One more thing
                     </span>
                   </div>
@@ -292,13 +292,13 @@ export default function ComingSoonPage() {
                   {/* Urgency bar */}
                   <div
                     className="rounded-xl p-4 flex flex-col gap-2"
-                    style={{ background: "rgba(249,210,81,0.07)", border: "1px solid rgba(249,210,81,0.15)" }}
+                    style={{ background: "rgba(var(--color-accent-highlight-rgb), 0.08)", border: "1px solid rgba(var(--color-accent-highlight-rgb), 0.18)" }}
                   >
                     <div className="flex justify-between items-center">
                       <span className="text-xs font-medium" style={{ color: "rgba(255,255,255,0.5)" }}>
                         Founding spots remaining
                       </span>
-                      <span className="text-sm font-bold" style={{ color: "var(--color-gold)" }}>
+                      <span className="text-sm font-bold" style={{ color: "var(--color-accent-highlight)" }}>
                         {SPOTS_REMAINING} of 40
                       </span>
                     </div>
@@ -307,7 +307,7 @@ export default function ComingSoonPage() {
                         className="h-full rounded-full"
                         style={{
                           width: `${((40 - SPOTS_REMAINING) / 40) * 100}%`,
-                          background: "var(--color-gold)",
+                          background: "var(--color-accent-highlight)",
                         }}
                       />
                     </div>

@@ -40,12 +40,12 @@ export function VideoPlayer() {
         }}
       />
 
-      {/* Gold radial accent */}
+      {/* Highlight radial accent */}
       <div
         className="absolute inset-0"
         style={{
           backgroundImage:
-            "radial-gradient(ellipse at 25% 55%, rgba(249,210,81,0.1) 0%, transparent 55%)",
+            "radial-gradient(ellipse at 25% 55%, rgba(var(--color-accent-highlight-rgb), 0.12) 0%, transparent 55%)",
         }}
       />
 
@@ -161,7 +161,7 @@ export function VideoPlayer() {
           <button
             className="mt-2 text-xs underline"
             style={{
-              color: "var(--color-gold)",
+              color: "var(--color-accent-highlight)",
               textUnderlineOffset: "3px",
             }}
             onClick={(e) => {

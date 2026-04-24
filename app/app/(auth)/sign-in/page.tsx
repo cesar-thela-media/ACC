@@ -33,7 +33,7 @@ export default function SignInPage() {
   }
 
   return (
-    <div className="w-full max-w-sm">
+    <div className="w-full max-w-md">
       {/* Quick access — one-click demo accounts */}
       <div
         className="mb-8 p-4 rounded-2xl"

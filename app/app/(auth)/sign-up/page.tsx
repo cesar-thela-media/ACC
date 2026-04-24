@@ -47,7 +47,7 @@ export default function SignUpPage() {
   }
 
   return (
-    <div className="w-full max-w-sm">
+    <div className="w-full max-w-md">
       <div className="mb-8">
         <h1
           className="mb-2"
@@ -76,7 +76,7 @@ export default function SignUpPage() {
       </div>
 
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <Input
             label="First name"
             value={form.firstName}

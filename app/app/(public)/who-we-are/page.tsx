@@ -20,10 +20,10 @@ export default function WhoWeArePage() {
     <>
       {/* HERO */}
       <section
-        className="pt-32 pb-20"
+        className="pt-28 md:pt-32 pb-16 md:pb-20"
         style={{ background: "var(--color-cream-100)" }}
       >
-        <div className="max-w-4xl mx-auto px-6 text-center">
+        <div className="max-w-4xl mx-auto px-5 md:px-6 text-center">
           <p
             className="text-xs font-medium uppercase tracking-widest mb-5"
             style={{ color: "var(--color-sage-600)" }}
@@ -42,7 +42,7 @@ export default function WhoWeArePage() {
             A professional home for therapists who take their work seriously.
           </h1>
           <p
-            className="text-lg leading-relaxed max-w-2xl mx-auto"
+            className="text-base md:text-lg leading-relaxed max-w-2xl mx-auto"
             style={{ color: "var(--color-text-secondary)" }}
           >
             The Austin Clinician Circle was founded by a therapist who felt the
@@ -54,11 +54,11 @@ export default function WhoWeArePage() {
 
       {/* SARAH'S STORY */}
       <section
-        className="py-24"
+        className="py-16 md:py-24"
         style={{ background: "var(--color-cream-200)" }}
       >
-        <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
-          <div className="aspect-square rounded-2xl max-w-sm w-full sticky top-24 overflow-hidden">
+        <div className="max-w-6xl mx-auto px-5 md:px-6 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
+          <div className="aspect-square rounded-2xl max-w-sm w-full mx-auto md:mx-0 lg:sticky lg:top-24 overflow-hidden">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/sarah-arnold.jpeg"
@@ -133,10 +133,10 @@ export default function WhoWeArePage() {
 
       {/* ORIGIN */}
       <section
-        className="py-24"
+        className="py-16 md:py-24"
         style={{ background: "var(--color-cream-100)" }}
       >
-        <div className="max-w-4xl mx-auto px-6 text-center">
+        <div className="max-w-4xl mx-auto px-5 md:px-6 text-center">
           <p
             className="text-xs font-medium uppercase tracking-widest mb-5"
             style={{ color: "var(--color-sage-600)" }}
@@ -183,11 +183,11 @@ export default function WhoWeArePage() {
 
       {/* VALUES */}
       <section
-        className="py-24"
+        className="py-16 md:py-24"
         style={{ background: "var(--color-cream-200)" }}
       >
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="max-w-3xl mx-auto text-center mb-14">
+        <div className="max-w-6xl mx-auto px-5 md:px-6">
+          <div className="max-w-3xl mx-auto text-center mb-10 md:mb-14">
             <p
               className="text-xs font-medium uppercase tracking-widest mb-5"
               style={{ color: "var(--color-sage-600)" }}
@@ -204,9 +204,9 @@ export default function WhoWeArePage() {
               The values that shape ACC.
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10">
             {values.map((v) => (
-              <div key={v.title} className="text-center">
+              <div key={v.title} className="text-center md:text-left lg:text-center">
                 <h3
                   className="text-base font-semibold mb-3"
                   style={{ color: "var(--color-sage-800)" }}
@@ -227,10 +227,10 @@ export default function WhoWeArePage() {
 
       {/* CTA */}
       <section
-        className="py-24 text-center"
+        className="py-16 md:py-24 text-center"
         style={{ background: "var(--color-sage-900)" }}
       >
-        <div className="max-w-xl mx-auto px-6">
+        <div className="max-w-xl mx-auto px-5 md:px-6">
           <h2
             className="section-title-strong mb-6"
             style={{
@@ -242,7 +242,7 @@ export default function WhoWeArePage() {
           </h2>
           <Link
             href="/join"
-            className="inline-flex items-center justify-center px-8 py-3.5 rounded-full text-sm font-medium hover:opacity-90 transition-opacity"
+            className="inline-flex w-full sm:w-auto items-center justify-center px-8 py-3.5 rounded-full text-sm font-medium hover:opacity-90 transition-opacity"
             style={{ background: "#fff", color: "var(--color-sage-700)" }}
           >
             Apply for membership

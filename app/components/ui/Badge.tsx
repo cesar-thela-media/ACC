@@ -1,6 +1,14 @@
 import { type ReactNode } from "react";
 
-type BadgeVariant = "default" | "success" | "warning" | "error" | "gold" | "blush";
+type BadgeVariant =
+  | "default"
+  | "success"
+  | "warning"
+  | "error"
+  | "accent"
+  | "highlight"
+  | "gold"
+  | "blush";
 
 interface BadgeProps {
   variant?: BadgeVariant;
@@ -11,10 +19,12 @@ interface BadgeProps {
 const variantStyles: Record<BadgeVariant, { background: string; color: string }> = {
   default: { background: "rgba(228,235,230,0.7)", color: "var(--color-sage-700)" },
   success: { background: "rgba(74,124,89,0.12)", color: "var(--color-success)" },
-  warning: { background: "rgba(201,169,110,0.18)", color: "var(--color-warning)" },
+  warning: { background: "rgba(var(--color-accent-highlight-rgb), 0.22)", color: "var(--color-warning)" },
   error:   { background: "rgba(181,75,75,0.12)", color: "var(--color-error)" },
-  gold:    { background: "rgba(201,169,110,0.12)", color: "var(--color-gold)" },
-  blush:   { background: "var(--color-blush)", color: "var(--color-text-primary)" },
+  accent: { background: "rgba(var(--color-accent-secondary-rgb), 0.12)", color: "var(--color-sage-800)" },
+  highlight: { background: "rgba(var(--color-accent-highlight-rgb), 0.18)", color: "var(--color-text-primary)" },
+  gold:    { background: "rgba(var(--color-accent-highlight-rgb), 0.18)", color: "var(--color-text-primary)" },
+  blush:   { background: "rgba(var(--color-accent-secondary-rgb), 0.12)", color: "var(--color-text-primary)" },
 };
 
 export function Badge({

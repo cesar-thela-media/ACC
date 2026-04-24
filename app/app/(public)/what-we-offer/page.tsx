@@ -97,10 +97,10 @@ export default function WhatWeOfferPage() {
     <>
       {/* HERO */}
       <section
-        className="pt-32 pb-20"
+        className="pt-28 md:pt-32 pb-16 md:pb-20"
         style={{ background: "var(--color-cream-100)" }}
       >
-        <div className="max-w-4xl mx-auto px-6 text-center">
+        <div className="max-w-4xl mx-auto px-5 md:px-6 text-center">
           <p
             className="text-xs font-medium uppercase tracking-widest mb-5"
             style={{ color: "var(--color-sage-600)" }}
@@ -119,7 +119,7 @@ export default function WhatWeOfferPage() {
             Everything a thriving private practice needs.
           </h1>
           <p
-            className="text-lg leading-relaxed max-w-2xl mx-auto"
+            className="text-base md:text-lg leading-relaxed max-w-2xl mx-auto"
             style={{ color: "var(--color-text-secondary)" }}
           >
             One membership gives you full access to clinical support, professional
@@ -132,7 +132,7 @@ export default function WhatWeOfferPage() {
       {benefits.map((section, i) => (
         <section
           key={section.category}
-          className="py-20"
+          className="py-16 md:py-20"
           style={{
             background:
               i % 2 === 0
@@ -140,8 +140,8 @@ export default function WhatWeOfferPage() {
                 : "var(--color-cream-100)",
           }}
         >
-          <div className="max-w-6xl mx-auto px-6">
-            <div className="flex flex-col items-center gap-3 mb-12 text-center">
+          <div className="max-w-6xl mx-auto px-5 md:px-6">
+            <div className="flex flex-col items-center gap-3 mb-10 md:mb-12 text-center">
               <span
                 className="text-2xl"
                 style={{ color: "var(--color-sage-500)" }}
@@ -155,9 +155,9 @@ export default function WhatWeOfferPage() {
                 {section.category}
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {section.items.map((item) => (
-                <div key={item.title} className="text-center">
+                <div key={item.title} className="text-left md:text-center">
                   <h3
                     className="text-base font-semibold mb-3"
                     style={{ color: "var(--color-sage-800)" }}
@@ -179,11 +179,11 @@ export default function WhatWeOfferPage() {
 
       {/* PRICING */}
       <section
-        className="py-24"
+        className="py-16 md:py-24"
         style={{ background: "var(--color-cream-200)" }}
       >
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <div className="max-w-6xl mx-auto px-5 md:px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
             <div className="text-center md:text-left">
               <p
                 className="text-xs font-medium uppercase tracking-widest mb-5"
@@ -211,7 +211,7 @@ export default function WhatWeOfferPage() {
               </p>
               <Link
                 href="/join"
-                className="inline-flex items-center justify-center px-8 py-3.5 rounded-full text-sm font-medium hover:opacity-90 transition-opacity"
+                className="inline-flex w-full sm:w-auto items-center justify-center px-8 py-3.5 rounded-full text-sm font-medium hover:opacity-90 transition-opacity"
                 style={{
                   background: "var(--color-sage-700)",
                   color: "#fff",
@@ -220,7 +220,7 @@ export default function WhatWeOfferPage() {
                 Apply for membership
               </Link>
             </div>
-            <div className="max-w-sm">
+            <div className="max-w-sm w-full mx-auto">
               <PricingCard price="$129" features={pricingFeatures} featured />
             </div>
           </div>
@@ -229,10 +229,10 @@ export default function WhatWeOfferPage() {
 
       {/* FAQ */}
       <section
-        className="py-24"
+        className="py-16 md:py-24"
         style={{ background: "var(--color-cream-100)" }}
       >
-        <div className="max-w-3xl mx-auto px-6 text-center">
+        <div className="max-w-3xl mx-auto px-5 md:px-6 text-center">
           <p
             className="text-xs font-medium uppercase tracking-widest mb-5"
             style={{ color: "var(--color-sage-600)" }}
@@ -240,7 +240,7 @@ export default function WhatWeOfferPage() {
             Questions
           </p>
           <h2
-            className="section-title-strong mb-14"
+            className="section-title-strong mb-10 md:mb-14"
             style={{
               fontSize: "clamp(1.75rem, 3vw, 2.25rem)",
               color: "var(--color-sage-900)",
@@ -250,7 +250,7 @@ export default function WhatWeOfferPage() {
           </h2>
           <div className="flex flex-col divide-y text-left" style={{ borderColor: "var(--color-cream-300)" }}>
             {faqs.map((faq) => (
-              <div key={faq.q} className="py-7">
+              <div key={faq.q} className="py-6 md:py-7">
                 <h3
                   className="text-base font-semibold mb-3"
                   style={{ color: "var(--color-sage-800)" }}

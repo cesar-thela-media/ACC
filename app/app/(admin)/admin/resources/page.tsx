@@ -39,14 +39,14 @@ export default function AdminResourcesPage() {
 
   return (
     <div className="flex flex-col gap-8">
-      <div className="flex items-start justify-between gap-4">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
           <p className="text-xs font-medium uppercase tracking-widest mb-2" style={{ color: "var(--color-sage-600)" }}>Admin</p>
           <h1 style={{ fontFamily: "var(--font-serif), Manrope, sans-serif", fontSize: "2rem", fontWeight: 400, color: "var(--color-sage-900)" }}>
             Resources
           </h1>
         </div>
-        <Button variant="primary" size="sm" onClick={() => setShowForm((v) => !v)}>
+        <Button variant="primary" size="sm" className="w-full sm:w-auto" onClick={() => setShowForm((v) => !v)}>
           {showForm ? "Cancel" : "+ Upload resource"}
         </Button>
       </div>
@@ -114,7 +114,7 @@ export default function AdminResourcesPage() {
                 <p className="text-xs mt-1" style={{ color: "var(--color-text-tertiary)" }}>PDF, DOC, MP4 · 50MB max</p>
               </div>
             </div>
-            <div className="flex items-center gap-3">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
               <Button type="submit" variant="primary" size="sm">
                 {submitted ? "Publishing…" : "Publish resource"}
               </Button>
@@ -143,36 +143,71 @@ export default function AdminResourcesPage() {
       </div>
 
       {/* Resource table */}
-      <div className="rounded-2xl border overflow-hidden bg-white" style={{ borderColor: "var(--color-cream-300)" }}>
-        <table className="w-full text-sm">
-          <thead>
-            <tr style={{ borderBottom: "1px solid var(--color-cream-300)", background: "var(--color-cream-100)" }}>
-              <th className="text-left px-5 py-3 text-xs font-semibold" style={{ color: "var(--color-text-tertiary)" }}>Title</th>
-              <th className="text-left px-5 py-3 text-xs font-semibold" style={{ color: "var(--color-text-tertiary)" }}>Category</th>
-              <th className="text-left px-5 py-3 text-xs font-semibold" style={{ color: "var(--color-text-tertiary)" }}>Type</th>
-              <th className="text-left px-5 py-3 text-xs font-semibold" style={{ color: "var(--color-text-tertiary)" }}>Published</th>
-              <th className="text-left px-5 py-3 text-xs font-semibold" style={{ color: "var(--color-text-tertiary)" }}>Downloads</th>
-              <th className="px-5 py-3" />
-            </tr>
-          </thead>
-          <tbody>
-            {filtered.map((r, i) => (
-              <tr key={r.id} style={{ borderBottom: i < filtered.length - 1 ? "1px solid var(--color-cream-200)" : "none" }}>
-                <td className="px-5 py-3.5 font-medium" style={{ color: "var(--color-text-primary)" }}>{r.title}</td>
-                <td className="px-5 py-3.5"><Badge>{r.category}</Badge></td>
-                <td className="px-5 py-3.5 text-xs" style={{ color: "var(--color-text-tertiary)" }}>{r.type}</td>
-                <td className="px-5 py-3.5" style={{ color: "var(--color-text-tertiary)" }}>{r.published}</td>
-                <td className="px-5 py-3.5" style={{ color: "var(--color-text-secondary)" }}>{r.downloads}</td>
-                <td className="px-5 py-3.5 text-right">
-                  <div className="flex items-center justify-end gap-3">
-                    <button className="text-xs underline" style={{ color: "var(--color-sage-700)", textUnderlineOffset: "3px" }}>Edit</button>
-                    <button className="text-xs underline" style={{ color: "var(--color-error)", textUnderlineOffset: "3px" }}>Delete</button>
-                  </div>
-                </td>
+      <div className="md:hidden flex flex-col gap-3">
+        {filtered.map((r) => (
+          <div
+            key={r.id}
+            className="rounded-2xl border bg-white p-4 flex flex-col gap-3"
+            style={{ borderColor: "var(--color-cream-300)" }}
+          >
+            <div className="flex items-start justify-between gap-3">
+              <div>
+                <p className="text-sm font-semibold" style={{ color: "var(--color-text-primary)" }}>{r.title}</p>
+                <p className="text-xs mt-1" style={{ color: "var(--color-text-tertiary)" }}>{r.published}</p>
+              </div>
+              <Badge>{r.category}</Badge>
+            </div>
+            <div className="flex items-center gap-3 flex-wrap text-xs" style={{ color: "var(--color-text-tertiary)" }}>
+              <span>{r.type}</span>
+              <span>•</span>
+              <span>{r.downloads} downloads</span>
+            </div>
+            <div className="flex flex-wrap items-center gap-4">
+              <button className="text-xs underline" style={{ color: "var(--color-sage-700)", textUnderlineOffset: "3px" }}>Edit</button>
+              <button className="text-xs underline" style={{ color: "var(--color-error)", textUnderlineOffset: "3px" }}>Delete</button>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {filtered.length === 0 && (
+        <div className="py-16 text-center" style={{ color: "var(--color-text-tertiary)" }}>
+          <p className="text-sm">No resources match this category yet.</p>
+        </div>
+      )}
+
+      <div className="hidden md:block rounded-2xl border overflow-hidden bg-white" style={{ borderColor: "var(--color-cream-300)" }}>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm">
+            <thead>
+              <tr style={{ borderBottom: "1px solid var(--color-cream-300)", background: "var(--color-cream-100)" }}>
+                <th className="text-left px-5 py-3 text-xs font-semibold" style={{ color: "var(--color-text-tertiary)" }}>Title</th>
+                <th className="text-left px-5 py-3 text-xs font-semibold" style={{ color: "var(--color-text-tertiary)" }}>Category</th>
+                <th className="text-left px-5 py-3 text-xs font-semibold" style={{ color: "var(--color-text-tertiary)" }}>Type</th>
+                <th className="text-left px-5 py-3 text-xs font-semibold" style={{ color: "var(--color-text-tertiary)" }}>Published</th>
+                <th className="text-left px-5 py-3 text-xs font-semibold" style={{ color: "var(--color-text-tertiary)" }}>Downloads</th>
+                <th className="px-5 py-3" />
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {filtered.map((r, i) => (
+                <tr key={r.id} style={{ borderBottom: i < filtered.length - 1 ? "1px solid var(--color-cream-200)" : "none" }}>
+                  <td className="px-5 py-3.5 font-medium" style={{ color: "var(--color-text-primary)" }}>{r.title}</td>
+                  <td className="px-5 py-3.5"><Badge>{r.category}</Badge></td>
+                  <td className="px-5 py-3.5 text-xs" style={{ color: "var(--color-text-tertiary)" }}>{r.type}</td>
+                  <td className="px-5 py-3.5" style={{ color: "var(--color-text-tertiary)" }}>{r.published}</td>
+                  <td className="px-5 py-3.5" style={{ color: "var(--color-text-secondary)" }}>{r.downloads}</td>
+                  <td className="px-5 py-3.5 text-right">
+                    <div className="flex items-center justify-end gap-3">
+                      <button className="text-xs underline" style={{ color: "var(--color-sage-700)", textUnderlineOffset: "3px" }}>Edit</button>
+                      <button className="text-xs underline" style={{ color: "var(--color-error)", textUnderlineOffset: "3px" }}>Delete</button>
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

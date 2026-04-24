@@ -17,7 +17,7 @@ export function PricingCard({
 }: PricingCardProps) {
   return (
     <div
-      className="rounded-3xl p-8 flex flex-col gap-6"
+      className="rounded-3xl p-6 sm:p-8 flex flex-col gap-5 sm:gap-6 w-full"
       style={{
         background: "#fff",
         border: `2px solid ${
@@ -37,10 +37,11 @@ export function PricingCard({
         </p>
         <div className="flex items-baseline gap-1">
           <span
-            className="text-5xl font-light"
+            className="font-light"
             style={{
               fontFamily: "var(--font-serif), Georgia, serif",
               color: "var(--color-sage-700)",
+              fontSize: "clamp(2.75rem, 12vw, 3.5rem)",
             }}
           >
             {price}

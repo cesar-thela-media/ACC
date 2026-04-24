@@ -27,11 +27,11 @@ const INITIAL_EVENTS: EventEntry[] = [
   { id: 5, title: "Burnout prevention: clinician self-care", date: "Jun 17, 2026", time: "1:00 – 2:30pm", format: "Virtual (Zoom)", category: "Self-Care", ceus: null, rsvpCount: 2, spots: 25 },
 ];
 
-const CATEGORY_VARIANTS: Record<string, "default" | "gold" | "success" | "warning"> = {
+const CATEGORY_VARIANTS: Record<string, "default" | "accent" | "success" | "warning" | "highlight"> = {
   Consultation: "default",
-  Workshop: "gold",
+  Workshop: "accent",
   CEU: "success",
-  "Self-Care": "warning",
+  "Self-Care": "highlight",
 };
 
 const BLANK_FORM = { title: "", date: "", time: "", format: "Virtual (Zoom)", category: "Consultation", ceus: "", description: "", spots: "" };
@@ -112,14 +112,14 @@ export default function AdminEventsPage() {
 
   return (
     <div className="flex flex-col gap-8">
-      <div className="flex items-start justify-between gap-4">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
           <p className="text-xs font-medium uppercase tracking-widest mb-2" style={{ color: "var(--color-sage-600)" }}>Admin</p>
           <h1 style={{ fontFamily: "var(--font-serif), Manrope, sans-serif", fontSize: "2rem", fontWeight: 400, color: "var(--color-sage-900)" }}>
             Events
           </h1>
         </div>
-        <Button variant="primary" size="sm" onClick={openCreate}>+ Create event</Button>
+        <Button variant="primary" size="sm" className="w-full sm:w-auto" onClick={openCreate}>+ Create event</Button>
       </div>
 
       {/* Create / Edit form */}
@@ -209,7 +209,7 @@ export default function AdminEventsPage() {
               onChange={(e) => setForm((f) => ({ ...f, description: e.target.value }))}
               placeholder="Event description shown to members"
             />
-            <div className="flex items-center gap-3">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
               <Button type="submit" variant="primary" size="sm">
                 {editId != null ? "Save changes" : "Create event"}
               </Button>
@@ -222,65 +222,119 @@ export default function AdminEventsPage() {
       )}
 
       {/* Event list */}
-      <div className="rounded-2xl border overflow-hidden bg-white" style={{ borderColor: "var(--color-cream-300)" }}>
-        <table className="w-full text-sm">
-          <thead>
-            <tr style={{ borderBottom: "1px solid var(--color-cream-300)", background: "var(--color-cream-100)" }}>
-              <th className="text-left px-5 py-3 text-xs font-semibold" style={{ color: "var(--color-text-tertiary)" }}>Event</th>
-              <th className="text-left px-5 py-3 text-xs font-semibold" style={{ color: "var(--color-text-tertiary)" }}>Date & time</th>
-              <th className="text-left px-5 py-3 text-xs font-semibold" style={{ color: "var(--color-text-tertiary)" }}>Category</th>
-              <th className="text-left px-5 py-3 text-xs font-semibold" style={{ color: "var(--color-text-tertiary)" }}>RSVPs</th>
-              <th className="px-5 py-3" />
-            </tr>
-          </thead>
-          <tbody>
-            {events.map((ev, i) => (
-              <tr key={ev.id} style={{ borderBottom: i < events.length - 1 ? "1px solid var(--color-cream-200)" : "none" }}>
-                <td className="px-5 py-3.5">
-                  <p className="font-medium" style={{ color: "var(--color-text-primary)" }}>{ev.title}</p>
-                  <p className="text-xs mt-0.5" style={{ color: "var(--color-text-tertiary)" }}>{ev.format}</p>
-                </td>
-                <td className="px-5 py-3.5" style={{ color: "var(--color-text-secondary)" }}>
-                  <p>{ev.date}</p>
-                  <p className="text-xs" style={{ color: "var(--color-text-tertiary)" }}>{ev.time}</p>
-                </td>
-                <td className="px-5 py-3.5">
-                  <div className="flex flex-col gap-1">
-                    <Badge variant={CATEGORY_VARIANTS[ev.category] ?? "default"}>{ev.category}</Badge>
-                    {ev.ceus && <Badge variant="success">{ev.ceus} CEU{ev.ceus !== 1 ? "s" : ""}</Badge>}
-                  </div>
-                </td>
-                <td className="px-5 py-3.5" style={{ color: "var(--color-text-secondary)" }}>
-                  {ev.rsvpCount}{ev.spots ? ` / ${ev.spots}` : ""}
-                </td>
-                <td className="px-5 py-3.5 text-right">
-                  <div className="flex items-center justify-end gap-3">
-                    <button
-                      className="text-xs underline"
-                      style={{ color: "var(--color-sage-700)", textUnderlineOffset: "3px" }}
-                      onClick={() => openEdit(ev)}
-                    >
-                      Edit
-                    </button>
-                    <button
-                      className="text-xs underline"
-                      style={{ color: "var(--color-error)", textUnderlineOffset: "3px" }}
-                      onClick={() => handleDelete(ev.id)}
-                    >
-                      Delete
-                    </button>
-                  </div>
-                </td>
+      {events.length > 0 && (
+        <div className="md:hidden flex flex-col gap-3">
+          {events.map((ev) => (
+            <div
+              key={ev.id}
+              className="rounded-2xl border bg-white p-4 flex flex-col gap-3"
+              style={{ borderColor: "var(--color-cream-300)" }}
+            >
+              <div className="flex items-start justify-between gap-3">
+                <div>
+                  <p className="text-sm font-semibold" style={{ color: "var(--color-text-primary)" }}>{ev.title}</p>
+                  <p className="text-xs mt-1" style={{ color: "var(--color-text-tertiary)" }}>{ev.format}</p>
+                </div>
+                <Badge variant={CATEGORY_VARIANTS[ev.category] ?? "default"}>{ev.category}</Badge>
+              </div>
+              <div className="text-sm flex flex-col gap-1" style={{ color: "var(--color-text-secondary)" }}>
+                <p>{ev.date}</p>
+                <p className="text-xs" style={{ color: "var(--color-text-tertiary)" }}>{ev.time}</p>
+              </div>
+              <div className="flex items-center gap-2 flex-wrap">
+                {ev.ceus && <Badge variant="success">{ev.ceus} CEU{ev.ceus !== 1 ? "s" : ""}</Badge>}
+                <span className="text-xs" style={{ color: "var(--color-text-tertiary)" }}>
+                  {ev.rsvpCount}{ev.spots ? ` / ${ev.spots}` : ""} RSVPs
+                </span>
+              </div>
+              <div className="flex flex-wrap items-center gap-4">
+                <button
+                  className="text-xs underline"
+                  style={{ color: "var(--color-sage-700)", textUnderlineOffset: "3px" }}
+                  onClick={() => openEdit(ev)}
+                >
+                  Edit
+                </button>
+                <button
+                  className="text-xs underline"
+                  style={{ color: "var(--color-error)", textUnderlineOffset: "3px" }}
+                  onClick={() => handleDelete(ev.id)}
+                >
+                  Delete
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+
+      <div className="hidden md:block rounded-2xl border overflow-hidden bg-white" style={{ borderColor: "var(--color-cream-300)" }}>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm">
+            <thead>
+              <tr style={{ borderBottom: "1px solid var(--color-cream-300)", background: "var(--color-cream-100)" }}>
+                <th className="text-left px-5 py-3 text-xs font-semibold" style={{ color: "var(--color-text-tertiary)" }}>Event</th>
+                <th className="text-left px-5 py-3 text-xs font-semibold" style={{ color: "var(--color-text-tertiary)" }}>Date & time</th>
+                <th className="text-left px-5 py-3 text-xs font-semibold" style={{ color: "var(--color-text-tertiary)" }}>Category</th>
+                <th className="text-left px-5 py-3 text-xs font-semibold" style={{ color: "var(--color-text-tertiary)" }}>RSVPs</th>
+                <th className="px-5 py-3" />
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {events.map((ev, i) => (
+                <tr key={ev.id} style={{ borderBottom: i < events.length - 1 ? "1px solid var(--color-cream-200)" : "none" }}>
+                  <td className="px-5 py-3.5">
+                    <p className="font-medium" style={{ color: "var(--color-text-primary)" }}>{ev.title}</p>
+                    <p className="text-xs mt-0.5" style={{ color: "var(--color-text-tertiary)" }}>{ev.format}</p>
+                  </td>
+                  <td className="px-5 py-3.5" style={{ color: "var(--color-text-secondary)" }}>
+                    <p>{ev.date}</p>
+                    <p className="text-xs" style={{ color: "var(--color-text-tertiary)" }}>{ev.time}</p>
+                  </td>
+                  <td className="px-5 py-3.5">
+                    <div className="flex flex-col gap-1">
+                      <Badge variant={CATEGORY_VARIANTS[ev.category] ?? "default"}>{ev.category}</Badge>
+                      {ev.ceus && <Badge variant="success">{ev.ceus} CEU{ev.ceus !== 1 ? "s" : ""}</Badge>}
+                    </div>
+                  </td>
+                  <td className="px-5 py-3.5" style={{ color: "var(--color-text-secondary)" }}>
+                    {ev.rsvpCount}{ev.spots ? ` / ${ev.spots}` : ""}
+                  </td>
+                  <td className="px-5 py-3.5 text-right">
+                    <div className="flex items-center justify-end gap-3">
+                      <button
+                        className="text-xs underline"
+                        style={{ color: "var(--color-sage-700)", textUnderlineOffset: "3px" }}
+                        onClick={() => openEdit(ev)}
+                      >
+                        Edit
+                      </button>
+                      <button
+                        className="text-xs underline"
+                        style={{ color: "var(--color-error)", textUnderlineOffset: "3px" }}
+                        onClick={() => handleDelete(ev.id)}
+                      >
+                        Delete
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
         {events.length === 0 && (
           <div className="py-16 text-center" style={{ color: "var(--color-text-tertiary)" }}>
             <p className="text-sm">No events yet. Create one above.</p>
           </div>
         )}
       </div>
+
+      {events.length === 0 && (
+        <div className="md:hidden py-16 text-center" style={{ color: "var(--color-text-tertiary)" }}>
+          <p className="text-sm">No events yet. Create one above.</p>
+        </div>
+      )}
     </div>
   );
 }

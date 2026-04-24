@@ -10,13 +10,13 @@ import {
 import type { ReactElement } from "react";
 
 // ─── Palette ──────────────────────────────────────────────────────────────
-const SAGE_900 = "#2F3E33";
+const SAGE_900 = "#1B1B1B";
 const SAGE_700 = "#4A5D4E";
 const SAGE_600 = "#5A7060";
 const SAGE_100 = "#E4EBE6";
 const GOLD = "#C9A96E";
 const CREAM = "#F8FAF3";
-const TEXT = "#191C18";
+const TEXT = "#1B1B1B";
 const TEXT_SEC = "#444841";
 
 const s = StyleSheet.create({

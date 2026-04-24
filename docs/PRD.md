@@ -200,7 +200,7 @@ Austin Clinician Circle is a professional sanctuary for therapists — where cli
 
 | Token | Hex | Usage |
 |-------|-----|-------|
-| `--color-sage-900` | `#2F3E33` | Hero backgrounds, footer, dark sections |
+| `--color-sage-900` | `#1B1B1B` | Hero backgrounds, footer, dark sections |
 | `--color-sage-800` | `#3B4D3F` | Dark section variants, hover on dark |
 | `--color-sage-700` | `#4A5D4E` | **Primary brand** — buttons, links, icons, active states |
 | `--color-sage-600` | `#5A7060` | Eyebrow labels, secondary accents |
@@ -222,7 +222,7 @@ Austin Clinician Circle is a professional sanctuary for therapists — where cli
 
 | Token | Hex | Usage |
 |-------|-----|-------|
-| `--color-text-primary` | `#191C18` | Headings, body (never pure black) |
+| `--color-text-primary` | `#1B1B1B` | Headings, body (never pure black) |
 | `--color-text-secondary` | `#444841` | Subtext, captions |
 | `--color-text-tertiary` | `#75796E` | Placeholders, fine print |
 | `--color-text-inverse` | `#FFFFFF` | Text on dark/sage backgrounds |
@@ -231,9 +231,15 @@ Austin Clinician Circle is a professional sanctuary for therapists — where cli
 
 | Token | Hex | Usage |
 |-------|-----|-------|
-| `--color-gold` | `#C9A96E` | Premium highlights, membership badge |
-| `--color-terracotta` | `#C07A5A` | Warm CTA accents, callout borders |
-| `--color-blush` | `#FED7D2` | Achievement callouts, milestone banners |
+| `--color-accent-secondary` | `#DC673B` | Admin sidebar/drawer, warm-filled callouts, quote blocks, and selective surface accents — not default public marketing text |
+| `--color-accent-highlight` | `#F9D251` | Small highlight moments for chips, stars, progress fills, and subtle glow accents |
+| `--color-gold` / `--color-terracotta` | alias only | Legacy compatibility — avoid in new frontend work |
+
+**Role rules**
+- Sage remains the primary brand color for buttons, links, and visible text emphasis across the public marketing experience.
+- The homepage tagline emphasis — “Find your community.” — should render in green/sage, not orange.
+- Orange is now the intentional admin-shell color: the admin sidebar/drawer uses `--color-accent-secondary` with white text while the main content area remains on cream/white surfaces.
+- Yellow stays a micro-accent only; if a section starts feeling yellow-led, pull it back.
 
 **Functional**
 
@@ -263,7 +269,7 @@ Both fonts loaded via `next/font/google` as CSS variables: `--font-serif`, `--fo
 - All headings: sentence case (never ALL CAPS)
 - Max body width: 680px for readability
 - Line-height: 1.6 for body, 1.1–1.3 for headings
-- No pure black anywhere — use `--color-text-primary` (#191C18)
+- No pure black anywhere — use `--color-text-primary` (#1B1B1B)
 
 ### 5.5 Spacing and Layout
 
@@ -305,6 +311,7 @@ Both fonts loaded via `next/font/google` as CSS variables: `--font-serif`, `--fo
 **Navigation:**
 - Transparent on hero, glassmorphism on scroll
 - `backdrop-filter: blur(20px)`, 300ms transition
+- Admin navigation is the one orange-forward shell in the product: orange sidebar/drawer, white text, cream content area.
 
 ---
 

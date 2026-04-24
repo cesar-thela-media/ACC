@@ -12,7 +12,7 @@ const invoices = [
 
 export default function BillingPage() {
   return (
-    <div className="flex flex-col gap-10 max-w-2xl">
+    <div className="flex flex-col gap-10 max-w-2xl w-full">
       <div>
         <p className="text-xs font-medium uppercase tracking-widest mb-2" style={{ color: "var(--color-sage-600)" }}>Billing</p>
         <h1 style={{ fontFamily: "var(--font-serif), Manrope, sans-serif", fontSize: "2rem", fontWeight: 400, color: "var(--color-sage-900)" }}>
@@ -22,7 +22,7 @@ export default function BillingPage() {
 
       {/* Current plan */}
       <Card className="flex flex-col gap-5">
-        <div className="flex items-start justify-between gap-4">
+        <div className="flex flex-col sm:flex-row items-start justify-between gap-4">
           <div>
             <h2 className="text-base font-semibold" style={{ color: "var(--color-sage-800)" }}>
               ACC Member — Monthly
@@ -35,7 +35,7 @@ export default function BillingPage() {
         </div>
 
         <div
-          className="rounded-xl px-5 py-4 flex items-center justify-between gap-4"
+          className="rounded-xl px-4 sm:px-5 py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4"
           style={{ background: "var(--color-cream-100)", border: "1px solid var(--color-cream-300)" }}
         >
           <div>
@@ -50,11 +50,11 @@ export default function BillingPage() {
         </div>
 
         <div
-          className="rounded-xl px-5 py-4 flex flex-col gap-1"
+          className="rounded-xl px-4 sm:px-5 py-4 flex flex-col gap-1"
           style={{ background: "var(--color-cream-100)", border: "1px solid var(--color-cream-300)" }}
         >
           <p className="text-xs font-medium" style={{ color: "var(--color-text-secondary)" }}>Payment method</p>
-          <div className="flex items-center gap-3 mt-1">
+          <div className="flex flex-wrap items-center gap-3 mt-1">
             <div
               className="px-3 py-1 rounded text-xs font-semibold"
               style={{ background: "var(--color-sage-900)", color: "#fff" }}
@@ -70,7 +70,7 @@ export default function BillingPage() {
           </div>
         </div>
 
-        <div className="flex gap-3 flex-wrap">
+        <div className="flex flex-col sm:flex-row gap-3 flex-wrap">
           <Button variant="secondary" size="sm">Update payment method</Button>
           <Button variant="ghost" size="sm">Download receipt</Button>
         </div>
@@ -95,38 +95,59 @@ export default function BillingPage() {
       {/* Invoice history */}
       <div>
         <h2 className="text-base font-semibold mb-4" style={{ color: "var(--color-sage-900)" }}>Invoice history</h2>
-        <Card className="overflow-hidden" style={{ padding: 0 }}>
-          <table className="w-full text-sm">
-            <thead>
-              <tr style={{ borderBottom: "1px solid var(--color-cream-300)", background: "var(--color-cream-100)" }}>
-                <th className="text-left px-6 py-3 text-xs font-semibold" style={{ color: "var(--color-text-tertiary)" }}>Invoice</th>
-                <th className="text-left px-6 py-3 text-xs font-semibold" style={{ color: "var(--color-text-tertiary)" }}>Date</th>
-                <th className="text-left px-6 py-3 text-xs font-semibold" style={{ color: "var(--color-text-tertiary)" }}>Amount</th>
-                <th className="text-left px-6 py-3 text-xs font-semibold" style={{ color: "var(--color-text-tertiary)" }}>Status</th>
-                <th className="px-6 py-3" />
-              </tr>
-            </thead>
-            <tbody>
-              {invoices.map((inv, i) => (
-                <tr
-                  key={inv.id}
-                  style={{ borderBottom: i < invoices.length - 1 ? "1px solid var(--color-cream-200)" : "none" }}
-                >
-                  <td className="px-6 py-3.5" style={{ color: "var(--color-text-primary)", fontFamily: "var(--font-sans)" }}>
-                    {inv.id}
-                  </td>
-                  <td className="px-6 py-3.5" style={{ color: "var(--color-text-secondary)" }}>{inv.date}</td>
-                  <td className="px-6 py-3.5" style={{ color: "var(--color-text-primary)", fontWeight: 500 }}>{inv.amount}</td>
-                  <td className="px-6 py-3.5"><Badge variant="success">{inv.status}</Badge></td>
-                  <td className="px-6 py-3.5 text-right">
-                    <button className="text-xs underline" style={{ color: "var(--color-sage-700)", textUnderlineOffset: "3px" }}>
-                      Download
-                    </button>
-                  </td>
+        <div className="md:hidden flex flex-col gap-3">
+          {invoices.map((inv) => (
+            <Card key={inv.id} className="flex flex-col gap-3">
+              <div className="flex items-start justify-between gap-3">
+                <div>
+                  <p className="text-sm font-semibold" style={{ color: "var(--color-text-primary)" }}>{inv.id}</p>
+                  <p className="text-xs mt-1" style={{ color: "var(--color-text-tertiary)" }}>{inv.date}</p>
+                </div>
+                <Badge variant="success">{inv.status}</Badge>
+              </div>
+              <div className="flex items-center justify-between gap-3">
+                <p className="text-sm font-medium" style={{ color: "var(--color-text-primary)" }}>{inv.amount}</p>
+                <button className="text-xs underline" style={{ color: "var(--color-sage-700)", textUnderlineOffset: "3px" }}>
+                  Download
+                </button>
+              </div>
+            </Card>
+          ))}
+        </div>
+        <Card className="hidden md:block overflow-hidden" style={{ padding: 0 }}>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr style={{ borderBottom: "1px solid var(--color-cream-300)", background: "var(--color-cream-100)" }}>
+                  <th className="text-left px-6 py-3 text-xs font-semibold" style={{ color: "var(--color-text-tertiary)" }}>Invoice</th>
+                  <th className="text-left px-6 py-3 text-xs font-semibold" style={{ color: "var(--color-text-tertiary)" }}>Date</th>
+                  <th className="text-left px-6 py-3 text-xs font-semibold" style={{ color: "var(--color-text-tertiary)" }}>Amount</th>
+                  <th className="text-left px-6 py-3 text-xs font-semibold" style={{ color: "var(--color-text-tertiary)" }}>Status</th>
+                  <th className="px-6 py-3" />
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {invoices.map((inv, i) => (
+                  <tr
+                    key={inv.id}
+                    style={{ borderBottom: i < invoices.length - 1 ? "1px solid var(--color-cream-200)" : "none" }}
+                  >
+                    <td className="px-6 py-3.5" style={{ color: "var(--color-text-primary)", fontFamily: "var(--font-sans)" }}>
+                      {inv.id}
+                    </td>
+                    <td className="px-6 py-3.5" style={{ color: "var(--color-text-secondary)" }}>{inv.date}</td>
+                    <td className="px-6 py-3.5" style={{ color: "var(--color-text-primary)", fontWeight: 500 }}>{inv.amount}</td>
+                    <td className="px-6 py-3.5"><Badge variant="success">{inv.status}</Badge></td>
+                    <td className="px-6 py-3.5 text-right">
+                      <button className="text-xs underline" style={{ color: "var(--color-sage-700)", textUnderlineOffset: "3px" }}>
+                        Download
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </Card>
       </div>
 

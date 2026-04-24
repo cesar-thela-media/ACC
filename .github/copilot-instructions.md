@@ -22,7 +22,7 @@ Fonts: Cormorant Garamond (serif, headings) + Plus Jakarta Sans (sans, body)
 Loaded via next/font/google as CSS variables: --font-serif, --font-sans
 
 Colors (always use CSS variables, never raw hex):
-- --color-sage-900: #2F3E33  (dark hero, footer, deep sections)
+- --color-sage-900: #1B1B1B  (dark hero, footer, deep sections)
 - --color-sage-800: #3B4D3F
 - --color-sage-700: #4A5D4E  (primary brand, buttons, links)
 - --color-sage-600: #5A7060
@@ -33,13 +33,21 @@ Colors (always use CSS variables, never raw hex):
 - --color-cream-200: #ECEFE8  (section alt background)
 - --color-cream-300: #DFE3DA  (borders, dividers)
 - --color-cream-400: #C5C8BE
-- --color-text-primary: #191C18
+- --color-text-primary: #1B1B1B
 - --color-text-secondary: #444841
 - --color-text-tertiary: #75796E
 - --color-text-inverse: #FFFFFF
 - --color-error: #B54B4B
 - --color-success: #4A7C59
-- --color-gold: #C9A96E
+- --color-accent-secondary: #DC673B  (orange admin sidebar, warm filled callouts, selective surface accents — avoid as default marketing text color)
+- --color-accent-highlight: #F9D251  (small highlight moments only)
+- --color-admin-sidebar: alias of --color-accent-secondary
+- --color-hero-tagline: alias of --color-sage-500 for the homepage “Find your community.” emphasis
+
+Color hierarchy:
+- Sage leads the brand and should carry most buttons, links, and text emphasis.
+- Orange is structural and warm — especially for admin shell surfaces, quote fills, and selective callouts.
+- Yellow is a micro-highlight, not the dominant field color.
 
 Borders: rounded-full for buttons/pills, rounded-2xl for cards
 Shadows: soft sage-tinted ambient — shadow-md for cards, shadow-lg for modals
@@ -49,6 +57,7 @@ Shadows: soft sage-tinted ambient — shadow-md for cards, shadow-lg for modals
 ## Code Conventions
 
 - Use CSS variables (var(--color-...)) for all colors, never raw hex in JSX
+- Prefer semantic role tokens when available (`--color-admin-sidebar`, `--color-hero-tagline`, etc.)
 - Tailwind utility classes for layout/spacing, CSS vars for brand colors
 - All pages are in app/app/ using Next.js App Router file-based routing
 - "use client" only when the component needs useState/useEffect
@@ -129,6 +138,8 @@ Sarah's tagline: "Deepen your work. Find your community."
 - Diff behavior between main and your changes when relevant
 - Ask yourself: "Would a staff engineer approve this?"
 - Run tests, check logs, demonstrate correctness
+- Run `npm run build` from `app/` whenever the change is substantial, user-visible, or could affect production behavior
+- When browser/runtime console errors are relevant to the task, inspect them, trace the root cause, and fix them before calling the work done
 
 ### 5. Demand Elegance (Balanced)
 - For non-trivial changes: pause and ask "is there a more elegant way?"
@@ -139,6 +150,7 @@ Sarah's tagline: "Deepen your work. Find your community."
 ### 6. Autonomous Bug Fixing
 - When given a bug report: just fix it. Don't ask for hand-holding
 - Point at logs, errors, failing tests — then resolve them
+- If console errors are part of the problem, treat them like failing tests: reproduce, fix, and re-verify
 - Zero context switching required from the user
 
 ---

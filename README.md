@@ -67,7 +67,7 @@ docker compose down -v
 
 Calm sage/cream palette — complementing restoredfamily.com.
 Typography: Cormorant Garamond (headings) + Plus Jakarta Sans (body).
-Colors: sage `#4A5D4E`, soft surface `#F8FAF3`, nested surface `#ECEFE8`, accent gold `#C9A96E`.
+Colors: sage `#4A5D4E`, near-black `#1B1B1B`, soft surface `#F8FAF3`, nested surface `#ECEFE8`, accent gold `#C9A96E`.
 
 ---
 

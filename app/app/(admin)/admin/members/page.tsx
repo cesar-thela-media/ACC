@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { Badge } from "@/components/ui/Badge";
-import { Button } from "@/components/ui/Button";
 
 type Status = "active" | "inactive" | "suspended";
 
@@ -55,7 +54,7 @@ export default function AdminMembersPage() {
           className="flex-1 px-4 py-2.5 text-sm rounded-lg border outline-none"
           style={{ borderColor: "var(--color-cream-400)", background: "#fff", color: "var(--color-text-primary)" }}
         />
-        <div className="flex gap-2">
+        <div className="flex gap-2 flex-wrap">
           {(["all", "active", "inactive", "suspended"] as const).map((s) => (
             <button
               key={s}
@@ -78,81 +77,143 @@ export default function AdminMembersPage() {
       </p>
 
       {/* Table */}
+      {filtered.length > 0 && (
+        <div className="md:hidden flex flex-col gap-3">
+          {filtered.map((m) => (
+            <div
+              key={m.id}
+              className="rounded-2xl border bg-white p-4 flex flex-col gap-4"
+              style={{ borderColor: "var(--color-cream-300)" }}
+            >
+              <div className="flex items-start justify-between gap-3">
+                <div className="flex items-center gap-3">
+                  <div
+                    className="w-9 h-9 rounded-full flex items-center justify-center text-xs font-medium shrink-0"
+                    style={{ background: "var(--color-sage-100)", color: "var(--color-sage-600)" }}
+                  >
+                    {m.name.charAt(0)}
+                  </div>
+                  <div>
+                    <p className="font-medium" style={{ color: "var(--color-text-primary)" }}>{m.name}</p>
+                    <p className="text-xs" style={{ color: "var(--color-text-tertiary)" }}>{m.credentials}</p>
+                  </div>
+                </div>
+                <Badge variant={STATUS_VARIANTS[m.status]}>{STATUS_LABELS[m.status]}</Badge>
+              </div>
+              <div className="text-sm flex flex-col gap-1.5">
+                <p style={{ color: "var(--color-text-secondary)" }}>{m.email}</p>
+                <p className="text-xs" style={{ color: "var(--color-text-tertiary)" }}>Joined {m.joined}</p>
+                <p className="text-xs" style={{ color: "var(--color-text-tertiary)" }}>
+                  {m.accepting ? "Accepting clients" : "Not accepting clients"}
+                </p>
+              </div>
+              <div className="flex flex-wrap items-center gap-4">
+                <button
+                  className="text-xs underline"
+                  style={{ color: "var(--color-sage-700)", textUnderlineOffset: "3px" }}
+                >
+                  View
+                </button>
+                {m.status === "active" && (
+                  <button
+                    className="text-xs underline"
+                    style={{ color: "var(--color-error)", textUnderlineOffset: "3px" }}
+                  >
+                    Suspend
+                  </button>
+                )}
+                {m.status === "suspended" && (
+                  <button
+                    className="text-xs underline"
+                    style={{ color: "var(--color-success)", textUnderlineOffset: "3px" }}
+                  >
+                    Reinstate
+                  </button>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+
       <div
-        className="rounded-2xl border overflow-hidden bg-white"
+        className="hidden md:block rounded-2xl border overflow-hidden bg-white"
         style={{ borderColor: "var(--color-cream-300)" }}
       >
-        <table className="w-full text-sm">
-          <thead>
-            <tr style={{ borderBottom: "1px solid var(--color-cream-300)", background: "var(--color-cream-100)" }}>
-              <th className="text-left px-5 py-3 text-xs font-semibold" style={{ color: "var(--color-text-tertiary)" }}>Name</th>
-              <th className="text-left px-5 py-3 text-xs font-semibold" style={{ color: "var(--color-text-tertiary)" }}>Email</th>
-              <th className="text-left px-5 py-3 text-xs font-semibold" style={{ color: "var(--color-text-tertiary)" }}>Joined</th>
-              <th className="text-left px-5 py-3 text-xs font-semibold" style={{ color: "var(--color-text-tertiary)" }}>Status</th>
-              <th className="px-5 py-3" />
-            </tr>
-          </thead>
-          <tbody>
-            {filtered.map((m, i) => (
-              <tr
-                key={m.id}
-                style={{ borderBottom: i < filtered.length - 1 ? "1px solid var(--color-cream-200)" : "none" }}
-              >
-                <td className="px-5 py-3.5">
-                  <div className="flex items-center gap-3">
-                    <div
-                      className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-medium shrink-0"
-                      style={{ background: "var(--color-sage-100)", color: "var(--color-sage-600)" }}
-                    >
-                      {m.name.charAt(0)}
-                    </div>
-                    <div>
-                      <p className="font-medium" style={{ color: "var(--color-text-primary)" }}>{m.name}</p>
-                      <p className="text-xs" style={{ color: "var(--color-text-tertiary)" }}>{m.credentials}</p>
-                    </div>
-                  </div>
-                </td>
-                <td className="px-5 py-3.5" style={{ color: "var(--color-text-secondary)" }}>{m.email}</td>
-                <td className="px-5 py-3.5" style={{ color: "var(--color-text-tertiary)" }}>{m.joined}</td>
-                <td className="px-5 py-3.5">
-                  <Badge variant={STATUS_VARIANTS[m.status]}>{STATUS_LABELS[m.status]}</Badge>
-                </td>
-                <td className="px-5 py-3.5 text-right">
-                  <div className="flex items-center justify-end gap-3">
-                    <button
-                      className="text-xs underline"
-                      style={{ color: "var(--color-sage-700)", textUnderlineOffset: "3px" }}
-                    >
-                      View
-                    </button>
-                    {m.status === "active" && (
-                      <button
-                        className="text-xs underline"
-                        style={{ color: "var(--color-error)", textUnderlineOffset: "3px" }}
-                      >
-                        Suspend
-                      </button>
-                    )}
-                    {m.status === "suspended" && (
-                      <button
-                        className="text-xs underline"
-                        style={{ color: "var(--color-success)", textUnderlineOffset: "3px" }}
-                      >
-                        Reinstate
-                      </button>
-                    )}
-                  </div>
-                </td>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm">
+            <thead>
+              <tr style={{ borderBottom: "1px solid var(--color-cream-300)", background: "var(--color-cream-100)" }}>
+                <th className="text-left px-5 py-3 text-xs font-semibold" style={{ color: "var(--color-text-tertiary)" }}>Name</th>
+                <th className="text-left px-5 py-3 text-xs font-semibold" style={{ color: "var(--color-text-tertiary)" }}>Email</th>
+                <th className="text-left px-5 py-3 text-xs font-semibold" style={{ color: "var(--color-text-tertiary)" }}>Joined</th>
+                <th className="text-left px-5 py-3 text-xs font-semibold" style={{ color: "var(--color-text-tertiary)" }}>Status</th>
+                <th className="px-5 py-3" />
               </tr>
-            ))}
-          </tbody>
-        </table>
-        {filtered.length === 0 && (
-          <div className="py-16 text-center" style={{ color: "var(--color-text-tertiary)" }}>
-            <p className="text-sm">No members match your filters.</p>
-          </div>
-        )}
+            </thead>
+            <tbody>
+              {filtered.map((m, i) => (
+                <tr
+                  key={m.id}
+                  style={{ borderBottom: i < filtered.length - 1 ? "1px solid var(--color-cream-200)" : "none" }}
+                >
+                  <td className="px-5 py-3.5">
+                    <div className="flex items-center gap-3">
+                      <div
+                        className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-medium shrink-0"
+                        style={{ background: "var(--color-sage-100)", color: "var(--color-sage-600)" }}
+                      >
+                        {m.name.charAt(0)}
+                      </div>
+                      <div>
+                        <p className="font-medium" style={{ color: "var(--color-text-primary)" }}>{m.name}</p>
+                        <p className="text-xs" style={{ color: "var(--color-text-tertiary)" }}>{m.credentials}</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td className="px-5 py-3.5" style={{ color: "var(--color-text-secondary)" }}>{m.email}</td>
+                  <td className="px-5 py-3.5" style={{ color: "var(--color-text-tertiary)" }}>{m.joined}</td>
+                  <td className="px-5 py-3.5">
+                    <Badge variant={STATUS_VARIANTS[m.status]}>{STATUS_LABELS[m.status]}</Badge>
+                  </td>
+                  <td className="px-5 py-3.5 text-right">
+                    <div className="flex items-center justify-end gap-3">
+                      <button
+                        className="text-xs underline"
+                        style={{ color: "var(--color-sage-700)", textUnderlineOffset: "3px" }}
+                      >
+                        View
+                      </button>
+                      {m.status === "active" && (
+                        <button
+                          className="text-xs underline"
+                          style={{ color: "var(--color-error)", textUnderlineOffset: "3px" }}
+                        >
+                          Suspend
+                        </button>
+                      )}
+                      {m.status === "suspended" && (
+                        <button
+                          className="text-xs underline"
+                          style={{ color: "var(--color-success)", textUnderlineOffset: "3px" }}
+                        >
+                          Reinstate
+                        </button>
+                      )}
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
+
+      {filtered.length === 0 && (
+        <div className="py-16 text-center" style={{ color: "var(--color-text-tertiary)" }}>
+          <p className="text-sm">No members match your filters.</p>
+        </div>
+      )}
     </div>
   );
 }

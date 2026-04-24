@@ -3,8 +3,8 @@ import Link from "next/link";
 export function Footer() {
   return (
     <footer style={{ background: "var(--color-sage-900)" }}>
-      <div className="max-w-6xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+      <div className="max-w-6xl mx-auto px-5 md:px-6 py-12 md:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-10 mb-10 md:mb-12 text-center md:text-left">
           <div className="md:col-span-2">
             <p
               className="text-lg font-semibold mb-3"
@@ -16,7 +16,7 @@ export function Footer() {
               Austin Clinician Circle
             </p>
             <p
-              className="text-sm leading-relaxed max-w-xs"
+              className="text-sm leading-relaxed max-w-xs mx-auto md:mx-0"
               style={{ color: "rgba(255,255,255,0.6)" }}
             >
               A virtual support network for licensed therapists. Deepen your
@@ -77,7 +77,7 @@ export function Footer() {
         </div>
 
         <div
-          className="pt-8 border-t flex flex-col sm:flex-row items-center justify-between gap-4"
+          className="pt-8 border-t flex flex-col md:flex-row items-center justify-between gap-3 md:gap-4 text-center md:text-left"
           style={{ borderColor: "rgba(255,255,255,0.08)" }}
         >
           <p className="text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>

@@ -15,13 +15,13 @@ const benefits = [
     icon: "◫",
     title: "Curated resource library",
     body: "48+ clinical tools, handouts, worksheets, and business guides — organized, downloadable, and built for active private practice.",
-    accent: "var(--color-gold)",
+    accent: "var(--color-accent-secondary)",
   },
   {
     icon: "◎",
     title: "Referral network",
     body: "A trusted, vetted circle of Austin-area clinicians. Refer with confidence. Get referred. Build relationships that last longer than a single consult.",
-    accent: "var(--color-terracotta)",
+    accent: "var(--color-accent-highlight)",
   },
   {
     icon: "◈",
@@ -33,13 +33,13 @@ const benefits = [
     icon: "◷",
     title: "Public directory listing",
     body: "A professionally crafted listing in our public clinician directory — searchable by specialty, format, and availability. Clients find you here.",
-    accent: "var(--color-gold)",
+    accent: "var(--color-accent-secondary)",
   },
   {
     icon: "◇",
     title: "Practice coaching access",
     body: "Discounted one-on-one practice-building sessions with Sarah Arnold, LPC-S — on fees, marketing, burnout, and long-term sustainability.",
-    accent: "var(--color-terracotta)",
+    accent: "var(--color-accent-highlight)",
   },
 ];
 
@@ -122,7 +122,7 @@ export default function HomePage() {
     <>
       {/* ── HERO ──────────────────────────────────────────────────────────── */}
       <section
-        className="relative h-screen flex flex-col pt-[104px] overflow-hidden"
+        className="relative min-h-[100svh] md:h-screen flex flex-col pt-[104px] pb-10 md:pb-0 overflow-hidden"
         style={{ background: "var(--color-sage-900)" }}
       >
         {/* Hero background photo */}
@@ -160,30 +160,30 @@ export default function HomePage() {
           className="absolute inset-0 pointer-events-none"
           style={{
             backgroundImage:
-              "radial-gradient(circle at 72% 38%, rgba(249,210,81,0.12) 0%, transparent 55%)",
+              "radial-gradient(circle at 72% 38%, rgba(var(--color-accent-highlight-rgb), 0.12) 0%, transparent 55%)",
           }}
         />
 
         {/* Decorative rings */}
         <div
           className="absolute -top-24 -right-24 w-[28rem] h-[28rem] rounded-full pointer-events-none"
-          style={{ border: "1px solid rgba(249,210,81,0.09)" }}
+          style={{ border: "1px solid rgba(var(--color-accent-highlight-rgb), 0.09)" }}
         />
         <div
           className="absolute top-16 right-24 w-64 h-64 rounded-full pointer-events-none"
-          style={{ border: "1px solid rgba(249,210,81,0.06)" }}
+          style={{ border: "1px solid rgba(var(--color-accent-highlight-rgb), 0.06)" }}
         />
         <div
           className="absolute -bottom-40 -left-40 w-[40rem] h-[40rem] rounded-full pointer-events-none"
-          style={{ border: "1px solid rgba(249,210,81,0.05)" }}
+          style={{ border: "1px solid rgba(var(--color-accent-highlight-rgb), 0.05)" }}
         />
 
         {/* Main content */}
         <div className="flex-1 flex items-center relative z-10">
-          <div className="max-w-6xl mx-auto px-6 py-8 md:py-10 w-full">
+          <div className="max-w-6xl mx-auto px-5 md:px-6 py-6 md:py-10 w-full">
             <div>
               <p
-                className="text-xs font-medium uppercase tracking-widest mb-8 inline-flex items-center gap-2"
+                className="text-xs font-medium uppercase tracking-widest mb-6 md:mb-8 inline-flex items-center gap-2"
                 style={{
                   color: "rgba(255,255,255,0.4)",
                   animation:
@@ -192,7 +192,7 @@ export default function HomePage() {
               >
                 <span
                   className="inline-block w-6 h-px"
-                  style={{ background: "var(--color-terracotta)" }}
+                  style={{ background: "var(--color-sage-100)" }}
                 />
                 For licensed therapists in Austin, TX
               </p>
@@ -213,7 +213,7 @@ export default function HomePage() {
                 <br />
                 <em
                   style={{
-                    color: "var(--color-sage-700)",
+                    color: "var(--color-hero-tagline)",
                     fontStyle: "italic",
                   }}
                 >
@@ -222,7 +222,7 @@ export default function HomePage() {
               </h1>
 
               <p
-                className="text-lg leading-relaxed mb-12 max-w-xl"
+                className="text-base md:text-lg leading-relaxed mb-10 md:mb-12 max-w-xl"
                 style={{
                   color: "rgba(255,255,255,0.65)",
                   animation:
@@ -243,14 +243,14 @@ export default function HomePage() {
               >
                 <Link
                   href="/join"
-                  className="inline-flex items-center justify-center px-8 py-4 rounded-full text-sm font-semibold transition-all duration-200 hover:opacity-90 hover:shadow-xl"
+                  className="inline-flex w-full sm:w-auto items-center justify-center px-8 py-4 rounded-full text-sm font-semibold transition-all duration-200 hover:opacity-90 hover:shadow-xl"
                   style={{ background: "#fff", color: "var(--color-sage-800)" }}
                 >
                   Apply for membership
                 </Link>
                 <Link
                   href="/what-we-offer"
-                  className="inline-flex items-center justify-center px-8 py-4 rounded-full text-sm font-medium transition-all duration-200 hover:bg-white/10"
+                  className="inline-flex w-full sm:w-auto items-center justify-center px-8 py-4 rounded-full text-sm font-medium transition-all duration-200 hover:bg-white/10"
                   style={{
                     border: "1px solid rgba(255,255,255,0.2)",
                     color: "rgba(255,255,255,0.8)",
@@ -266,8 +266,8 @@ export default function HomePage() {
       </section>
 
       {/* ── PROBLEM / PROMISE ─────────────────────────────────────────────── */}
-      <section className="py-28" style={{ background: "var(--color-sage-700)" }}>
-        <div className="max-w-4xl mx-auto px-6 text-center">
+      <section className="py-20 md:py-28" style={{ background: "var(--color-sage-700)" }}>
+        <div className="max-w-4xl mx-auto px-5 md:px-6 text-center">
           <p
             className="text-xs font-medium uppercase tracking-widest mb-6"
             data-aos="fade-in"
@@ -286,12 +286,12 @@ export default function HomePage() {
           >
             Private practice can feel isolating.
             <br />
-            <span style={{ color: "var(--color-gold)" }}>
+            <span style={{ color: "var(--color-accent-highlight)" }}>
               You don&apos;t have to do this alone.
             </span>
           </h2>
           <p
-            className="text-base leading-relaxed max-w-2xl mx-auto mb-5"
+            className="text-sm md:text-base leading-relaxed max-w-2xl mx-auto mb-5"
             data-aos="fade-in"
             data-delay="200"
             style={{ color: "rgba(255,255,255,0.82)" }}
@@ -302,7 +302,7 @@ export default function HomePage() {
             never fully replace it.
           </p>
           <p
-            className="text-base leading-relaxed max-w-2xl mx-auto mb-12"
+            className="text-sm md:text-base leading-relaxed max-w-2xl mx-auto mb-10 md:mb-12"
             data-aos="fade-in"
             data-delay="300"
             style={{ color: "rgba(255,255,255,0.82)" }}
@@ -312,7 +312,7 @@ export default function HomePage() {
             each other accountable to doing their best work.
           </p>
           <div
-            className="inline-flex items-center gap-3 px-6 py-3 rounded-full"
+            className="inline-flex flex-col sm:flex-row items-center gap-2 sm:gap-3 px-5 sm:px-6 py-3 rounded-2xl sm:rounded-full text-center sm:text-left"
             data-aos="fade-in"
             data-delay="400"
             style={{
@@ -347,9 +347,9 @@ export default function HomePage() {
       </section>
 
       {/* ── BENEFITS GRID ────────────────────────────────────────────────── */}
-      <section className="py-28" style={{ background: "var(--color-cream-100)" }}>
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="mb-16" data-aos="fade-in-up">
+      <section className="py-20 md:py-28" style={{ background: "var(--color-cream-100)" }}>
+        <div className="max-w-6xl mx-auto px-5 md:px-6">
+          <div className="mb-12 md:mb-16" data-aos="fade-in-up">
             <p
               className="text-xs font-medium uppercase tracking-widest mb-4"
               style={{ color: "var(--color-sage-600)" }}
@@ -374,7 +374,7 @@ export default function HomePage() {
             {benefits.map((b, i) => (
               <div
                 key={b.title}
-                className="group flex flex-col gap-4 p-8 transition-colors duration-300 hover:bg-white"
+                className="group flex flex-col gap-4 p-6 md:p-8 transition-colors duration-300 hover:bg-white"
                 data-aos="fade-in-up"
                 data-delay={String(((i % 3) + 1) * 100)}
                 style={{ background: "var(--color-cream-100)" }}
@@ -407,10 +407,10 @@ export default function HomePage() {
       </section>
 
       {/* ── FOUNDER ─────────────────────────────────────────────────────── */}
-      <section className="py-28" style={{ background: "var(--color-sage-900)" }}>
-        <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+      <section className="py-20 md:py-28" style={{ background: "var(--color-sage-900)" }}>
+        <div className="max-w-6xl mx-auto px-5 md:px-6 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
           {/* Photo */}
-          <div className="relative max-w-sm w-full" data-aos="slide-left">
+          <div className="relative max-w-sm w-full mx-auto md:mx-0" data-aos="slide-left">
             <div className="aspect-[4/5] rounded-2xl w-full overflow-hidden">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -421,8 +421,8 @@ export default function HomePage() {
             </div>
             {/* Floating quote badge */}
             <div
-              className="absolute -bottom-5 -right-5 px-5 py-4 rounded-xl max-w-[260px]"
-              style={{ background: "var(--color-terracotta)" }}
+              className="relative md:absolute md:-bottom-5 md:-right-5 mt-4 md:mt-0 ml-auto md:ml-0 px-5 py-4 rounded-xl max-w-[260px]"
+              style={{ background: "var(--color-accent-secondary)" }}
             >
               <p
                 className="text-sm font-medium leading-snug"
@@ -440,7 +440,7 @@ export default function HomePage() {
           </div>
 
           {/* Text */}
-          <div data-aos="slide-right" data-delay="150">
+          <div data-aos="slide-right" data-delay="150" className="text-center md:text-left">
             <p
               className="text-xs font-medium uppercase tracking-widest mb-6"
               style={{ color: "rgba(255,255,255,0.4)" }}
@@ -478,7 +478,7 @@ export default function HomePage() {
               href="/who-we-are"
               className="inline-flex items-center text-sm font-medium underline transition-opacity hover:opacity-70"
               style={{
-                color: "var(--color-gold)",
+                color: "var(--color-accent-highlight)",
                 textUnderlineOffset: "4px",
               }}
             >
@@ -489,8 +489,8 @@ export default function HomePage() {
       </section>
 
       {/* ── VIDEO ────────────────────────────────────────────────────────── */}
-      <section className="py-28" style={{ background: "var(--color-cream-100)" }}>
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="py-20 md:py-28" style={{ background: "var(--color-cream-100)" }}>
+        <div className="max-w-6xl mx-auto px-5 md:px-6">
           <div className="mb-12 text-center" data-aos="fade-in-up">
             <p
               className="text-xs font-medium uppercase tracking-widest mb-4"
@@ -515,8 +515,8 @@ export default function HomePage() {
       </section>
 
       {/* ── TESTIMONIALS ─────────────────────────────────────────────────── */}
-      <section className="py-28" style={{ background: "var(--color-cream-200)" }}>
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="py-20 md:py-28" style={{ background: "var(--color-cream-200)" }}>
+        <div className="max-w-6xl mx-auto px-5 md:px-6">
           <p
             className="text-xs font-medium uppercase tracking-widest mb-4"
             data-aos="fade-in"
@@ -525,7 +525,7 @@ export default function HomePage() {
             From the community
           </p>
           <h2
-            className="section-title-strong mb-16 max-w-lg"
+            className="section-title-strong mb-12 md:mb-16 max-w-lg"
             data-aos="fade-in-up"
             data-delay="100"
             style={{
@@ -540,12 +540,12 @@ export default function HomePage() {
             {testimonials.map((t, i) => (
               <div
                 key={t.name}
-                className="flex flex-col gap-5 p-8 rounded-2xl"
+                className="flex flex-col gap-5 p-6 md:p-8 rounded-2xl"
                 data-aos="fade-in-up"
                 data-delay={String((i + 1) * 150)}
                 style={{
                   background: "#fff",
-                  borderLeft: "3px solid var(--color-terracotta)",
+                  borderLeft: "3px solid var(--color-accent-secondary)",
                   boxShadow: "0 4px 20px rgba(27,27,27,0.06)",
                 }}
               >
@@ -555,7 +555,7 @@ export default function HomePage() {
                     <span
                       key={j}
                       className="text-sm"
-                      style={{ color: "var(--color-gold)" }}
+                      style={{ color: "var(--color-accent-highlight)" }}
                     >
                       ★
                     </span>
@@ -566,7 +566,7 @@ export default function HomePage() {
                 <p
                   className="text-4xl leading-none -mb-2"
                   style={{
-                    color: "var(--color-terracotta)",
+                    color: "var(--color-accent-highlight)",
                     fontFamily: "Georgia, serif",
                     opacity: 0.5,
                   }}
@@ -617,8 +617,8 @@ export default function HomePage() {
       </section>
 
       {/* ── HOW IT WORKS ─────────────────────────────────────────────────── */}
-      <section className="py-28" style={{ background: "var(--color-cream-100)" }}>
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="py-20 md:py-28" style={{ background: "var(--color-cream-100)" }}>
+        <div className="max-w-6xl mx-auto px-5 md:px-6">
           <div className="mb-16 text-center" data-aos="fade-in-up">
             <p
               className="text-xs font-medium uppercase tracking-widest mb-4"
@@ -637,7 +637,7 @@ export default function HomePage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 relative">
             {/* Connecting dashed line (desktop) */}
             <div
               className="absolute top-8 left-[16.67%] right-[16.67%] h-px hidden md:block"
@@ -650,7 +650,7 @@ export default function HomePage() {
             {steps.map((s, i) => (
               <div
                 key={s.num}
-                className="flex flex-col gap-4"
+                className="flex flex-col gap-4 items-center md:items-start text-center md:text-left"
                 data-aos="fade-in-up"
                 data-delay={String((i + 1) * 150)}
               >
@@ -665,7 +665,7 @@ export default function HomePage() {
                     className="text-2xl font-light"
                     style={{
                       fontFamily: "var(--font-serif), Manrope, sans-serif",
-                      color: "var(--color-gold)",
+                      color: "var(--color-sage-700)",
                     }}
                   >
                     {s.num}
@@ -694,7 +694,7 @@ export default function HomePage() {
           >
             <Link
               href="/join"
-              className="inline-flex items-center justify-center px-8 py-4 rounded-full text-sm font-semibold transition-all duration-200 hover:opacity-90"
+              className="inline-flex w-full sm:w-auto items-center justify-center px-8 py-4 rounded-full text-sm font-semibold transition-all duration-200 hover:opacity-90"
               style={{ background: "var(--color-sage-700)", color: "#fff" }}
             >
               Start your application →
@@ -704,10 +704,10 @@ export default function HomePage() {
       </section>
 
       {/* ── DIRECTORY PREVIEW ────────────────────────────────────────────── */}
-      <section className="py-28" style={{ background: "var(--color-cream-200)" }}>
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="py-20 md:py-28" style={{ background: "var(--color-cream-200)" }}>
+        <div className="max-w-6xl mx-auto px-5 md:px-6">
           <div
-            className="flex items-end justify-between mb-14 gap-6 flex-wrap"
+            className="flex flex-col md:flex-row md:items-end justify-between mb-10 md:mb-14 gap-5 md:gap-6"
             data-aos="fade-in-up"
           >
             <div>
@@ -739,7 +739,7 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
             {memberPreview.map((m, i) => (
               <div
                 key={m.name}
@@ -754,8 +754,8 @@ export default function HomePage() {
       </section>
 
       {/* ── PRICING ──────────────────────────────────────────────────────── */}
-      <section className="py-28" style={{ background: "var(--color-cream-100)" }}>
-        <div className="max-w-lg mx-auto px-6 text-center">
+      <section className="py-20 md:py-28" style={{ background: "var(--color-cream-100)" }}>
+        <div className="max-w-xl mx-auto px-5 md:px-6 text-center">
           <p
             className="text-xs font-medium uppercase tracking-widest mb-4"
             data-aos="fade-in"
@@ -776,7 +776,7 @@ export default function HomePage() {
           </h2>
 
           <div
-            className="rounded-2xl border p-10 text-left"
+            className="rounded-2xl border p-6 md:p-10 text-left"
             data-aos="scale-in"
             data-delay="150"
             style={{
@@ -785,13 +785,13 @@ export default function HomePage() {
               boxShadow: "0 8px 48px rgba(27,27,27,0.08)",
             }}
           >
-            <div className="flex items-center justify-between mb-2">
-              <div className="flex items-baseline gap-2">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-2">
+              <div className="flex items-baseline gap-2 flex-wrap">
                 <span
                   className="font-light"
                   style={{
                     fontFamily: "var(--font-serif), Manrope, sans-serif",
-                    fontSize: "3.5rem",
+                    fontSize: "clamp(2.75rem, 14vw, 3.5rem)",
                     color: "var(--color-sage-700)",
                     lineHeight: 1,
                   }}
@@ -871,7 +871,7 @@ export default function HomePage() {
 
       {/* ── FINAL CTA ────────────────────────────────────────────────────── */}
       <section
-        className="py-28 relative overflow-hidden"
+        className="py-20 md:py-28 relative overflow-hidden"
         style={{ background: "var(--color-sage-900)" }}
       >
         {/* Sage radial */}
@@ -885,15 +885,15 @@ export default function HomePage() {
 
         {/* Decorative rings */}
         <div
-          className="absolute top-8 right-8 w-80 h-80 rounded-full pointer-events-none"
+          className="hidden md:block absolute top-8 right-8 w-80 h-80 rounded-full pointer-events-none"
           style={{ border: "1px solid rgba(255,255,255,0.05)" }}
         />
         <div
-          className="absolute -bottom-24 left-16 w-[26rem] h-[26rem] rounded-full pointer-events-none"
+          className="hidden md:block absolute -bottom-24 left-16 w-[26rem] h-[26rem] rounded-full pointer-events-none"
           style={{ border: "1px solid rgba(255,255,255,0.04)" }}
         />
 
-        <div className="max-w-3xl mx-auto px-6 text-center relative z-10">
+        <div className="max-w-3xl mx-auto px-5 md:px-6 text-center relative z-10">
           {/* Pulsing badge */}
           <div
             className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full mb-8"
@@ -905,7 +905,7 @@ export default function HomePage() {
           >
             <span
               className="w-2 h-2 rounded-full animate-pulse-dot"
-              style={{ background: "var(--color-terracotta)" }}
+              style={{ background: "var(--color-accent-secondary)" }}
             />
             <span
               className="text-xs font-medium"
@@ -926,7 +926,7 @@ export default function HomePage() {
           >
             Ready to stop doing
             <br />
-            <em style={{ color: "var(--color-gold)", fontStyle: "italic" }}>
+            <em style={{ color: "var(--color-accent-highlight)", fontStyle: "italic" }}>
               this alone?
             </em>
           </h2>
@@ -949,14 +949,14 @@ export default function HomePage() {
           >
             <Link
               href="/join"
-              className="inline-flex items-center justify-center px-10 py-4 rounded-full text-sm font-semibold transition-all duration-200 hover:opacity-90 hover:shadow-xl"
+              className="inline-flex w-full sm:w-auto items-center justify-center px-10 py-4 rounded-full text-sm font-semibold transition-all duration-200 hover:opacity-90 hover:shadow-xl"
               style={{ background: "#fff", color: "var(--color-sage-800)" }}
             >
               Apply for membership
             </Link>
             <Link
               href="/find-a-clinician"
-              className="inline-flex items-center justify-center px-10 py-4 rounded-full text-sm font-medium transition-all duration-200 hover:bg-white/10"
+              className="inline-flex w-full sm:w-auto items-center justify-center px-10 py-4 rounded-full text-sm font-medium transition-all duration-200 hover:bg-white/10"
               style={{
                 border: "1px solid rgba(255,255,255,0.2)",
                 color: "rgba(255,255,255,0.65)",

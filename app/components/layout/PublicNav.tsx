@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { MobileSidePanel } from "@/components/layout/MobileSidePanel";
 
 const navLinks = [
   { href: "/who-we-are", label: "Who we are" },
@@ -23,6 +24,10 @@ export function PublicNav() {
     window.addEventListener("scroll", handler, { passive: true });
     return () => window.removeEventListener("scroll", handler);
   }, [isHomepage]);
+
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [pathname]);
 
   return (
     <>
@@ -49,7 +54,7 @@ export function PublicNav() {
             <Link
               href="/join"
               className="text-xs font-semibold shrink-0 hidden sm:block transition-opacity hover:opacity-80"
-              style={{ color: "var(--color-gold)" }}
+              style={{ color: "var(--color-accent-highlight)" }}
             >
               Apply now →
             </Link>
@@ -88,7 +93,7 @@ export function PublicNav() {
                   className="text-sm font-medium transition-colors duration-300"
                   style={{
                     color: isHomepage && !scrolled
-                      ? pathname === link.href ? "var(--color-gold)" : "rgba(255,255,255,0.85)"
+                      ? pathname === link.href ? "var(--color-accent-highlight)" : "rgba(255,255,255,0.85)"
                       : pathname === link.href ? "var(--color-sage-700)" : "var(--color-text-secondary)",
                     textDecoration: pathname === link.href ? "underline" : "none",
                     textUnderlineOffset: "4px",
@@ -113,7 +118,7 @@ export function PublicNav() {
                 href="/join"
                 className="text-sm font-medium px-5 py-2 rounded-full transition-all duration-300"
                 style={{
-                  background: isHomepage && !scrolled ? "rgba(255,255,255,0.15)" : "var(--color-sage-700)",
+                  background: isHomepage && !scrolled ? "rgba(255,255,255,0.15)" : "var(--color-accent-secondary)",
                   color: "#fff",
                   border: isHomepage && !scrolled ? "1px solid rgba(255,255,255,0.3)" : "none",
                 }}
@@ -144,12 +149,20 @@ export function PublicNav() {
         </div>
       </header>
 
-      {mobileOpen && (
-        <div
-          className="fixed inset-0 z-50 flex flex-col px-8 py-10"
-          style={{ background: "var(--color-sage-900)" }}
-        >
-          <div className="flex items-center justify-between mb-12">
+      <MobileSidePanel
+        open={mobileOpen}
+        onClose={() => setMobileOpen(false)}
+        side="right"
+        background="rgba(27,27,27,0.98)"
+        borderColor="rgba(255,255,255,0.08)"
+        title={
+          <div>
+            <p
+              className="text-[11px] font-medium uppercase tracking-[0.24em] mb-2"
+              style={{ color: "rgba(255,255,255,0.42)" }}
+            >
+              Navigate
+            </p>
             <span
               className="text-base font-semibold"
               style={{
@@ -159,53 +172,51 @@ export function PublicNav() {
             >
               Austin Clinician Circle
             </span>
-            <button
-              onClick={() => setMobileOpen(false)}
-              className="text-2xl leading-none"
-              style={{ color: "rgba(255,255,255,0.7)" }}
-              aria-label="Close menu"
-            >
-              ✕
-            </button>
           </div>
-
-          <nav className="flex flex-col gap-6">
-            {navLinks.map((link) => (
+        }
+      >
+        <nav className="flex flex-col gap-2">
+          {navLinks.map((link) => {
+            const active = pathname === link.href;
+            return (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className="text-3xl font-light"
+                className="px-4 py-3 rounded-2xl text-base font-medium transition-all duration-300"
                 style={{
-                  fontFamily: "var(--font-serif), Georgia, serif",
-                  color: "#fff",
+                  background: active ? "rgba(220,103,59,0.14)" : "transparent",
+                  color: active ? "var(--color-accent-highlight)" : "rgba(255,255,255,0.84)",
                 }}
               >
                 {link.label}
               </Link>
-            ))}
-          </nav>
+            );
+          })}
+        </nav>
 
-          <div className="mt-auto flex flex-col gap-3">
-            <Link
-              href="/sign-in"
-              onClick={() => setMobileOpen(false)}
-              className="text-center py-3 rounded-full text-sm font-medium border"
-              style={{ color: "#fff", borderColor: "rgba(255,255,255,0.3)" }}
-            >
-              Sign in
-            </Link>
-            <Link
-              href="/join"
-              onClick={() => setMobileOpen(false)}
-              className="text-center py-3 rounded-full text-sm font-medium"
-              style={{ background: "#fff", color: "var(--color-sage-700)" }}
-            >
-              Join the circle
-            </Link>
-          </div>
+        <div
+          className="mt-8 pt-6 flex flex-col gap-3"
+          style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
+        >
+          <Link
+            href="/sign-in"
+            onClick={() => setMobileOpen(false)}
+            className="text-center py-3 rounded-full text-sm font-medium border transition-all duration-300"
+            style={{ color: "#fff", borderColor: "rgba(255,255,255,0.2)" }}
+          >
+            Sign in
+          </Link>
+          <Link
+            href="/join"
+            onClick={() => setMobileOpen(false)}
+            className="text-center py-3 rounded-full text-sm font-medium transition-all duration-300"
+            style={{ background: "var(--color-accent-secondary)", color: "#fff" }}
+          >
+            Join the circle
+          </Link>
         </div>
-      )}
+      </MobileSidePanel>
     </>
   );
 }

@@ -23,7 +23,7 @@ export function ClinicianCard({
 }: ClinicianCardProps) {
   return (
     <div
-      className="bg-white rounded-2xl p-5 flex flex-col gap-4 transition-all duration-300 hover:-translate-y-1"
+      className="bg-white rounded-2xl p-5 sm:p-6 flex flex-col gap-4 transition-all duration-300 hover:-translate-y-1"
       style={{
         border: "1px solid rgba(197, 200, 190, 0.5)",
         boxShadow: "0 2px 16px rgba(74, 93, 78, 0.07)",
@@ -53,13 +53,13 @@ export function ClinicianCard({
         </div>
         <div className="flex-1 min-w-0">
           <p
-            className="text-sm font-semibold truncate"
+            className="text-sm font-semibold leading-snug"
             style={{ color: "var(--color-text-primary)" }}
           >
             {name}, {credentials}
           </p>
           <p
-            className="text-sm mt-0.5 line-clamp-2"
+            className="text-sm mt-0.5 line-clamp-3"
             style={{ color: "var(--color-text-secondary)" }}
           >
             {tagline}

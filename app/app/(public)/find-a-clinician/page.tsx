@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ClinicianCard } from "@/components/cards/ClinicianCard";
+import { MobileSidePanel } from "@/components/layout/MobileSidePanel";
 
 const ALL_CLINICIANS = [
   {
@@ -98,6 +99,17 @@ export default function FindAClinicianPage() {
   const [selectedSpecialty, setSelectedSpecialty] = useState("");
   const [selectedFormat, setSelectedFormat] = useState("");
   const [acceptingOnly, setAcceptingOnly] = useState(false);
+  const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
+
+  const hasActiveFilters = Boolean(
+    selectedSpecialty || selectedFormat || acceptingOnly
+  );
+
+  function clearFilters() {
+    setSelectedSpecialty("");
+    setSelectedFormat("");
+    setAcceptingOnly(false);
+  }
 
   const filtered = ALL_CLINICIANS.filter((c) => {
     if (
@@ -120,10 +132,10 @@ export default function FindAClinicianPage() {
     <>
       {/* HERO */}
       <section
-        className="pt-32 pb-12"
+        className="pt-28 md:pt-32 pb-10 md:pb-12"
         style={{ background: "var(--color-cream-100)" }}
       >
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-5 md:px-6">
           <p
             className="text-xs font-medium uppercase tracking-widest mb-5"
             style={{ color: "var(--color-sage-600)" }}
@@ -152,12 +164,59 @@ export default function FindAClinicianPage() {
       </section>
 
       <section
-        className="py-10"
+        className="py-8 md:py-10"
         style={{ background: "var(--color-cream-100)" }}
       >
-        <div className="max-w-6xl mx-auto px-6 flex flex-col lg:flex-row gap-10">
+        <div className="max-w-6xl mx-auto px-5 md:px-6 flex flex-col lg:flex-row gap-8 md:gap-10">
+          <div className="lg:hidden flex flex-col gap-3">
+            <input
+              type="text"
+              placeholder="Search name or specialty..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              className="w-full px-4 py-3 text-sm rounded-xl border outline-none"
+              style={{
+                borderColor: "var(--color-cream-400)",
+                background: "#fff",
+                color: "var(--color-text-primary)",
+              }}
+            />
+            <div className="flex items-center justify-between gap-3">
+              <p className="text-xs" style={{ color: "var(--color-text-tertiary)" }}>
+                {filtered.length} clinician{filtered.length !== 1 ? "s" : ""} found
+              </p>
+              <div className="flex items-center gap-2">
+                {hasActiveFilters && (
+                  <button
+                    type="button"
+                    onClick={clearFilters}
+                    className="px-3 py-2 rounded-full text-xs font-medium"
+                    style={{
+                      background: "var(--color-sage-50)",
+                      color: "var(--color-sage-700)",
+                      border: "1px solid var(--color-cream-300)",
+                    }}
+                  >
+                    Clear
+                  </button>
+                )}
+                <button
+                  type="button"
+                  onClick={() => setMobileFiltersOpen(true)}
+                  className="px-4 py-2 rounded-full text-xs font-medium"
+                  style={{
+                    background: "var(--color-sage-700)",
+                    color: "#fff",
+                  }}
+                >
+                  Filters
+                </button>
+              </div>
+            </div>
+          </div>
+
           {/* FILTERS */}
-          <aside className="lg:w-56 shrink-0 flex flex-col gap-7">
+          <aside className="hidden lg:flex lg:w-56 shrink-0 flex-col gap-7 lg:sticky lg:top-24 self-start">
             <div>
               <input
                 type="text"
@@ -290,7 +349,7 @@ export default function FindAClinicianPage() {
           {/* GRID */}
           <div className="flex-1">
             <p
-              className="text-xs mb-5"
+              className="hidden lg:block text-xs mb-5"
               style={{ color: "var(--color-text-tertiary)" }}
             >
               {filtered.length} clinician{filtered.length !== 1 ? "s" : ""}{" "}
@@ -314,6 +373,130 @@ export default function FindAClinicianPage() {
             )}
           </div>
         </div>
+
+        <MobileSidePanel
+          open={mobileFiltersOpen}
+          onClose={() => setMobileFiltersOpen(false)}
+          side="right"
+          background="var(--color-cream-100)"
+          borderColor="rgba(197,200,190,0.7)"
+          titleColor="var(--color-sage-900)"
+          closeColor="var(--color-text-secondary)"
+          title={
+            <div>
+              <p className="text-[11px] font-medium uppercase tracking-[0.24em] mb-2" style={{ color: "var(--color-sage-600)" }}>
+                Clinician search
+              </p>
+              <span className="text-base font-semibold" style={{ fontFamily: "var(--font-serif), Georgia, serif" }}>
+                Refine results
+              </span>
+            </div>
+          }
+        >
+          <div className="flex flex-col gap-6">
+            <div>
+              <p className="text-xs font-medium uppercase tracking-widest mb-3" style={{ color: "var(--color-text-tertiary)" }}>
+                Specialty
+              </p>
+              <div className="flex flex-col gap-1.5">
+                <button
+                  onClick={() => setSelectedSpecialty("")}
+                  className="text-left text-sm px-1 py-1 transition-colors"
+                  style={{
+                    color: selectedSpecialty === "" ? "var(--color-sage-700)" : "var(--color-text-secondary)",
+                    fontWeight: selectedSpecialty === "" ? 600 : 400,
+                  }}
+                >
+                  All specialties
+                </button>
+                {allSpecialties.map((s) => (
+                  <button
+                    key={s}
+                    onClick={() => setSelectedSpecialty(s === selectedSpecialty ? "" : s)}
+                    className="text-left text-sm px-1 py-1 transition-colors"
+                    style={{
+                      color: selectedSpecialty === s ? "var(--color-sage-700)" : "var(--color-text-secondary)",
+                      fontWeight: selectedSpecialty === s ? 600 : 400,
+                    }}
+                  >
+                    {s}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <p className="text-xs font-medium uppercase tracking-widest mb-3" style={{ color: "var(--color-text-tertiary)" }}>
+                Format
+              </p>
+              <div className="flex flex-col gap-1.5">
+                <button
+                  onClick={() => setSelectedFormat("")}
+                  className="text-left text-sm px-1 py-1 transition-colors"
+                  style={{
+                    color: selectedFormat === "" ? "var(--color-sage-700)" : "var(--color-text-secondary)",
+                    fontWeight: selectedFormat === "" ? 600 : 400,
+                  }}
+                >
+                  All formats
+                </button>
+                {formats.map((f) => (
+                  <button
+                    key={f}
+                    onClick={() => setSelectedFormat(f === selectedFormat ? "" : f)}
+                    className="text-left text-sm px-1 py-1 transition-colors"
+                    style={{
+                      color: selectedFormat === f ? "var(--color-sage-700)" : "var(--color-text-secondary)",
+                      fontWeight: selectedFormat === f ? 600 : 400,
+                    }}
+                  >
+                    {f}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <label className="flex items-center justify-between gap-3 cursor-pointer">
+              <span className="text-sm" style={{ color: "var(--color-text-secondary)" }}>
+                Accepting clients only
+              </span>
+              <div
+                onClick={() => setAcceptingOnly((v) => !v)}
+                className="w-9 h-5 rounded-full transition-colors flex items-center px-0.5 cursor-pointer"
+                style={{
+                  background: acceptingOnly ? "var(--color-sage-700)" : "var(--color-cream-400)",
+                }}
+              >
+                <div
+                  className="w-4 h-4 rounded-full bg-white shadow transition-transform"
+                  style={{ transform: acceptingOnly ? "translateX(16px)" : "translateX(0)" }}
+                />
+              </div>
+            </label>
+
+            <div className="mt-auto pt-6 flex flex-col gap-3" style={{ borderTop: "1px solid var(--color-cream-300)" }}>
+              <button
+                type="button"
+                onClick={() => setMobileFiltersOpen(false)}
+                className="w-full py-3 rounded-full text-sm font-medium"
+                style={{ background: "var(--color-sage-700)", color: "#fff" }}
+              >
+                Show {filtered.length} result{filtered.length !== 1 ? "s" : ""}
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  clearFilters();
+                  setMobileFiltersOpen(false);
+                }}
+                className="w-full py-3 rounded-full text-sm font-medium"
+                style={{ background: "#fff", color: "var(--color-sage-700)", border: "1px solid var(--color-cream-300)" }}
+              >
+                Clear filters
+              </button>
+            </div>
+          </div>
+        </MobileSidePanel>
       </section>
     </>
   );

@@ -85,7 +85,7 @@ export default function JoinPage() {
   if (submitted) {
     return (
       <div
-        className="min-h-screen flex items-center justify-center pt-16 px-6"
+        className="min-h-screen flex items-center justify-center pt-20 md:pt-16 px-5 md:px-6"
         style={{ background: "var(--color-cream-100)" }}
       >
         <div className="max-w-md text-center">
@@ -123,10 +123,10 @@ export default function JoinPage() {
 
   return (
     <div
-      className="min-h-screen pt-24 pb-20"
+      className="min-h-screen pt-20 md:pt-24 pb-16 md:pb-20"
       style={{ background: "var(--color-cream-100)" }}
     >
-      <div className="max-w-xl mx-auto px-6">
+      <div className="max-w-xl mx-auto px-5 md:px-6">
         {/* Header */}
         <p
           className="text-xs font-medium uppercase tracking-widest mb-4"
@@ -147,7 +147,7 @@ export default function JoinPage() {
         </h1>
 
         {/* Step indicator */}
-        <div className="flex items-center gap-3 mb-10">
+        <div className="flex flex-wrap items-center gap-3 gap-y-3 mb-8 md:mb-10">
           {STEPS.map((label, i) => (
             <div key={label} className="flex items-center gap-3">
               <div className="flex items-center gap-2">
@@ -177,7 +177,7 @@ export default function JoinPage() {
               </div>
               {i < STEPS.length - 1 && (
                 <div
-                  className="h-px w-8"
+                  className="h-px w-5 sm:w-8"
                   style={{
                     background:
                       i < step
@@ -193,7 +193,7 @@ export default function JoinPage() {
         {/* STEP 1 — About you */}
         {step === 0 && (
           <div className="flex flex-col gap-5">
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Input
                 label="First name"
                 value={form.firstName}
@@ -300,7 +300,7 @@ export default function JoinPage() {
               >
                 Practice format
               </label>
-              <div className="flex gap-2">
+              <div className="flex flex-wrap gap-2">
                 {["Virtual only", "In-person only", "Hybrid"].map((f) => (
                   <button
                     key={f}
@@ -405,7 +405,7 @@ export default function JoinPage() {
               onChange={(e) => set("whyACC", e.target.value)}
               placeholder="What are you hoping to get from this community?"
             />
-            <div className="flex gap-3 mt-2">
+            <div className="flex flex-col sm:flex-row gap-3 mt-2">
               <Button variant="secondary" onClick={() => setStep(0)} className="flex-1">
                 ← Back
               </Button>
@@ -443,9 +443,9 @@ export default function JoinPage() {
                   ["Format", form.format],
                   ["Specialties", form.specialties.join(", ") || "—"],
                 ].map(([label, value]) => (
-                  <div key={label} className="flex gap-4">
+                  <div key={label} className="flex flex-col sm:flex-row gap-1 sm:gap-4">
                     <span
-                      className="w-32 shrink-0 font-medium"
+                      className="w-full sm:w-32 shrink-0 font-medium"
                       style={{ color: "var(--color-text-tertiary)" }}
                     >
                       {label}
@@ -470,7 +470,7 @@ export default function JoinPage() {
               collected after Sarah reviews and approves your application.
             </div>
 
-            <div className="flex gap-3">
+            <div className="flex flex-col sm:flex-row gap-3">
               <Button variant="secondary" onClick={() => setStep(1)} className="flex-1">
                 ← Back
               </Button>
