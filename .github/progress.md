@@ -63,3 +63,6 @@
 - Rewrote `docs/design-system.md` and `docs/DESIGN.md`, then synced `docs/PRD.md` and `.github/copilot-instructions.md`, to clearly codify the new hierarchy: sage-first brand, orange admin shell / warm surfaces, yellow micro-highlights.
 - Found and fixed a runtime token issue while validating: semantic alias variables such as `--color-admin-sidebar` and `--color-hero-tagline` must live in plain `:root` CSS instead of only inside Tailwind `@theme inline`, otherwise the browser resolves them as empty values.
 - Final validation complete: `npm run build` passes after the token fix, homepage hero emphasis computes to `rgb(107, 133, 114)`, and the admin sidebar computes to `rgb(220, 103, 59)` with the visible footer action reading `Log out`.
+- Updated `.github/copilot-instructions.md` again to explicitly require `npm run build` for substantial / production-impacting work and to treat relevant browser console errors as mandatory verification items to reproduce, fix, and re-check.
+- Re-ran `npm run build` from `app/` for this instruction-update prompt and confirmed the production build still passes.
+- Pushed the latest repo state to `origin/cesar` with commit `7ad39516626ca22014cf49029d2c7f2dea3dd8fe` (`chore: refresh UI and verification instructions`), then prepared a final follow-up log-only sync so `.github/progress.md` stays current at task close.
