@@ -49,6 +49,8 @@
 - Verified the responsive pass in browser at a strict mobile viewport (`390px` wide) on key routes including `/`, `/find-a-clinician`, `/join`, `/admin/members`, and `/dashboard/billing`; the new mobile layouts, card stacks, and filter drawer rendered correctly.
 
 ## 2026-04-25
+- Started repo publish step for the latest prompt: preparing the verified navbar/footer/member-public UI polish changes for commit and push to `origin/cesar` while keeping local helper files out of the commit.
+- Started a new UI expansion pass: making the public navbar CTA green, reorganizing the shared footer, and upgrading any thinner public/dashboard routes that still need richer responsive UI treatment in the current design system.
 - Started the repo-instruction follow-up from the latest prompt: adding an explicit rule that ACC work should run `npm run build` when needed and should investigate/fix relevant console error logs before completion, then preparing the repo for another push to `origin/cesar`.
 - Started the admin-shell refresh requested in the latest prompt: shifting the admin sidebar/drawer to orange, changing the admin footer action to “Log out,” and tightening the role split so sage leads text emphasis while orange becomes a structural/admin accent.
 - Started a follow-up UI polish pass to lock the desktop dashboard/admin shell so the sidebar stays fully visible while only the main content panel scrolls.
@@ -66,3 +68,9 @@
 - Updated `.github/copilot-instructions.md` again to explicitly require `npm run build` for substantial / production-impacting work and to treat relevant browser console errors as mandatory verification items to reproduce, fix, and re-check.
 - Re-ran `npm run build` from `app/` for this instruction-update prompt and confirmed the production build still passes.
 - Pushed the latest repo state to `origin/cesar` with commit `7ad39516626ca22014cf49029d2c7f2dea3dd8fe` (`chore: refresh UI and verification instructions`), then prepared a final follow-up log-only sync so `.github/progress.md` stays current at task close.
+- Completed the latest public/member UI polish pass: the public navbar CTA now stays sage green, the shared footer is reorganized into a stronger CTA + structured link columns, and the thinner member/public pages gained fuller responsive layouts.
+- Expanded `dashboard/resources` into a richer library experience with stats, featured content, curated collections, clearer empty states, and filter controls that work across both sidebar and drawer layouts.
+- Expanded `dashboard/network` into a fuller referral workspace with stats, network activity, clinician fit data, sorting/filtering, and stronger member cards for referral decisions.
+- Upgraded `/coming-soon` with a more structured header/footer system that better matches the ACC brand language while preserving the lead-capture flow.
+- During browser validation, found and fixed a shared responsive bug: `MobileSidePanel` was hidden at `md` while several filter triggers stayed visible until `lg`, so drawers silently failed on tablet widths. Added a shared `hideAbove` breakpoint prop and applied it to the filter-drawer pages (`/find-a-clinician`, `/dashboard/resources`, `/dashboard/network`).
+- Final validation for this prompt is complete: file-level checks are clean, `npm run build` passes from `app/` with no warnings, the public navbar CTA computes to `rgb(74, 93, 78)`, and the updated drawers/pages were browser-verified on `/`, `/coming-soon`, `/find-a-clinician`, `/dashboard/resources`, and `/dashboard/network`.

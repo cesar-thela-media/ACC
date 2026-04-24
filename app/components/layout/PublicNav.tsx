@@ -118,9 +118,10 @@ export function PublicNav() {
                 href="/join"
                 className="text-sm font-medium px-5 py-2 rounded-full transition-all duration-300"
                 style={{
-                  background: isHomepage && !scrolled ? "rgba(255,255,255,0.15)" : "var(--color-accent-secondary)",
+                  background: "var(--color-sage-700)",
                   color: "#fff",
-                  border: isHomepage && !scrolled ? "1px solid rgba(255,255,255,0.3)" : "none",
+                  border: isHomepage && !scrolled ? "1px solid rgba(255,255,255,0.12)" : "none",
+                  boxShadow: "0 10px 28px rgba(74, 93, 78, 0.18)",
                 }}
               >
                 Join the circle
@@ -185,8 +186,8 @@ export function PublicNav() {
                 onClick={() => setMobileOpen(false)}
                 className="px-4 py-3 rounded-2xl text-base font-medium transition-all duration-300"
                 style={{
-                  background: active ? "rgba(220,103,59,0.14)" : "transparent",
-                  color: active ? "var(--color-accent-highlight)" : "rgba(255,255,255,0.84)",
+                  background: active ? "rgba(74,93,78,0.24)" : "transparent",
+                  color: active ? "#fff" : "rgba(255,255,255,0.84)",
                 }}
               >
                 {link.label}
@@ -211,7 +212,7 @@ export function PublicNav() {
             href="/join"
             onClick={() => setMobileOpen(false)}
             className="text-center py-3 rounded-full text-sm font-medium transition-all duration-300"
-            style={{ background: "var(--color-accent-secondary)", color: "#fff" }}
+            style={{ background: "var(--color-sage-700)", color: "#fff" }}
           >
             Join the circle
           </Link>

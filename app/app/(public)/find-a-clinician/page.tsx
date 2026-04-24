@@ -378,6 +378,7 @@ export default function FindAClinicianPage() {
           open={mobileFiltersOpen}
           onClose={() => setMobileFiltersOpen(false)}
           side="right"
+          hideAbove="lg"
           background="var(--color-cream-100)"
           borderColor="rgba(197,200,190,0.7)"
           titleColor="var(--color-sage-900)"

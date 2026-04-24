@@ -69,14 +69,41 @@ export default function ComingSoonPage() {
         }}
       />
 
-      {/* Wordmark */}
-      <header className="relative z-10 px-6 pt-8 flex justify-center">
-        <p
-          className="text-xs font-semibold uppercase tracking-widest"
-          style={{ color: "rgba(255,255,255,0.35)" }}
-        >
-          Austin Clinician Circle
-        </p>
+      {/* Header */}
+      <header className="relative z-10 px-5 md:px-6 pt-6 md:pt-8">
+        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="text-center sm:text-left">
+            <p
+              className="text-[11px] font-medium uppercase tracking-[0.24em] mb-2"
+              style={{ color: "rgba(255,255,255,0.34)" }}
+            >
+              Free guide for therapists
+            </p>
+            <p
+              className="text-sm font-semibold"
+              style={{ fontFamily: "var(--font-serif), Georgia, serif", color: "#fff" }}
+            >
+              Austin Clinician Circle
+            </p>
+          </div>
+
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <Link
+              href="/"
+              className="inline-flex items-center justify-center px-4 py-2.5 rounded-full text-sm font-medium transition-colors hover:bg-white/10"
+              style={{ color: "#fff", border: "1px solid rgba(255,255,255,0.14)" }}
+            >
+              Back to site
+            </Link>
+            <Link
+              href="/join"
+              className="inline-flex items-center justify-center px-4 py-2.5 rounded-full text-sm font-medium transition-opacity hover:opacity-90"
+              style={{ background: "var(--color-sage-700)", color: "#fff" }}
+            >
+              Apply now
+            </Link>
+          </div>
+        </div>
       </header>
 
       {/* Main */}
@@ -335,10 +362,65 @@ export default function ComingSoonPage() {
       </main>
 
       {/* Footer */}
-      <footer className="relative z-10 px-6 pb-8 flex justify-center">
-        <p className="text-xs" style={{ color: "rgba(255,255,255,0.2)" }}>
-          Founded by Sarah Arnold, LPC-S · Restored Family Counseling · Austin, TX
-        </p>
+      <footer className="relative z-10 px-5 md:px-6 pb-8 md:pb-10 pt-10">
+        <div className="max-w-6xl mx-auto border-t pt-8 md:pt-10" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+            <div>
+              <p
+                className="text-sm font-semibold mb-3"
+                style={{ fontFamily: "var(--font-serif), Georgia, serif", color: "#fff" }}
+              >
+                Austin Clinician Circle
+              </p>
+              <p className="text-sm leading-relaxed max-w-sm mx-auto md:mx-0" style={{ color: "rgba(255,255,255,0.52)" }}>
+                A grounded professional community for licensed therapists who want consultation, connection, and sustainable private practice.
+              </p>
+            </div>
+
+            <div>
+              <p className="text-xs font-medium uppercase tracking-widest mb-4" style={{ color: "rgba(255,255,255,0.34)" }}>
+                What&apos;s inside the playbook
+              </p>
+              <div className="flex flex-col gap-2 text-sm" style={{ color: "rgba(255,255,255,0.56)" }}>
+                <p>Fee setting and messaging guidance</p>
+                <p>Referral network blueprint</p>
+                <p>Burnout early-warning checklist</p>
+              </div>
+            </div>
+
+            <div>
+              <p className="text-xs font-medium uppercase tracking-widest mb-4" style={{ color: "rgba(255,255,255,0.34)" }}>
+                Next steps
+              </p>
+              <div className="flex flex-col gap-2.5">
+                <Link href="/what-we-offer" className="text-sm transition-colors hover:text-white" style={{ color: "rgba(255,255,255,0.56)" }}>
+                  Explore membership
+                </Link>
+                <Link href="/join" className="text-sm transition-colors hover:text-white" style={{ color: "rgba(255,255,255,0.56)" }}>
+                  Apply for founding membership
+                </Link>
+                <Link href="/find-a-clinician" className="text-sm transition-colors hover:text-white" style={{ color: "rgba(255,255,255,0.56)" }}>
+                  Browse the clinician directory
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-8 pt-6 border-t flex flex-col md:flex-row items-center justify-between gap-3 text-center md:text-left" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
+            <p className="text-xs" style={{ color: "rgba(255,255,255,0.26)" }}>
+              Founded by Sarah Arnold, LPC-S · Austin, TX
+            </p>
+            <a
+              href="https://www.restoredfamily.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs underline transition-colors hover:text-white"
+              style={{ color: "rgba(255,255,255,0.34)" }}
+            >
+              Restored Family Counseling
+            </a>
+          </div>
+        </div>
       </footer>
     </div>
   );

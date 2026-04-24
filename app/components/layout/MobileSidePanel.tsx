@@ -8,6 +8,7 @@ interface MobileSidePanelProps {
   title: ReactNode;
   children: ReactNode;
   side?: "left" | "right";
+  hideAbove?: "md" | "lg";
   background: string;
   borderColor: string;
   titleColor?: string;
@@ -20,6 +21,7 @@ export function MobileSidePanel({
   title,
   children,
   side = "left",
+  hideAbove = "md",
   background,
   borderColor,
   titleColor = "#fff",
@@ -41,9 +43,10 @@ export function MobileSidePanel({
   }
 
   const edgeClass = side === "right" ? "right-0 border-l" : "left-0 border-r";
+  const visibilityClass = hideAbove === "lg" ? "lg:hidden" : "md:hidden";
 
   return (
-    <div className="md:hidden fixed inset-0 z-[70]" role="dialog" aria-modal="true">
+    <div className={`${visibilityClass} fixed inset-0 z-[70]`} role="dialog" aria-modal="true">
       <button
         type="button"
         aria-label="Close navigation panel"
