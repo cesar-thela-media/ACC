@@ -38,7 +38,7 @@ export function AdminNav() {
             Admin
           </p>
           <span className="text-sm font-semibold" style={{ fontFamily: "var(--font-serif), Manrope, sans-serif", color: "var(--color-text-primary)" }}>
-            Austin Clinician Circle
+            The Circle
           </span>
         </div>
 
@@ -74,7 +74,7 @@ export function AdminNav() {
               color: "var(--color-text-primary)",
             }}
           >
-            Austin Clinician Circle
+            The Circle
           </span>
         </div>
 
@@ -124,7 +124,7 @@ export function AdminNav() {
               Admin
             </p>
             <span className="text-base font-semibold" style={{ fontFamily: "var(--font-serif), Manrope, sans-serif", color: "var(--color-text-primary)" }}>
-              Austin Clinician Circle
+              The Circle
             </span>
           </div>
         }

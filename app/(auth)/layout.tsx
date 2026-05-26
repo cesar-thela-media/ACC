@@ -19,14 +19,14 @@ export default function AuthLayout({
             color: "var(--color-sage-800)",
           }}
         >
-          Austin Clinician Circle
+          The Circle
         </Link>
       </header>
       <main className="flex-1 flex items-start md:items-center justify-center px-5 md:px-6 py-10 md:py-16">
         {children}
       </main>
       <footer className="py-6 text-center text-xs" style={{ color: "var(--color-text-tertiary)" }}>
-        © {new Date().getFullYear()} Austin Clinician Circle
+        © {new Date().getFullYear()} The Circle
       </footer>
     </div>
   );

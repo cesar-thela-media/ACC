@@ -214,19 +214,9 @@ export default function WhatWeOfferPage() {
                 A simple membership with full access to consultation,
                 professional development, and community.
               </p>
-              <Link
-                href="/join"
-                className="inline-flex w-full sm:w-auto items-center justify-center px-8 py-3.5 rounded-full text-sm font-medium hover:opacity-90 transition-opacity"
-                style={{
-                  background: "var(--color-sage-700)",
-                  color: "#fff",
-                }}
-              >
-                Apply for membership
-              </Link>
             </div>
             <div className="max-w-sm w-full mx-auto">
-              <PricingCard price="$79" features={pricingFeatures} featured />
+              <PricingCard price="$79" features={pricingFeatures} featured ctaLabel="Start your application" />
             </div>
           </div>
         </div>

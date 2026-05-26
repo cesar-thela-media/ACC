@@ -40,7 +40,7 @@ export function DashboardNav() {
             color: "#fff",
           }}
         >
-          Austin Clinician Circle
+          The Circle
         </Link>
 
         <button
@@ -69,7 +69,7 @@ export function DashboardNav() {
             color: "#fff",
           }}
         >
-          Austin Clinician Circle
+          The Circle
         </Link>
 
         <nav className="flex flex-col gap-1">
@@ -116,7 +116,7 @@ export function DashboardNav() {
               Member dashboard
             </p>
             <span className="text-base font-semibold" style={{ fontFamily: "var(--font-serif), Georgia, serif", color: "#fff" }}>
-              Austin Clinician Circle
+              The Circle
             </span>
           </div>
         }

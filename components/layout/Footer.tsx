@@ -8,7 +8,7 @@ const exploreLinks = [
 ];
 
 const memberLinks = [
-  { href: "/join", label: "Apply for membership" },
+  { href: "/join", label: "Join the circle" },
   { href: "/sign-in", label: "Sign in" },
   { href: "/dashboard", label: "Member dashboard" },
   { href: "/coming-soon", label: "Free practice playbook" },

@@ -227,7 +227,7 @@ export default function WhoWeArePage() {
             className="inline-flex w-full sm:w-auto items-center justify-center px-8 py-3.5 rounded-full text-sm font-medium hover:opacity-90 transition-opacity"
             style={{ background: "#fff", color: "var(--color-sage-700)" }}
           >
-            Apply for membership
+            Join the circle
           </Link>
         </div>
       </section>

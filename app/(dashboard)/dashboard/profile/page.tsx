@@ -46,7 +46,7 @@ export default function ProfilePage() {
           Edit your profile
         </h1>
         <p className="text-sm mt-1" style={{ color: "var(--color-text-secondary)" }}>
-          Your profile appears in the ACC member directory and clinician search.
+          Your profile appears in The Circle member directory and clinician search.
         </p>
       </div>
 

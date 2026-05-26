@@ -8,8 +8,8 @@ import { Button } from "@/components/ui/Button";
 
 // Mock accounts; replace with BetterAuth when backend is wired
 const MOCK_ACCOUNTS: Record<string, { password: string; redirect: string }> = {
-  "jane@acc.com":    { password: "demo",    redirect: "/dashboard" },
-  "sarah@acc.com":   { password: "founder", redirect: "/admin" },
+  "jane@thecircle.test":  { password: "demo", redirect: "/dashboard" },
+  "sarah@thecircle.test": { password: "founder", redirect: "/admin" },
 };
 
 export default function SignInPage() {
@@ -91,7 +91,7 @@ export default function SignInPage() {
           Welcome back.
         </h1>
         <p className="text-sm" style={{ color: "var(--color-text-secondary)" }}>
-          Sign in to your ACC member account.
+          Sign in to your The Circle account.
         </p>
       </div>
 
@@ -159,7 +159,7 @@ export default function SignInPage() {
             textUnderlineOffset: "3px",
           }}
         >
-          Apply for membership
+          Join the circle
         </Link>
       </div>
     </div>

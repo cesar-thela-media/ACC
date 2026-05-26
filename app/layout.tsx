@@ -18,9 +18,9 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Austin Clinician Circle",
+  title: "The Circle",
   description:
-    "A virtual membership network for licensed therapists in Austin, TX. Deepen your work. Find your community.",
+    "The Circle is a virtual membership network for licensed therapists in Austin, TX. Deepen your work. Find your community.",
 };
 
 export default function RootLayout({
