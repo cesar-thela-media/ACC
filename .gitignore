@@ -24,6 +24,7 @@
 .DS_Store
 *.pem
 .playwright-mcp/
+delete-donotpush/
 
 # debug
 npm-debug.log*

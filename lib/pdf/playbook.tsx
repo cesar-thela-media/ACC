@@ -348,7 +348,7 @@ export function PlaybookDocument({ firstName }: { firstName: string }): ReactEle
             {"\n"}Playbook
           </Text>
           <Text style={s.coverSubtitle}>
-            Four frameworks used by Austin's most sustainable independent practices — fee-setting, referral building, burnout prevention, and community.
+            Four frameworks used by Austin's most sustainable independent practices: fee-setting, referral building, burnout prevention, and community.
           </Text>
           <View style={s.coverDivider} />
           <Text style={s.coverByline}>
@@ -370,7 +370,7 @@ export function PlaybookDocument({ firstName }: { firstName: string }): ReactEle
           ["01", "The Fee-Setting Framework", "3"],
           ["02", "The Referral Network Blueprint", "6"],
           ["03", "The Burnout Early-Warning Checklist", "9"],
-          ["04", "The ACC Community Playbook", "12"],
+          ["04", "The Circle Community Playbook", "12"],
         ].map(([num, label, pg]) => (
           <View key={num} style={s.tocRow}>
             <Text style={s.tocNum}>{num}</Text>
@@ -380,7 +380,7 @@ export function PlaybookDocument({ firstName }: { firstName: string }): ReactEle
         ))}
         <View style={s.callout}>
           <Text style={s.calloutText}>
-            "The isolation of private practice is the single biggest threat to clinician longevity — not caseload, not documentation, not billing. It's being alone with hard work." — Sarah Arnold, LPC-S
+            "The isolation of private practice is the single biggest threat to clinician longevity, not caseload, not documentation, not billing. It's being alone with hard work." (Sarah Arnold, LPC-S)
           </Text>
         </View>
         <Footer page={2} />
@@ -391,22 +391,22 @@ export function PlaybookDocument({ firstName }: { firstName: string }): ReactEle
         <View style={s.sectionHeader}>
           <Text style={s.sectionNum}>Section 01</Text>
           <Text style={s.sectionTitle}>The Fee-Setting Framework</Text>
-          <Text style={s.sectionTagline}>Stop undercharging — and stop apologizing for what you're worth.</Text>
+          <Text style={s.sectionTagline}>Stop undercharging, and stop apologizing for what you're worth.</Text>
         </View>
 
         <Text style={s.p}>
-          Most therapists set their fees too low. Not because they don't know their value, but because they've been conditioned to apologize for it. This section gives you a systematic way to set fees that reflect the true cost of your work — and hold them.
+          Most therapists set their fees too low. Not because they don't know their value, but because they've been conditioned to apologize for it. This section gives you a systematic way to set fees that reflect the true cost of your work and hold them.
         </Text>
 
-        <Text style={s.h2}>Step 1 — Calculate your true hourly cost</Text>
+        <Text style={s.h2}>Step 1: Calculate your true hourly cost</Text>
         <Text style={s.p}>
           Before you set a client-facing rate, calculate what one clinical hour actually costs you to deliver. Include: your time in session, documentation (typically 20–30 min per hour), administrative overhead, continuing education amortized monthly, liability insurance, EHR and billing software, office rent or platform fees, and unpaid no-shows or late cancellations at your current rate.
         </Text>
         <NumItem n={1} text="Track your actual billable hours vs. total hours worked this month." />
         <NumItem n={2} text="Add up all fixed monthly practice costs (rent, software, insurance, phone)." />
-        <NumItem n={3} text="Divide total cost by billable hours — this is your floor. Your rate must exceed it." />
+        <NumItem n={3} text="Divide total cost by billable hours. This is your floor. Your rate must exceed it." />
 
-        <Text style={s.h2}>Step 2 — Know your local market ceiling</Text>
+        <Text style={s.h2}>Step 2: Know your local market ceiling</Text>
         <Text style={s.p}>
           In the Austin metro, licensed therapist rates currently range from $140–$250/hr for individual therapy, with specialists (EMDR, IFS, trauma) regularly billing $175–$275. If you're below $150, you're likely underpriced relative to your training and licensure.
         </Text>
@@ -414,23 +414,23 @@ export function PlaybookDocument({ firstName }: { firstName: string }): ReactEle
         <View style={s.goldBox}>
           <Text style={s.goldBoxTitle}>The $30 Raise Rule</Text>
           <Text style={s.goldBoxText}>
-            If no prospective client has pushed back on your fee in the last 6 months, your rate is too low. Raise it by $30 for all new clients. Give existing clients 60 days' notice. You will not lose them all — and the ones who leave at $30 were not your clients anyway.
+            If no prospective client has pushed back on your fee in the last 6 months, your rate is too low. Raise it by $30 for all new clients. Give existing clients 60 days' notice. You will not lose them all, and the ones who leave at $30 were not your clients anyway.
           </Text>
         </View>
         <Footer page={3} />
       </Page>
 
       <Page size="A4" style={s.page}>
-        <Text style={s.h2}>Step 3 — The sliding scale decision framework</Text>
+        <Text style={s.h2}>Step 3: The sliding scale decision framework</Text>
         <Text style={s.p}>
           Sliding scale is a values decision, not a default. Before offering reduced fees, decide in advance: How many reduced-fee slots will I hold at any one time? What is my floor? What documentation or process will I use?
         </Text>
-        <NumItem n={1} text="Decide your hard floor — the minimum you will accept for any session — and write it down." />
+        <NumItem n={1} text="Decide your hard floor, the minimum you will accept for any session, and write it down." />
         <NumItem n={2} text="Limit reduced-fee slots to no more than 20% of your caseload unless it's a core part of your mission." />
         <NumItem n={3} text="Consider a brief financial screening so you're giving reduced fees to clients who genuinely need them." />
         <NumItem n={4} text="Revisit reduced-fee clients annually. Circumstances change." />
 
-        <Text style={s.h2}>Step 4 — Communicating fees without apology</Text>
+        <Text style={s.h2}>Step 4: Communicating fees without apology</Text>
         <Text style={s.p}>
           The language you use to discuss fees signals your relationship to your own value. Compare:
         </Text>
@@ -441,7 +441,7 @@ export function PlaybookDocument({ firstName }: { firstName: string }): ReactEle
           </Text>
         </View>
         <Text style={s.p}>
-          The second version is complete. It does not pre-emptively apologize. It invites dialogue from a place of stability. Practice this phrasing until it feels neutral — because it is.
+          The second version is complete. It does not pre-emptively apologize. It invites dialogue from a place of stability. Practice this phrasing until it feels neutral, because it is.
         </Text>
 
         <Text style={s.h3}>When to raise existing client rates</Text>
@@ -460,22 +460,22 @@ export function PlaybookDocument({ firstName }: { firstName: string }): ReactEle
         </View>
 
         <Text style={s.p}>
-          Most clinicians wait until they have a referral need to start building referral relationships. This is backwards. A strong referral network is built over months and years — and pays dividends when you need it most.
+          Most clinicians wait until they have a referral need to start building referral relationships. This is backwards. A strong referral network is built over months and years, and it pays dividends when you need it most.
         </Text>
 
         <Text style={s.h2}>The three-ring referral model</Text>
         <Text style={s.p}>
           Think of your referral network as three concentric rings:
         </Text>
-        <NumItem n={1} text="Ring 1 — Warm: Clinicians you know personally, trust clinically, and would refer your own family member to. Aim for 5–8 across key specialties (trauma, couples, children, psychiatry, EMDR, somatic)." />
-        <NumItem n={2} text="Ring 2 — Cool: Clinicians you've met at trainings, supervision groups, or through shared clients. You have a sense of their work. Worth developing into Ring 1." />
-        <NumItem n={3} text="Ring 3 — Cold: Names in your EHR or Psychology Today — known to you but not known by you. Don't refer to cold contacts for high-acuity clients." />
+        <NumItem n={1} text="Ring 1: Warm. Clinicians you know personally, trust clinically, and would refer your own family member to. Aim for 5–8 across key specialties (trauma, couples, children, psychiatry, EMDR, somatic)." />
+        <NumItem n={2} text="Ring 2: Cool. Clinicians you've met at trainings, supervision groups, or through shared clients. You have a sense of their work. Worth developing into Ring 1." />
+        <NumItem n={3} text="Ring 3: Cold. Names in your EHR or Psychology Today, known to you but not known by you. Don't refer to cold contacts for high-acuity clients." />
 
         <Text style={s.h2}>Building Ring 1 referral relationships</Text>
-        <NumItem n={1} text="Reach out to one clinician per month with a specific, genuine message: 'I've heard good things about your work with attachment-based couples therapy. I'm a trauma-focused IFS therapist — I'd love to know more about your practice.'" />
+        <NumItem n={1} text="Reach out to one clinician per month with a specific, genuine message: 'I've heard good things about your work with attachment-based couples therapy. I'm a trauma-focused IFS therapist, and I'd love to know more about your practice.'" />
         <NumItem n={2} text="Meet for coffee or a 20-minute video call. Ask about their specialty, client fit, and what kinds of referrals they can't always take." />
-        <NumItem n={3} text="Follow up when you send a referral. A quick message — 'I referred Jane Doe, she'll reach out this week' — builds trust and shows professionalism." />
-        <NumItem n={4} text="Track who you've referred to and who has referred to you. Reciprocity matters, but it's rarely equal — and that's okay." />
+        <NumItem n={3} text="Follow up when you send a referral. A quick message like 'I referred Jane Doe, she'll reach out this week' builds trust and shows professionalism." />
+        <NumItem n={4} text="Track who you've referred to and who has referred to you. Reciprocity matters, but it's rarely equal, and that's okay." />
 
         <View style={s.goldBox}>
           <Text style={s.goldBoxTitle}>The Best Referral You Can Give</Text>
@@ -491,7 +491,7 @@ export function PlaybookDocument({ firstName }: { firstName: string }): ReactEle
         <Text style={s.p}>
           The most common referral gaps for Austin-area private practice therapists:
         </Text>
-        <CheckItem text="Child therapist (ages 5–12) — almost always needed" />
+        <CheckItem text="Child therapist (ages 5–12), almost always needed" />
         <CheckItem text="Adolescent therapist with eating disorder experience" />
         <CheckItem text="Psychiatrist or PMHNP for medication consultation" />
         <CheckItem text="Bilingual (Spanish) therapist for referrals you can't take" />
@@ -501,7 +501,7 @@ export function PlaybookDocument({ firstName }: { firstName: string }): ReactEle
 
         <Text style={s.h2}>The referral pipeline mindset</Text>
         <Text style={s.p}>
-          Your referral network is not a backup plan — it's an asset. Clinicians with strong Ring 1 networks:
+          Your referral network is not a backup plan. It's an asset. Clinicians with strong Ring 1 networks:
         </Text>
         <NumItem n={1} text="Maintain fuller caseloads because trusted referrals convert at 3–4x the rate of cold inquiries." />
         <NumItem n={2} text="Give better care because they can quickly place clients who need a different fit." />
@@ -509,7 +509,7 @@ export function PlaybookDocument({ firstName }: { firstName: string }): ReactEle
 
         <View style={s.callout}>
           <Text style={s.calloutText}>
-            "The clinicians I see burn out fastest are the ones trying to be everything to every client. A strong referral network is what lets you specialize — and specialization is what lets you do your best work." — Sarah Arnold
+            "The clinicians I see burn out fastest are the ones trying to be everything to every client. A strong referral network is what lets you specialize, and specialization is what lets you do your best work." (Sarah Arnold)
           </Text>
         </View>
         <Footer page={7} />
@@ -520,11 +520,11 @@ export function PlaybookDocument({ firstName }: { firstName: string }): ReactEle
         <View style={s.sectionHeader}>
           <Text style={s.sectionNum}>Section 03</Text>
           <Text style={s.sectionTitle}>The Burnout Early-Warning Checklist</Text>
-          <Text style={s.sectionTagline}>12 signs most clinicians miss — and what to do about each one.</Text>
+          <Text style={s.sectionTagline}>12 signs most clinicians miss, and what to do about each one.</Text>
         </View>
 
         <Text style={s.p}>
-          Burnout in therapists rarely arrives as a single dramatic event. It accumulates — small erosions in boundary, motivation, and presence that, over months, become chronic. The checklist below is designed for early detection, not crisis response.
+          Burnout in therapists rarely arrives as a single dramatic event. It accumulates as small erosions in boundary, motivation, and presence that, over months, become chronic. The checklist below is designed for early detection, not crisis response.
         </Text>
         <Text style={s.p}>
           Check any item you've experienced more than twice in the past 30 days. Three or more checked items is a signal worth taking seriously.
@@ -545,7 +545,7 @@ export function PlaybookDocument({ firstName }: { firstName: string }): ReactEle
         <Text style={s.h2}>Personal and systemic signs</Text>
         <CheckItem text="Work conversations dominate your social interactions even when you're 'off.'" />
         <CheckItem text="You're using alcohol, food, screens, or exercise in ways that feel compensatory rather than nourishing." />
-        <CheckItem text="You feel resentment toward the field, your clients, or the healthcare system — and it's not moving through you." />
+        <CheckItem text="You feel resentment toward the field, your clients, or the healthcare system, and it's not moving through you." />
         <CheckItem text="You can't remember the last time you felt genuinely curious about a clinical case." />
         <Footer page={9} />
       </Page>
@@ -565,18 +565,18 @@ export function PlaybookDocument({ firstName }: { firstName: string }): ReactEle
 
         <Text style={s.h3}>6+ items checked</Text>
         <Text style={s.p}>
-          You are likely already in secondary trauma or clinical burnout. This is not a character failing — it is occupational injury. Stop adding clients. Seek consultation or personal therapy immediately. Consider whether a caseload reduction is necessary for client safety as much as your own.
+          You are likely already in secondary trauma or clinical burnout. This is not a character failing. It is occupational injury. Stop adding clients. Seek consultation or personal therapy immediately. Consider whether a caseload reduction is necessary for client safety as much as your own.
         </Text>
 
         <View style={s.goldBox}>
           <Text style={s.goldBoxTitle}>The Most Protective Structure Known</Text>
           <Text style={s.goldBoxText}>
-            Research consistently shows that peer consultation — regular, structured, honest clinical consultation with colleagues — is the single most protective factor against burnout in licensed therapists. Not self-care in the conventional sense. Community. That's what ACC is built for.
+            Research consistently shows that peer consultation, regular, structured, honest clinical consultation with colleagues, is the single most protective factor against burnout in licensed therapists. Not self-care in the conventional sense. Community. That's what The Circle is built for.
           </Text>
         </View>
 
         <Text style={s.h2}>Building protective structures</Text>
-        <NumItem n={1} text="A hard caseload ceiling. Decide the maximum number of clients you will see per week — and hold it. Write it in your scheduling software as a block." />
+        <NumItem n={1} text="A hard caseload ceiling. Decide the maximum number of clients you will see per week and hold it. Write it in your scheduling software as a block." />
         <NumItem n={2} text="Regular peer consultation. Not just once when things are hard. Weekly or biweekly as a standing commitment." />
         <NumItem n={3} text="Personal therapy. Most licensing boards don't require it. The research says it matters anyway." />
         <NumItem n={4} text="At least one non-clinical professional relationship per week. Lunch with a colleague who isn't your client, supervisee, or supervisor." />
@@ -587,8 +587,8 @@ export function PlaybookDocument({ firstName }: { firstName: string }): ReactEle
       <Page size="A4" style={s.page}>
         <View style={s.sectionHeader}>
           <Text style={s.sectionNum}>Section 04</Text>
-          <Text style={s.sectionTitle}>The ACC Community Playbook</Text>
-          <Text style={s.sectionTagline}>What thriving private practices have in common — and what you can start doing today.</Text>
+          <Text style={s.sectionTitle}>The Circle Community Playbook</Text>
+          <Text style={s.sectionTagline}>What thriving private practices have in common, and what you can start doing today.</Text>
         </View>
 
         <Text style={s.p}>
@@ -596,11 +596,11 @@ export function PlaybookDocument({ firstName }: { firstName: string }): ReactEle
         </Text>
 
         <Text style={s.h2}>What thriving practices have in common</Text>
-        <NumItem n={1} text="They consult regularly — not just on crisis cases, but as a standing practice habit. Weekly or biweekly consultation is the norm, not the exception." />
-        <NumItem n={2} text="They refer generously — because they have a network they trust, they can place clients well rather than holding them past fit." />
-        <NumItem n={3} text="They keep learning — not just CEUs for license renewal, but trainings they actually want to take because they're curious." />
-        <NumItem n={4} text="They talk about money — fees, billing, overhead — with peers. The stigma around pricing in the helping professions is real and actively harmful." />
-        <NumItem n={5} text="They have at least one person who knows their full caseload and practice reality. Not just a supervisor — a peer." />
+        <NumItem n={1} text="They consult regularly, not just on crisis cases, but as a standing practice habit. Weekly or biweekly consultation is the norm, not the exception." />
+        <NumItem n={2} text="They refer generously, because they have a network they trust, and they can place clients well rather than holding them past fit." />
+        <NumItem n={3} text="They keep learning, not just CEUs for license renewal, but trainings they actually want to take because they're curious." />
+        <NumItem n={4} text="They talk about money: fees, billing, overhead, with peers. The stigma around pricing in the helping professions is real and actively harmful." />
+        <NumItem n={5} text="They have at least one person who knows their full caseload and practice reality. Not just a supervisor, a peer." />
 
         <Text style={s.h2}>The isolation tax</Text>
         <Text style={s.p}>
@@ -608,33 +608,33 @@ export function PlaybookDocument({ firstName }: { firstName: string }): ReactEle
         </Text>
         <View style={s.callout}>
           <Text style={s.calloutText}>
-            "Private practice isn't supposed to mean practicing alone. The word 'private' refers to your clients — not you." — Sarah Arnold
+            "Private practice isn't supposed to mean practicing alone. The word 'private' refers to your clients, not you." (Sarah Arnold)
           </Text>
         </View>
         <Footer page={12} />
       </Page>
 
       <Page size="A4" style={s.page}>
-        <Text style={s.h2}>What ACC offers</Text>
+        <Text style={s.h2}>What The Circle offers</Text>
         <Text style={s.p}>
-          Austin Clinician Circle is a curated membership community for licensed therapists — built around the structures that research and experience show actually protect clinician longevity:
+          Austin Clinician Circle is a curated membership community for licensed therapists, built around the structures that research and experience show actually protect clinician longevity:
         </Text>
-        <CheckItem text="Monthly group case consultation led by Sarah Arnold, LPC-S — bring a real case, get real support." />
-        <CheckItem text="2–3 CEU trainings per month on clinical and business topics, all archived." />
+        <CheckItem text="Monthly group case consultation led by Sarah Arnold, LPC-S, bring a real case and get real support." />
+        <CheckItem text="CEU trainings each month on clinical and business topics, all archived." />
         <CheckItem text="A vetted referral network of Austin-area clinicians you can actually trust." />
-        <CheckItem text="A curated resource library of 48+ clinical tools, handouts, and business guides." />
-        <CheckItem text="A public directory listing — professionally maintained and searchable by specialty." />
+        <CheckItem text="A curated resource library of clinical tools, handouts, and business guides." />
+        <CheckItem text="A public directory listing, professionally maintained and searchable by specialty." />
         <CheckItem text="Discounted 1-on-1 practice coaching with Sarah on fees, marketing, and burnout." />
 
         <Text style={s.h2}>Your next step</Text>
         <Text style={s.p}>
-          We're currently accepting founding members — a cohort of 40 therapists who will shape the community from its first year. Founding members lock in the lowest membership rate ACC will ever offer, receive priority access to all programming, and have direct input with Sarah on what gets built.
+          We're currently accepting founding members, a cohort of 40 therapists who will shape the community from its first year. Founding members lock in the lowest membership rate The Circle will ever offer, receive priority access to all programming, and have direct input with Sarah on what gets built.
         </Text>
 
         <View style={s.goldBox}>
           <Text style={s.goldBoxTitle}>Ready to apply?</Text>
           <Text style={s.goldBoxText}>
-            Applications are reviewed weekly. Visit austincliniciancircle.com/join to apply — it takes about 10 minutes and there's no commitment required to apply.{"\n\n"}
+            Applications are reviewed weekly. Visit austincliniciancircle.com/join to apply. It takes about 10 minutes and there's no commitment required to apply.{"\n\n"}
             Questions? Email Sarah directly at{" "}
             <Link src="mailto:sarah@austincliniciancircle.com" style={{ color: GOLD }}>
               sarah@austincliniciancircle.com

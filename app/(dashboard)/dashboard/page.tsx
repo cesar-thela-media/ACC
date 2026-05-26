@@ -165,7 +165,7 @@ export default function DashboardPage() {
         </Card>
       </div>
 
-      {/* Weekly milestone — warm accent callout */}
+      {/* Weekly milestone: warm accent callout */}
       <div
         className="rounded-2xl p-6 flex items-center justify-between gap-6"
         style={{

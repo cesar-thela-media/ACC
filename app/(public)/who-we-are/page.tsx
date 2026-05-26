@@ -3,22 +3,21 @@ import Link from "next/link";
 const values = [
   {
     title: "Clinical excellence",
-    body: "We believe therapists do their best work when they are connected to other skilled clinicians who challenge and support them. Case consultation isn't optional — it's foundational.",
+    body: "We believe therapists do their best work when they are connected to other skilled clinicians who challenge and support them. Case consultation isn't optional. It's foundational.",
   },
   {
     title: "Sustainable practice",
-    body: "Burnout is not inevitable. With the right structures — community, supervision, and personal care — therapists can build careers that last and practices that thrive.",
+    body: "Burnout is not inevitable. With the right structures, community, supervision, and personal care, therapists can build careers that last and practices that thrive.",
   },
   {
     title: "Professional identity",
-    body: "Beyond your solo brand, there's a professional community you belong to. ACC gives you a home, a directory listing, and colleagues who understand the work.",
+    body: "Beyond your solo brand, there is a professional community you belong to. The Circle gives you a home, a directory listing, and colleagues who understand the work.",
   },
 ];
 
 export default function WhoWeArePage() {
   return (
     <>
-      {/* HERO */}
       <section
         className="pt-28 md:pt-32 pb-16 md:pb-20"
         style={{ background: "var(--color-cream-100)" }}
@@ -31,7 +30,7 @@ export default function WhoWeArePage() {
             Who we are
           </p>
           <h1
-            className="leading-tight mb-8 max-w-2xl mx-auto"
+            className="leading-tight max-w-2xl mx-auto"
             style={{
               fontFamily: "var(--font-serif), Manrope, sans-serif",
               fontSize: "clamp(2.5rem, 5vw, 3.75rem)",
@@ -39,20 +38,58 @@ export default function WhoWeArePage() {
               color: "var(--color-sage-900)",
             }}
           >
-            A professional home for therapists who take their work seriously.
+            A professional home and community for therapists
           </h1>
-          <p
-            className="text-base md:text-lg leading-relaxed max-w-2xl mx-auto"
-            style={{ color: "var(--color-text-secondary)" }}
-          >
-            The Austin Clinician Circle was founded by a therapist who felt the
-            same isolation that most clinicians in private practice feel — and
-            decided to build something about it.
-          </p>
         </div>
       </section>
 
-      {/* SARAH'S STORY */}
+      <section
+        className="py-16 md:py-24"
+        style={{ background: "var(--color-cream-100)" }}
+      >
+        <div className="max-w-4xl mx-auto px-5 md:px-6 text-center">
+          <p
+            className="text-xs font-medium uppercase tracking-widest mb-5"
+            style={{ color: "var(--color-sage-600)" }}
+          >
+            The origin
+          </p>
+          <h2
+            className="section-title-strong mb-10"
+            style={{
+              fontSize: "clamp(1.75rem, 3vw, 2.25rem)",
+              color: "var(--color-sage-900)",
+            }}
+          >
+            Why The Circle exists.
+          </h2>
+          <div
+            className="flex flex-col gap-6 text-sm leading-relaxed max-w-2xl mx-auto text-left"
+            style={{ color: "var(--color-text-secondary)" }}
+          >
+            <p>
+              Most of us didn&apos;t fully anticipate how solo private practice would
+              feel. You&apos;re doing meaningful work, but there may not be a team
+              down the hall, no built-in debrief, and some days that absence is
+              more noticeable than others.
+            </p>
+            <p>
+              The Circle was designed to address that gap: a small network of
+              clinicians who meet regularly, share resources, make referrals to
+              each other, and show up for one another professionally and in real
+              community.
+            </p>
+            <p>
+              Founding members are therapists who have been part of Sarah&apos;s
+              professional circle, former associates, trusted colleagues, and
+              clinicians she has supervised. As The Circle grows, membership is
+              open to any licensed therapist who shares this commitment to
+              ongoing clinical growth and community.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section
         className="py-16 md:py-24"
         style={{ background: "var(--color-cream-200)" }}
@@ -87,32 +124,29 @@ export default function WhoWeArePage() {
               style={{ color: "var(--color-text-secondary)" }}
             >
               <p>
-                Sarah is a licensed professional counselor supervisor based in
-                Austin, Texas, and the founder of Restored Family Counseling.
-                She has spent her career working with individuals, couples, and
-                families navigating trauma, attachment wounds, and relational
-                difficulty.
+                Sarah is a Licensed Professional Counselor and Supervisor based
+                in Austin, Texas, and the founder of Restored Family
+                Counseling. She has spent her career working with individuals
+                and couples doing the deeper work, exploring the parts of
+                themselves that have been running the show, releasing what no
+                longer serves them, and stepping into a life that feels in
+                alignment with who they truly desire to be.
               </p>
               <p>
                 As she built her group practice and supervised pre-licensed
                 associates, she noticed a pattern: once therapists became fully
-                licensed and launched their own practices, they lost the built-in
-                community they had during training. Supervision groups ended.
-                Colleagues scattered. The richness of peer connection disappeared
-                — replaced by the solitude of a solo caseload.
+                licensed and launched their own practices, they lost the
+                built-in community they had during training. Supervision groups
+                ended. Colleagues scattered. What had once felt like a team
+                became, almost overnight, a practice of one.
               </p>
               <p>
-                The Austin Clinician Circle is Sarah&apos;s answer to that problem. It
-                is not a supervision group, a continuing education provider, or a
-                therapist directory — though it includes elements of all three. It
-                is a membership network: a professional community for therapists
-                who want to keep growing, stay connected, and do excellent work
-                over the long term.
-              </p>
-              <p>
-                Sarah continues to see clients at Restored Family Counseling and
-                leads ACC&apos;s clinical consultation groups. She lives and practices
-                in Austin.
+                The Circle is Sarah&apos;s answer to that problem.
+                It is not a supervision group, a continuing education provider,
+                or a therapist directory, though it includes elements of all
+                three. It is a membership network: a professional community for
+                therapists who want to keep growing, stay connected, and do
+                excellent work over the long term.
               </p>
             </div>
             <a
@@ -131,57 +165,6 @@ export default function WhoWeArePage() {
         </div>
       </section>
 
-      {/* ORIGIN */}
-      <section
-        className="py-16 md:py-24"
-        style={{ background: "var(--color-cream-100)" }}
-      >
-        <div className="max-w-4xl mx-auto px-5 md:px-6 text-center">
-          <p
-            className="text-xs font-medium uppercase tracking-widest mb-5"
-            style={{ color: "var(--color-sage-600)" }}
-          >
-            The origin
-          </p>
-          <h2
-            className="section-title-strong mb-10"
-            style={{
-              fontSize: "clamp(1.75rem, 3vw, 2.25rem)",
-              color: "var(--color-sage-900)",
-            }}
-          >
-            Why Austin Clinician Circle exists.
-          </h2>
-          <div
-            className="flex flex-col gap-6 text-sm leading-relaxed max-w-2xl mx-auto text-left"
-            style={{ color: "var(--color-text-secondary)" }}
-          >
-            <p>
-              Private practice is one of the most professionally isolating
-              environments in any helping profession. You see clients back to
-              back, hold their pain carefully, and then — often — sit alone in a
-              room with no one to debrief with, no one to consult on a difficult
-              case, no one to remind you why you chose this work.
-            </p>
-            <p>
-              ACC was designed to address that gap with something simple and
-              durable: a small network of Austin-area clinicians who meet
-              regularly, share resources, make referrals to each other, and show
-              up for one another professionally. No large conferences. No passive
-              webinars. Real community with real colleagues.
-            </p>
-            <p>
-              Founding members are therapists who have been part of Sarah&apos;s
-              professional circle — former associates, trusted colleagues, and
-              clinicians she has supervised or trained alongside. As ACC grows,
-              membership is open to any licensed therapist who shares this
-              commitment to ongoing clinical growth and community.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* VALUES */}
       <section
         className="py-16 md:py-24"
         style={{ background: "var(--color-cream-200)" }}
@@ -201,23 +184,23 @@ export default function WhoWeArePage() {
                 color: "var(--color-sage-900)",
               }}
             >
-              The values that shape ACC.
+              The values that shape The Circle.
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10">
-            {values.map((v) => (
-              <div key={v.title} className="text-center md:text-left lg:text-center">
+            {values.map((value) => (
+              <div key={value.title} className="text-center md:text-left lg:text-center">
                 <h3
                   className="text-base font-semibold mb-3"
                   style={{ color: "var(--color-sage-800)" }}
                 >
-                  {v.title}
+                  {value.title}
                 </h3>
                 <p
                   className="text-sm leading-relaxed"
                   style={{ color: "var(--color-text-secondary)" }}
                 >
-                  {v.body}
+                  {value.body}
                 </p>
               </div>
             ))}
@@ -225,7 +208,6 @@ export default function WhoWeArePage() {
         </div>
       </section>
 
-      {/* CTA */}
       <section
         className="py-16 md:py-24 text-center"
         style={{ background: "var(--color-sage-900)" }}

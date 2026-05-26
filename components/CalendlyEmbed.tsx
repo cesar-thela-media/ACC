@@ -19,7 +19,7 @@ export function CalendlyEmbed() {
           className="text-base font-semibold"
           style={{ color: "var(--color-sage-700)" }}
         >
-          1-on-1 coaching — coming soon
+          1-on-1 coaching coming soon
         </p>
         <p
           className="text-sm max-w-xs leading-relaxed"

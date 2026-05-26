@@ -44,7 +44,7 @@ type FormData = {
   specialties: string[];
   modalities: string[];
   bio: string;
-  whyACC: string;
+  whyCircle: string;
 };
 
 const empty: FormData = {
@@ -61,7 +61,7 @@ const empty: FormData = {
   specialties: [],
   modalities: [],
   bio: "",
-  whyACC: "",
+  whyCircle: "",
 };
 
 export default function JoinPage() {
@@ -143,7 +143,7 @@ export default function JoinPage() {
             color: "var(--color-sage-900)",
           }}
         >
-          Join the Austin Clinician Circle.
+          Join The Circle.
         </h1>
 
         {/* Step indicator */}
@@ -190,7 +190,7 @@ export default function JoinPage() {
           ))}
         </div>
 
-        {/* STEP 1 — About you */}
+        {/* STEP 1: About you */}
         {step === 0 && (
           <div className="flex flex-col gap-5">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -278,7 +278,7 @@ export default function JoinPage() {
           </div>
         )}
 
-        {/* STEP 2 — Your practice */}
+        {/* STEP 2: Your practice */}
         {step === 1 && (
           <div className="flex flex-col gap-5">
             <Input
@@ -399,10 +399,10 @@ export default function JoinPage() {
               hint="This will appear on your public directory listing."
             />
             <Textarea
-              label="Why do you want to join ACC?"
+              label="Why do you want to join The Circle?"
               rows={3}
-              value={form.whyACC}
-              onChange={(e) => set("whyACC", e.target.value)}
+              value={form.whyCircle}
+              onChange={(e) => set("whyCircle", e.target.value)}
               placeholder="What are you hoping to get from this community?"
             />
             <div className="flex flex-col sm:flex-row gap-3 mt-2">
@@ -416,7 +416,7 @@ export default function JoinPage() {
           </div>
         )}
 
-        {/* STEP 3 — Confirm */}
+        {/* STEP 3: Confirm */}
         {step === 2 && (
           <div className="flex flex-col gap-6">
             <div
@@ -438,10 +438,10 @@ export default function JoinPage() {
                   ["Email", form.email],
                   ["License", `${form.licenseType} ${form.licenseNumber}`],
                   ["Years licensed", form.yearsLicensed],
-                  ["Practice", form.practiceName || "—"],
+                  ["Practice", form.practiceName || "Not provided"],
                   ["Location", form.practiceCity],
                   ["Format", form.format],
-                  ["Specialties", form.specialties.join(", ") || "—"],
+                  ["Specialties", form.specialties.join(", ") || "Not provided"],
                 ].map(([label, value]) => (
                   <div key={label} className="flex flex-col sm:flex-row gap-1 sm:gap-4">
                     <span
@@ -466,7 +466,7 @@ export default function JoinPage() {
                 color: "var(--color-sage-700)",
               }}
             >
-              Membership is $129/month, billed monthly. Payment details will be
+              Membership is $79/month, billed monthly. Payment details will be
               collected after Sarah reviews and approves your application.
             </div>
 

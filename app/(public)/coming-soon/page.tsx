@@ -1,6 +1,6 @@
 "use client";
 
-// TODO: wire form submission to Resend — send the guide PDF to the captured
+// TODO: wire form submission to Resend to send the guide PDF to the captured
 // email and notify Sarah at sarah@restoredfc.com of the new lead.
 // Handler pattern: POST /api/leads  { firstName, email }
 
@@ -10,10 +10,10 @@ import Link from "next/link";
 const SPOTS_REMAINING = 16; // update manually or pull from DB
 
 const WHAT_YOULL_GET = [
-  "A proven fee-setting framework — stop undercharging for good",
-  "The referral network blueprint — build trust before you need it",
-  "Burnout early-warning checklist — 12 signs most clinicians miss",
-  "The ACC community playbook — what thriving practices do differently",
+  "A proven fee-setting framework: stop undercharging for good",
+  "The referral network blueprint: build trust before you need it",
+  "Burnout early-warning checklist: 12 signs most clinicians miss",
+  "The Circle community playbook: what thriving practices do differently",
 ];
 
 export default function ComingSoonPage() {
@@ -83,7 +83,7 @@ export default function ComingSoonPage() {
               className="text-sm font-semibold"
               style={{ fontFamily: "var(--font-serif), Georgia, serif", color: "#fff" }}
             >
-              Austin Clinician Circle
+              The Circle
             </p>
           </div>
 
@@ -141,7 +141,7 @@ export default function ComingSoonPage() {
               className="text-lg leading-relaxed mb-8"
               style={{ color: "rgba(255,255,255,0.6)", maxWidth: "30rem" }}
             >
-              Download <strong style={{ color: "rgba(255,255,255,0.85)", fontWeight: 600 }}>The Private Practice Playbook</strong> — a free guide used by licensed therapists in Austin to build sustainable, fulfilling practices.
+              Download <strong style={{ color: "rgba(255,255,255,0.85)", fontWeight: 600 }}>The Private Practice Playbook</strong>, a free guide used by licensed therapists in Austin to build sustainable, fulfilling practices.
             </p>
 
             {/* What you'll get */}
@@ -262,7 +262,7 @@ export default function ComingSoonPage() {
                   </button>
 
                   <p className="text-center text-xs" style={{ color: "rgba(255,255,255,0.25)" }}>
-                    By submitting you agree to receive occasional emails from Austin Clinician Circle. Unsubscribe anytime.
+                    By submitting you agree to receive occasional emails from The Circle. Unsubscribe anytime.
                   </p>
                 </form>
               </div>
@@ -313,7 +313,7 @@ export default function ComingSoonPage() {
                     You&apos;re invited to become a founding member.
                   </p>
                   <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>
-                    Austin Clinician Circle is launching with a founding cohort of 40 therapists who shape the community from day one — locked-in founding pricing, priority access, and direct input with Sarah.
+                    The Circle is launching with a founding cohort of 40 therapists who shape the community from day one, with locked-in founding pricing, priority access, and direct input with Sarah.
                   </p>
 
                   {/* Urgency bar */}
@@ -370,7 +370,7 @@ export default function ComingSoonPage() {
                 className="text-sm font-semibold mb-3"
                 style={{ fontFamily: "var(--font-serif), Georgia, serif", color: "#fff" }}
               >
-                Austin Clinician Circle
+                The Circle
               </p>
               <p className="text-sm leading-relaxed max-w-sm mx-auto md:mx-0" style={{ color: "rgba(255,255,255,0.52)" }}>
                 A grounded professional community for licensed therapists who want consultation, connection, and sustainable private practice.

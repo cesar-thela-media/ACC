@@ -6,7 +6,7 @@ import Link from "next/link";
 import { Input } from "@/components/ui/Input";
 import { Button } from "@/components/ui/Button";
 
-// Mock accounts — replace with BetterAuth when backend is wired
+// Mock accounts; replace with BetterAuth when backend is wired
 const MOCK_ACCOUNTS: Record<string, { password: string; redirect: string }> = {
   "jane@acc.com":    { password: "demo",    redirect: "/dashboard" },
   "sarah@acc.com":   { password: "founder", redirect: "/admin" },
@@ -34,7 +34,7 @@ export default function SignInPage() {
 
   return (
     <div className="w-full max-w-md">
-      {/* Quick access — one-click demo accounts */}
+      {/* Quick access: one-click demo accounts */}
       <div
         className="mb-8 p-4 rounded-2xl"
         style={{
@@ -46,7 +46,7 @@ export default function SignInPage() {
           className="text-xs font-semibold uppercase tracking-widest mb-3"
           style={{ color: "var(--color-sage-600)" }}
         >
-          Demo — quick access
+          Demo: quick access
         </p>
         <div className="flex flex-col gap-2">
           <button
@@ -59,7 +59,7 @@ export default function SignInPage() {
               Member account
             </p>
             <p className="text-sm font-medium" style={{ color: "#fff" }}>
-              Jane — Member dashboard →
+              Jane: Member dashboard →
             </p>
           </button>
           <button
@@ -72,7 +72,7 @@ export default function SignInPage() {
               Founder account
             </p>
             <p className="text-sm font-medium" style={{ color: "#fff" }}>
-              Sarah Arnold — Admin panel →
+              Sarah Arnold: Admin panel →
             </p>
           </button>
         </div>

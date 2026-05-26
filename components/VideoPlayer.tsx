@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 /**
- * Video section — shows a branded poster by default.
+ * Video section: shows a branded poster by default.
  * On click reveals a "coming soon" message. Swap in a real YouTube
  * embed ID when the video is ready.
  */

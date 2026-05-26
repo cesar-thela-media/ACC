@@ -25,7 +25,7 @@ export default function BillingPage() {
         <div className="flex flex-col sm:flex-row items-start justify-between gap-4">
           <div>
             <h2 className="text-base font-semibold" style={{ color: "var(--color-sage-800)" }}>
-              ACC Member — Monthly
+              The Circle member monthly
             </h2>
             <p className="text-sm mt-1" style={{ color: "var(--color-text-secondary)" }}>
               Full access to all community resources, events, and the member directory.

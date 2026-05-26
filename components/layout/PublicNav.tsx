@@ -32,36 +32,7 @@ export function PublicNav() {
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-50">
-        {/* Announcement bar — always dark, always visible */}
-        <div
-          style={{
-            background: "var(--color-sage-900)",
-            borderBottom: "1px solid rgba(255,255,255,0.08)",
-          }}
-        >
-          <div className="max-w-6xl mx-auto px-6 py-2.5 flex items-center justify-between gap-3">
-            <div className="flex items-center gap-2.5 min-w-0">
-              <span
-                className="w-1.5 h-1.5 rounded-full animate-pulse-dot shrink-0"
-                style={{ background: "var(--color-sage-500)" }}
-              />
-              <p className="text-xs" style={{ color: "rgba(255,255,255,0.7)" }}>
-                Now accepting founding members —{" "}
-                <strong style={{ color: "#fff" }}>24 of 40 spots filled.</strong>{" "}
-                Applications reviewed weekly.
-              </p>
-            </div>
-            <Link
-              href="/join"
-              className="text-xs font-semibold shrink-0 hidden sm:block transition-opacity hover:opacity-80"
-              style={{ color: "var(--color-accent-highlight)" }}
-            >
-              Apply now →
-            </Link>
-          </div>
-        </div>
-
-        {/* Nav — transparent on hero (homepage only), solid elsewhere */}
+        {/* Nav: transparent on hero (homepage only), solid elsewhere */}
         <div
           className="transition-all duration-300"
           style={{
@@ -82,7 +53,7 @@ export function PublicNav() {
                 color: isHomepage && !scrolled ? "#fff" : "var(--color-sage-800)",
               }}
             >
-              Austin Clinician Circle
+              The Circle
             </Link>
 
             <nav className="hidden md:flex items-center gap-8">
@@ -171,7 +142,7 @@ export function PublicNav() {
                 color: "#fff",
               }}
             >
-              Austin Clinician Circle
+              The Circle
             </span>
           </div>
         }

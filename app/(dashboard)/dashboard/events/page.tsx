@@ -13,7 +13,7 @@ const EVENTS = [
     time: "9:00 – 10:30am",
     format: "Virtual (Zoom)",
     category: "Consultation",
-    description: "Our monthly group case consultation. Bring a case you're working with — or come to support peers. Led by Sarah Arnold, LPC-S. Zoom link sent 24 hours before.",
+    description: "Our monthly group case consultation. Bring a case you're working with, or come to support peers. Led by Sarah Arnold, LPC-S. Zoom link sent 24 hours before.",
     ceus: 1.5,
     rsvp: true,
     spots: null,
@@ -61,7 +61,7 @@ const EVENTS = [
     time: "1:00 – 2:30pm",
     format: "Virtual (Zoom)",
     category: "Self-Care",
-    description: "A workshop focused on sustainable clinical practice — identifying early burnout signs and building personal structures for longevity.",
+    description: "A workshop focused on sustainable clinical practice, identifying early burnout signs and building personal structures for longevity.",
     ceus: null,
     rsvp: false,
     spots: 25,
@@ -176,7 +176,7 @@ export default function EventsPage() {
             Book a session with Sarah
           </h2>
           <p className="text-sm mt-1" style={{ color: "var(--color-text-secondary)" }}>
-            Discounted 1-on-1 practice-building sessions — fees, marketing, burnout, and long-term sustainability. Members only.
+            Discounted 1-on-1 practice-building sessions covering fees, marketing, burnout, and long-term sustainability. Members only.
           </p>
         </div>
         <CalendlyEmbed />

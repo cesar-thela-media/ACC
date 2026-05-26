@@ -67,7 +67,7 @@ const APPLICATIONS = [
     city: "Houston, TX",
     submitted: "Apr 8, 2026",
     status: "rejected" as AppStatus,
-    bio: "Counselor based in Houston — applied but does not meet Austin-area requirement.",
+    bio: "Counselor based in Houston, applied but does not meet Austin-area requirement.",
     specialties: ["Depression", "CBT"],
     format: "Telehealth",
     licenseNumber: "LPC-55144",

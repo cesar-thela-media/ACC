@@ -24,55 +24,6 @@ export function Footer() {
   return (
     <footer style={{ background: "var(--color-sage-900)" }}>
       <div className="max-w-6xl mx-auto px-5 md:px-6 py-12 md:py-16">
-        <div
-          className="mb-10 md:mb-12 rounded-[28px] border px-6 py-7 md:px-8 md:py-8 flex flex-col lg:flex-row lg:items-center justify-between gap-6"
-          style={{
-            background: "rgba(255,255,255,0.04)",
-            borderColor: "rgba(255,255,255,0.08)",
-          }}
-        >
-          <div className="max-w-2xl text-center lg:text-left">
-            <p
-              className="text-xs font-medium uppercase tracking-widest mb-3"
-              style={{ color: "rgba(255,255,255,0.42)" }}
-            >
-              For licensed therapists in Austin
-            </p>
-            <h2
-              className="section-title-strong text-[1.75rem] md:text-[2rem] mb-3"
-              style={{ color: "#fff" }}
-            >
-              Deepen your work with a real community behind you.
-            </h2>
-            <p
-              className="text-sm md:text-base leading-relaxed"
-              style={{ color: "rgba(255,255,255,0.62)" }}
-            >
-              Consultation, referrals, resources, and practice support — all in one grounded membership designed for therapists.
-            </p>
-          </div>
-
-          <div className="flex w-full lg:w-auto flex-col sm:flex-row gap-3">
-            <Link
-              href="/join"
-              className="inline-flex items-center justify-center px-6 py-3 rounded-full text-sm font-semibold transition-opacity hover:opacity-90"
-              style={{ background: "var(--color-sage-700)", color: "#fff" }}
-            >
-              Apply for membership
-            </Link>
-            <Link
-              href="/sign-in"
-              className="inline-flex items-center justify-center px-6 py-3 rounded-full text-sm font-medium transition-colors hover:bg-white/10"
-              style={{
-                color: "#fff",
-                border: "1px solid rgba(255,255,255,0.16)",
-              }}
-            >
-              Sign in
-            </Link>
-          </div>
-        </div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[1.35fr,0.9fr,0.9fr,1fr] gap-8 md:gap-10 mb-10 md:mb-12 text-center md:text-left">
           <div>
             <p
@@ -82,7 +33,7 @@ export function Footer() {
                 color: "#fff",
               }}
             >
-              Austin Clinician Circle
+              The Circle
             </p>
             <p
               className="text-sm leading-relaxed max-w-sm mx-auto md:mx-0"
@@ -152,7 +103,7 @@ export function Footer() {
               className="text-xs font-medium uppercase tracking-widest mb-4"
               style={{ color: "rgba(255,255,255,0.4)" }}
             >
-              Inside ACC
+              Inside The Circle
             </p>
             <div className="flex flex-col gap-3">
               {memberHighlights.map((item) => (
@@ -173,7 +124,7 @@ export function Footer() {
           style={{ borderColor: "rgba(255,255,255,0.08)" }}
         >
           <p className="text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>
-            © {new Date().getFullYear()} Austin Clinician Circle. All rights reserved.
+            © {new Date().getFullYear()} The Circle. All rights reserved.
           </p>
           <div
             className="flex flex-col md:flex-row items-center gap-2 md:gap-4 text-xs"

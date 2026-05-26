@@ -8,15 +8,15 @@ const benefits = [
     items: [
       {
         title: "Monthly case consultation",
-        body: "A structured consultation group meets the first Thursday of every month, 9–10:30am. Bring your difficult cases, process with trusted peers, and leave with new perspective.",
+        body: "A structured consultation group meets the first Thursday of every month from 9:00 to 10:30am. Bring your difficult cases, process with trusted peers, and leave with new perspective.",
       },
       {
         title: "Continuing education (CEUs)",
-        body: "Access to continuing education content aligned with your licensure requirements. Curated for practicing clinicians — not generic HR training.",
+        body: "Access to continuing education content aligned with your licensure requirements. Curated for practicing clinicians and designed for professional growth.",
       },
       {
         title: "Resource library",
-        body: "A growing library of clinical tools, assessment instruments, psychoeducation handouts, treatment frameworks, and business templates — organized and searchable.",
+        body: "A growing library of clinical tools, assessment instruments, psychoeducation handouts, treatment frameworks, and business templates, organized and searchable.",
       },
     ],
   },
@@ -26,15 +26,15 @@ const benefits = [
     items: [
       {
         title: "Clinician directory listing",
-        body: "Your profile on the public ACC directory — searchable by specialty, modality, location, and availability. A trusted source for referrals from clients and colleagues.",
+        body: "Your profile in the public directory, searchable by specialty, modality, location, and availability. A trusted source for referrals from clients and colleagues.",
       },
       {
         title: "Referral network",
-        body: "A private network of vetted Austin-area clinicians. Send and receive referrals confidently, knowing every member has been part of the same professional community.",
+        body: "A private network of vetted clinicians. Send and receive referrals confidently, knowing every member has been part of the same professional community.",
       },
       {
         title: "Practice and marketing guidance",
-        body: "Structured guidance on building a sustainable private practice — fee setting, marketing, business systems, and more. Drawn from Sarah's experience building Restored Family Counseling.",
+        body: "Structured guidance on building a sustainable private practice: fee setting, marketing, business systems, and more.",
       },
     ],
   },
@@ -48,7 +48,7 @@ const benefits = [
       },
       {
         title: "Discounted coaching with Sarah",
-        body: "Members receive discounted access to individual coaching sessions with Sarah Arnold, LPC-S — for clinical consultation, practice development, or both.",
+        body: "Members receive discounted access to individual coaching sessions with Sarah Arnold, LPC-S for clinical consultation, practice development, or both.",
       },
     ],
   },
@@ -56,40 +56,38 @@ const benefits = [
 
 const faqs = [
   {
-    q: "Who is ACC for?",
-    a: "ACC is for licensed therapists — LPC, LCSW, LMFT, PhD, PsyD — who are in independent or group private practice. Pre-licensed associates are not currently eligible for full membership.",
+    q: "Who is The Circle for?",
+    a: "The Circle is for licensed therapists, LPC, LCSW, LMFT, PhD, and PsyD, who are in independent or group private practice. Pre-licensed associates are not currently eligible for full membership.",
   },
   {
-    q: "Is this only for Austin-based therapists?",
-    a: "Yes, at launch ACC serves therapists in the Austin metro area. All meetings are virtual, so you don't need to be in any specific neighborhood — but we are building a community around this region.",
+    q: "Is this for Austin only?",
+    a: "No. While The Circle is based in Austin, we provide connection and support for clinicians all across Texas.",
   },
   {
     q: "How does the consultation group work?",
-    a: "The monthly group meets virtually on the first Thursday of each month, 9–10:30am. Members may present cases for discussion, and Sarah facilitates. The group is kept intentionally small for the quality of discussion.",
+    a: "The monthly group meets virtually on the first Thursday of each month, 9:00 to 10:30am. Members may present cases for discussion, and various topics will be covered for CEUs. The group is kept intentionally small for the quality of discussion.",
   },
   {
     q: "Is there a long-term contract?",
-    a: "No. Membership is month-to-month. You can cancel at any time from your billing settings.",
+    a: "No. There is no long-term contract, and you can cancel at any time from your billing settings.",
   },
   {
-    q: "What if I apply and am not accepted?",
-    a: "Founding membership cohorts are limited in size. If your application is not accepted in the current cohort, you will be added to the waitlist for the next opening.",
-  },
-  {
-    q: "I have more questions — how do I reach Sarah?",
-    a: "You can reach Sarah through Restored Family Counseling at restoredfamily.com. She reviews all ACC inquiries personally.",
+    q: "How do I reach Sarah?",
+    a: "By email - Sarah@restoredfamily.com",
   },
 ];
 
 const pricingFeatures = [
   "Monthly case consultation group",
-  "Continuing education access (CEUs)",
+  "CEU trainings each month",
   "Curated clinical resource library",
   "Public directory listing",
   "Trusted clinician referral network",
   "Marketing and practice guidance",
   "Discounted coaching with Sarah",
   "Mindfulness and burnout resources",
+  "Professional Will designation",
+  "Private online community for real-time support",
 ];
 
 export default function WhatWeOfferPage() {
@@ -122,8 +120,8 @@ export default function WhatWeOfferPage() {
             className="text-base md:text-lg leading-relaxed max-w-2xl mx-auto"
             style={{ color: "var(--color-text-secondary)" }}
           >
-            One membership gives you full access to clinical support, professional
-            development, and community — no tiers, no upsells.
+            Membership gives you full access to clinical support, professional
+            development, and community.
           </p>
         </div>
       </section>
@@ -157,7 +155,14 @@ export default function WhatWeOfferPage() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {section.items.map((item) => (
-                <div key={item.title} className="text-left md:text-center">
+                <div
+                  key={item.title}
+                  className={
+                    section.category === "Support"
+                      ? "text-center"
+                      : "text-left md:text-center"
+                  }
+                >
                   <h3
                     className="text-base font-semibold mb-3"
                     style={{ color: "var(--color-sage-800)" }}
@@ -206,8 +211,8 @@ export default function WhatWeOfferPage() {
                 className="text-sm leading-relaxed mb-8"
                 style={{ color: "var(--color-text-secondary)" }}
               >
-                Month-to-month, no contracts. Cancel anytime. Founding member
-                cohort spots are limited — apply now to lock in your place.
+                A simple membership with full access to consultation,
+                professional development, and community.
               </p>
               <Link
                 href="/join"
@@ -221,7 +226,7 @@ export default function WhatWeOfferPage() {
               </Link>
             </div>
             <div className="max-w-sm w-full mx-auto">
-              <PricingCard price="$129" features={pricingFeatures} featured />
+              <PricingCard price="$79" features={pricingFeatures} featured />
             </div>
           </div>
         </div>
