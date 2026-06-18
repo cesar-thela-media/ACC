@@ -29,7 +29,7 @@ export function DashboardNav() {
       <div
         className="md:hidden fixed top-0 left-0 right-0 z-40 h-16 px-4 flex items-center justify-between"
         style={{
-          background: "rgba(74,93,78,0.96)",
+          background: "rgba(45,59,44,0.96)",
           borderBottom: "1px solid rgba(255,255,255,0.12)",
           backdropFilter: "blur(16px)",
         }}
@@ -42,7 +42,7 @@ export function DashboardNav() {
             color: "#fff",
           }}
         >
-          The Circle
+          Austin Clinician Circle
         </Link>
 
         <button
@@ -59,8 +59,8 @@ export function DashboardNav() {
       <aside
         className="hidden md:flex w-56 shrink-0 h-screen overflow-hidden flex-col py-6 px-4"
         style={{
-          background: "var(--color-sage-700)",
-          borderRight: "1px solid rgba(255, 255, 255, 0.12)",
+          background: "var(--color-sage-800)",
+          borderRight: "1px solid rgba(255, 255, 255, 0.10)",
         }}
       >
         <Link
@@ -71,7 +71,7 @@ export function DashboardNav() {
             color: "#fff",
           }}
         >
-          The Circle
+          Austin Clinician Circle
         </Link>
 
         <nav className="flex flex-col gap-1">
@@ -83,8 +83,9 @@ export function DashboardNav() {
                 href={link.href}
                 className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-300"
                 style={{
-                  background: active ? "rgba(27, 27, 27, 0.22)" : "transparent",
-                  color: active ? "#fff" : "rgba(255,255,255,0.82)",
+                  background: active ? "rgba(194,150,58,0.18)" : "transparent",
+                  color: active ? "#C2963A" : "rgba(255,255,255,0.78)",
+                  borderLeft: active ? "3px solid #C2963A" : "3px solid transparent",
                 }}
               >
                 <span className="text-base leading-none">{link.icon}</span>
@@ -108,15 +109,15 @@ export function DashboardNav() {
       <MobileSidePanel
         open={mobileOpen}
         onClose={() => setMobileOpen(false)}
-        background="var(--color-sage-700)"
-        borderColor="rgba(255,255,255,0.12)"
+        background="var(--color-sage-800)"
+        borderColor="rgba(255,255,255,0.10)"
         title={
           <div>
             <p className="text-[11px] font-medium uppercase tracking-[0.24em] mb-2" style={{ color: "rgba(255,255,255,0.48)" }}>
               Member dashboard
             </p>
             <span className="text-base font-semibold" style={{ fontFamily: "var(--font-serif), Georgia, serif", color: "#fff" }}>
-              The Circle
+              Austin Clinician Circle
             </span>
           </div>
         }
@@ -131,8 +132,9 @@ export function DashboardNav() {
                 onClick={() => setMobileOpen(false)}
                 className="flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-medium transition-all duration-300"
                 style={{
-                  background: active ? "rgba(27,27,27,0.22)" : "transparent",
-                  color: active ? "#fff" : "rgba(255,255,255,0.82)",
+                  background: active ? "rgba(194,150,58,0.18)" : "transparent",
+                  color: active ? "#C2963A" : "rgba(255,255,255,0.78)",
+                  borderLeft: active ? "3px solid #C2963A" : "3px solid transparent",
                 }}
               >
                 <span className="text-base leading-none">{link.icon}</span>

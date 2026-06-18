@@ -92,13 +92,19 @@ export default function JoinPage() {
           <div
             className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-8 text-2xl"
             style={{
-              background: "var(--color-sage-100)",
-              color: "var(--color-sage-700)",
+              background: "var(--color-sage-800)",
+              color: "#fff",
             }}
           >
             ✓
           </div>
-          <h1 className="text-page-title mb-4">
+          <h1
+            className="text-page-title mb-4"
+            style={{
+              fontFamily: "var(--font-serif), Georgia, serif",
+              fontWeight: 300,
+            }}
+          >
             Application received.
           </h1>
           <p
@@ -121,17 +127,17 @@ export default function JoinPage() {
       <div className="max-w-xl mx-auto px-5 md:px-6">
         {/* Header */}
         <p
-          className="text-xs font-medium uppercase tracking-widest mb-4"
-          style={{ color: "var(--color-sage-600)" }}
+          className="text-[11px] font-semibold uppercase tracking-[0.28em] mb-4"
+          style={{ color: "var(--color-accent-highlight)" }}
         >
           Membership application
         </p>
         <h1
           className="mb-10"
           style={{
-            fontFamily: "var(--font-serif), Manrope, sans-serif",
+            fontFamily: "var(--font-serif), Georgia, serif",
             fontSize: "clamp(2rem, 4vw, 2.75rem)",
-            fontWeight: 400,
+            fontWeight: 300,
             color: "var(--color-sage-900)",
           }}
         >
@@ -148,7 +154,7 @@ export default function JoinPage() {
                   style={{
                     background:
                       i <= step
-                        ? "var(--color-sage-700)"
+                        ? "var(--color-accent-highlight)"
                         : "var(--color-cream-300)",
                     color: i <= step ? "#fff" : "var(--color-text-tertiary)",
                   }}
@@ -160,7 +166,7 @@ export default function JoinPage() {
                   style={{
                     color:
                       i === step
-                        ? "var(--color-sage-700)"
+                        ? "var(--color-accent-highlight)"
                         : "var(--color-text-tertiary)",
                   }}
                 >
@@ -173,7 +179,7 @@ export default function JoinPage() {
                   style={{
                     background:
                       i < step
-                        ? "var(--color-sage-700)"
+                        ? "var(--color-accent-highlight)"
                         : "var(--color-cream-300)",
                   }}
                 />
@@ -238,7 +244,7 @@ export default function JoinPage() {
                     style={{
                       background:
                         form.licenseType === t
-                          ? "var(--color-sage-700)"
+                          ? "var(--color-accent-highlight)"
                           : "var(--color-sage-50)",
                       color:
                         form.licenseType === t
@@ -310,7 +316,7 @@ export default function JoinPage() {
                     style={{
                       background:
                         form.format === f
-                          ? "var(--color-sage-700)"
+                          ? "var(--color-accent-highlight)"
                           : "var(--color-sage-50)",
                       color:
                         form.format === f ? "#fff" : "var(--color-sage-700)",
@@ -344,7 +350,7 @@ export default function JoinPage() {
                     className="px-3 py-1.5 rounded text-xs font-medium transition-colors"
                     style={{
                       background: form.specialties.includes(s)
-                        ? "var(--color-sage-700)"
+                        ? "var(--color-accent-highlight)"
                         : "var(--color-sage-50)",
                       color: form.specialties.includes(s)
                         ? "#fff"
@@ -375,7 +381,7 @@ export default function JoinPage() {
                     className="px-3 py-1.5 rounded text-xs font-medium transition-colors"
                     style={{
                       background: form.modalities.includes(m)
-                        ? "var(--color-sage-700)"
+                        ? "var(--color-accent-highlight)"
                         : "var(--color-sage-50)",
                       color: form.modalities.includes(m)
                         ? "#fff"

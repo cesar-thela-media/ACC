@@ -20,13 +20,14 @@ export default function AuthLayout({
       <header className="w-full px-5 md:px-6 py-4 md:py-5 flex items-center justify-between max-w-6xl mx-auto">
         <Link
           href="/"
-          className="text-base font-semibold tracking-wide"
+          className="text-base tracking-wide"
           style={{
-            fontFamily: "var(--font-serif), Manrope, sans-serif",
+            fontFamily: "var(--font-serif), Georgia, serif",
+            fontWeight: 300,
             color: "var(--color-sage-800)",
           }}
         >
-          The Circle
+          Austin Clinician Circle
         </Link>
       </header>
       <main className="flex-1 flex items-start md:items-center justify-center px-5 md:px-6 py-10 md:py-16">

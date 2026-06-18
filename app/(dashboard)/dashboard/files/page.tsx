@@ -68,9 +68,9 @@ export default function FilesPage() {
                   onClick={() => setCategory(item)}
                   className="px-3 py-1.5 rounded-full text-xs font-medium transition-colors"
                   style={{
-                    background: active ? "var(--color-sage-700)" : "#fff",
+                    background: active ? "#C2963A" : "#fff",
                     color: active ? "#fff" : "var(--color-sage-700)",
-                    border: `1px solid ${active ? "var(--color-sage-700)" : "var(--color-cream-300)"}`,
+                    border: `1px solid ${active ? "#C2963A" : "rgba(194,150,58,0.18)"}`,
                   }}
                 >
                   {item}

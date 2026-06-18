@@ -16,17 +16,17 @@ export default function FindAClinicianPage() {
       >
         <div className="container-fluid text-center max-w-5xl">
           <p
-            className="text-xs font-medium uppercase tracking-widest mb-5"
-            style={{ color: "var(--color-sage-600)" }}
+            className="text-[11px] font-semibold uppercase tracking-[0.28em] mb-5"
+            style={{ color: "var(--color-accent-highlight)" }}
           >
             Find a clinician
           </p>
           <h1
             className="leading-tight mb-6 max-w-2xl mx-auto"
             style={{
-              fontFamily: "var(--font-serif), Manrope, sans-serif",
+              fontFamily: "var(--font-serif), Georgia, serif",
               fontSize: "clamp(2rem, 4vw, 3rem)",
-              fontWeight: 400,
+              fontWeight: 300,
               color: "var(--color-sage-900)",
             }}
           >
@@ -43,11 +43,11 @@ export default function FindAClinicianPage() {
           <div
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm"
             style={{
-              background: "var(--color-sage-100)",
-              color: "var(--color-sage-700)",
+              background: "var(--color-sage-800)",
+              color: "#fff",
             }}
           >
-            <span className="w-1.5 h-1.5 rounded-full" style={{ background: "var(--color-sage-500)" }} />
+            <span className="w-1.5 h-1.5 rounded-full" style={{ background: "var(--color-accent-highlight)" }} />
             Launching soon
           </div>
         </div>
@@ -65,12 +65,14 @@ export default function FindAClinicianPage() {
               borderColor: "var(--color-cream-300)",
             }}
           >
-            <span className="text-3xl mb-3 block" style={{ color: "var(--color-sage-500)" }}>
+            <span className="text-3xl mb-3 block" style={{ color: "var(--color-accent-highlight)" }}>
               ◎
             </span>
             <h2
               className="section-title-strong mb-3"
               style={{
+                fontFamily: "var(--font-serif), Georgia, serif",
+                fontWeight: 300,
                 fontSize: "clamp(1.25rem, 2.5vw, 1.5rem)",
                 color: "var(--color-sage-900)",
               }}
@@ -88,7 +90,7 @@ export default function FindAClinicianPage() {
             <Link
               href="/join"
               className="inline-flex items-center justify-center px-8 py-3.5 rounded-full text-sm font-medium transition-opacity hover:opacity-90"
-              style={{ background: "var(--color-sage-700)", color: "#fff" }}
+              style={{ background: "var(--color-accent-highlight)", color: "#fff" }}
             >
               Apply for membership
             </Link>

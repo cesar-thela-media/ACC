@@ -6,30 +6,27 @@ import { usePathname } from "next/navigation";
 import { MobileSidePanel } from "@/components/layout/MobileSidePanel";
 
 const navLinks = [
-  { href: "/who-we-are", label: "Who we are" },
+  { href: "/who-we-are",   label: "Who we are" },
   { href: "/what-we-offer", label: "Membership" },
-  { href: "/coming-soon", label: "Community" },
-  { href: "/coming-soon", label: "Resources" },
+  { href: "/coming-soon",  label: "Community" },
+  { href: "/coming-soon",  label: "Resources" },
 ];
 
 export function PublicNav() {
-  const [scrolled, setScrolled] = useState(false);
+  const [scrolled, setScrolled]   = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
-
-  const isHomepage = pathname === "/";
-  const onDark = (isHomepage && !scrolled) || false;
+  const isHome = pathname === "/";
+  const onDark = isHome && !scrolled;
 
   useEffect(() => {
-    if (!isHomepage) return;
-    const handler = () => setScrolled(window.scrollY > 20);
+    if (!isHome) return;
+    const handler = () => setScrolled(window.scrollY > 24);
     window.addEventListener("scroll", handler, { passive: true });
     return () => window.removeEventListener("scroll", handler);
-  }, [isHomepage]);
+  }, [isHome]);
 
-  useEffect(() => {
-    setMobileOpen(false);
-  }, [pathname]);
+  useEffect(() => { setMobileOpen(false); }, [pathname]);
 
   return (
     <>
@@ -37,45 +34,42 @@ export function PublicNav() {
         <div
           className="transition-all duration-300"
           style={{
-            background: onDark ? "transparent" : "rgba(248,250,243,0.94)",
+            background: onDark ? "transparent" : "rgba(240,237,230,0.94)",
             backdropFilter: onDark ? "none" : "blur(20px)",
             WebkitBackdropFilter: onDark ? "none" : "blur(20px)",
-            borderBottom: onDark ? "none" : "1px solid rgba(223,227,218,0.6)",
+            borderBottom: onDark ? "none" : "1px solid rgba(194,150,58,0.14)",
           }}
         >
           <div className="max-w-7xl mx-auto px-6 h-14 flex items-center justify-between gap-8">
             {/* Logo */}
             <Link
               href="/"
-              className="text-sm font-medium shrink-0 transition-colors duration-300"
+              className="shrink-0 text-sm transition-colors duration-300"
               style={{
                 fontFamily: "var(--font-serif), Georgia, serif",
-                color: onDark ? "#fff" : "var(--color-sage-900)",
+                fontWeight: 300,
+                fontSize: "1rem",
                 letterSpacing: "0.01em",
+                color: onDark ? "#fff" : "#2D3B2C",
               }}
             >
               Austin Clinician Circle
             </Link>
 
-            {/* Desktop nav — centered with dot separators */}
+            {/* Desktop nav with dot separators */}
             <nav className="hidden md:flex items-center gap-0">
               {navLinks.map((link, i) => (
                 <span key={link.href + link.label} className="flex items-center">
                   {i > 0 && (
                     <span
-                      className="mx-3 text-xs select-none"
-                      style={{ color: onDark ? "rgba(255,255,255,0.3)" : "rgba(0,0,0,0.2)" }}
-                    >
-                      ·
-                    </span>
+                      className="mx-3 select-none text-xs"
+                      style={{ color: onDark ? "rgba(255,255,255,0.28)" : "rgba(45,59,44,0.22)" }}
+                    >·</span>
                   )}
                   <Link
                     href={link.href}
-                    className="text-sm transition-colors duration-300 hover:opacity-80"
-                    style={{
-                      color: onDark ? "rgba(255,255,255,0.82)" : "var(--color-text-secondary)",
-                      fontWeight: 400,
-                    }}
+                    className="text-sm transition-colors duration-300 hover:opacity-70"
+                    style={{ color: onDark ? "rgba(255,255,255,0.8)" : "#3D4A3B" }}
                   >
                     {link.label}
                   </Link>
@@ -84,21 +78,22 @@ export function PublicNav() {
             </nav>
 
             {/* Right actions */}
-            <div className="hidden md:flex items-center gap-4 shrink-0">
+            <div className="hidden md:flex items-center gap-5 shrink-0">
               <Link
                 href="/sign-in"
                 className="text-sm transition-colors duration-300 hover:opacity-70"
-                style={{ color: onDark ? "rgba(255,255,255,0.82)" : "var(--color-text-secondary)" }}
+                style={{ color: onDark ? "rgba(255,255,255,0.8)" : "#3D4A3B" }}
               >
                 Sign In
               </Link>
               <Link
                 href="/join"
-                className="text-sm font-medium px-5 py-2 rounded-full transition-all duration-300 hover:bg-opacity-90"
+                className="text-sm px-5 py-2 rounded-full transition-all duration-300"
                 style={{
-                  border: onDark ? "1px solid rgba(255,255,255,0.55)" : "1px solid var(--color-sage-700)",
-                  color: onDark ? "#fff" : "var(--color-sage-700)",
+                  border: onDark ? "1px solid rgba(255,255,255,0.45)" : "1px solid #C2963A",
+                  color: onDark ? "#fff" : "#C2963A",
                   background: "transparent",
+                  fontWeight: 500,
                 }}
               >
                 Join the Circle
@@ -112,11 +107,7 @@ export function PublicNav() {
               aria-label="Open menu"
             >
               {[0, 1, 2].map((n) => (
-                <span
-                  key={n}
-                  className="block w-5 h-0.5 transition-colors duration-300"
-                  style={{ background: onDark ? "#fff" : "var(--color-sage-800)" }}
-                />
+                <span key={n} className="block w-5 h-0.5" style={{ background: onDark ? "#fff" : "#2D3B2C" }} />
               ))}
             </button>
           </div>
@@ -127,64 +118,38 @@ export function PublicNav() {
         open={mobileOpen}
         onClose={() => setMobileOpen(false)}
         side="right"
-        background="rgba(28,43,33,0.98)"
+        background="rgba(45,59,44,0.98)"
         borderColor="rgba(255,255,255,0.08)"
         title={
           <div>
-            <p
-              className="text-[11px] font-medium uppercase tracking-[0.24em] mb-2"
-              style={{ color: "rgba(255,255,255,0.42)" }}
-            >
-              Navigate
-            </p>
-            <span
-              className="text-base font-medium"
-              style={{ fontFamily: "var(--font-serif), Georgia, serif", color: "#fff" }}
-            >
+            <p className="text-[10px] font-medium uppercase tracking-[0.24em] mb-2" style={{ color: "rgba(255,255,255,0.38)" }}>Navigate</p>
+            <span className="text-base" style={{ fontFamily: "var(--font-serif), Georgia, serif", fontWeight: 300, color: "#fff" }}>
               Austin Clinician Circle
             </span>
           </div>
         }
       >
-        <nav className="flex flex-col gap-2">
+        <nav className="flex flex-col gap-1.5">
           {navLinks.map((link) => (
             <Link
               key={link.href + link.label}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="px-4 py-3 rounded-2xl text-base font-medium transition-all duration-300"
+              className="px-4 py-3 rounded-xl text-base transition-all duration-200"
               style={{
-                background: pathname === link.href ? "rgba(74,93,78,0.24)" : "transparent",
-                color: pathname === link.href ? "#fff" : "rgba(255,255,255,0.84)",
+                background: pathname === link.href ? "rgba(194,150,58,0.18)" : "transparent",
+                color: pathname === link.href ? "#C2963A" : "rgba(255,255,255,0.8)",
               }}
             >
               {link.label}
             </Link>
           ))}
         </nav>
-
-        <div
-          className="mt-8 pt-6 flex flex-col gap-3"
-          style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
-        >
-          <Link
-            href="/sign-in"
-            onClick={() => setMobileOpen(false)}
-            className="text-center py-3 rounded-full text-sm font-medium border transition-all duration-300"
-            style={{ color: "#fff", borderColor: "rgba(255,255,255,0.2)" }}
-          >
+        <div className="mt-8 pt-6 flex flex-col gap-3" style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}>
+          <Link href="/sign-in" onClick={() => setMobileOpen(false)} className="text-center py-3 rounded-full text-sm border transition-all duration-200" style={{ color: "#fff", borderColor: "rgba(255,255,255,0.2)" }}>
             Sign In
           </Link>
-          <Link
-            href="/join"
-            onClick={() => setMobileOpen(false)}
-            className="text-center py-3 rounded-full text-sm font-medium transition-all duration-300"
-            style={{
-              border: "1px solid rgba(255,255,255,0.55)",
-              color: "#fff",
-              background: "transparent",
-            }}
-          >
+          <Link href="/join" onClick={() => setMobileOpen(false)} className="text-center py-3 rounded-full text-sm font-medium transition-all duration-200" style={{ border: "1px solid #C2963A", color: "#C2963A", background: "transparent" }}>
             Join the Circle
           </Link>
         </div>

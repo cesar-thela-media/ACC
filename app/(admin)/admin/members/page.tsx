@@ -64,8 +64,23 @@ export default function AdminMembersPage() {
   return (
     <div className="flex flex-col gap-8">
       <div>
-        <p className="text-eyebrow">Admin</p>
-        <h1 className="text-page-title">Members</h1>
+        <p
+          className="text-[11px] font-medium uppercase tracking-[0.2em] mb-1"
+          style={{ color: "#C2963A" }}
+        >
+          Admin
+        </p>
+        <h1
+          style={{
+            fontFamily: "var(--font-serif), Georgia, serif",
+            fontWeight: 300,
+            fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
+            color: "var(--color-sage-800)",
+            lineHeight: 1.15,
+          }}
+        >
+          Members
+        </h1>
       </div>
 
       {/* Toolbar */}
@@ -75,8 +90,14 @@ export default function AdminMembersPage() {
           placeholder="Search by name or email..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="flex-1 px-4 py-2.5 text-sm rounded-lg border outline-none"
-          style={{ borderColor: "var(--color-cream-400)", background: "#fff", color: "var(--color-text-primary)" }}
+          className="flex-1 px-4 py-2.5 text-sm rounded-lg border outline-none transition-colors"
+          style={{
+            borderColor: "rgba(194,150,58,0.20)",
+            background: "#fff",
+            color: "var(--color-text-primary)",
+          }}
+          onFocus={(e) => { e.currentTarget.style.borderColor = "#C2963A"; }}
+          onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(194,150,58,0.20)"; }}
         />
         <div className="flex gap-2 flex-wrap">
           {(["all", "active", "inactive", "suspended"] as const).map((s) => (
@@ -85,9 +106,9 @@ export default function AdminMembersPage() {
               onClick={() => setStatusFilter(s)}
               className="px-3 py-1.5 rounded text-xs font-medium capitalize transition-colors"
               style={{
-                background: statusFilter === s ? "var(--color-sage-700)" : "var(--color-sage-50)",
+                background: statusFilter === s ? "#C2963A" : "var(--color-cream-100)",
                 color: statusFilter === s ? "#fff" : "var(--color-sage-700)",
-                border: statusFilter === s ? "none" : "1px solid var(--color-cream-300)",
+                border: statusFilter === s ? "none" : "1px solid rgba(194,150,58,0.20)",
               }}
             >
               {s === "all" ? "All" : STATUS_LABELS[s]}
@@ -100,20 +121,20 @@ export default function AdminMembersPage() {
         {filtered.length} member{filtered.length !== 1 ? "s" : ""}
       </p>
 
-      {/* Table */}
+      {/* Mobile cards */}
       {filtered.length > 0 && (
         <div className="md:hidden flex flex-col gap-3">
           {filtered.map((m) => (
             <div
               key={m.id}
               className="rounded-2xl border bg-white p-4 flex flex-col gap-4"
-              style={{ borderColor: "var(--color-cream-300)" }}
+              style={{ borderColor: "rgba(194,150,58,0.12)" }}
             >
               <div className="flex items-start justify-between gap-3">
                 <div className="flex items-center gap-3">
                   <div
                     className="w-9 h-9 rounded-full flex items-center justify-center text-xs font-medium shrink-0"
-                    style={{ background: "var(--color-sage-100)", color: "var(--color-sage-600)" }}
+                    style={{ background: "rgba(194,150,58,0.10)", color: "#C2963A" }}
                   >
                     {m.name.charAt(0)}
                   </div>
@@ -134,7 +155,7 @@ export default function AdminMembersPage() {
               <div className="flex flex-wrap items-center gap-4">
                 <button
                   className="text-xs underline"
-                  style={{ color: "var(--color-sage-700)", textUnderlineOffset: "3px" }}
+                  style={{ color: "#C2963A", textUnderlineOffset: "3px" }}
                 >
                   View
                 </button>
@@ -160,34 +181,40 @@ export default function AdminMembersPage() {
         </div>
       )}
 
+      {/* Desktop table */}
       <div
         className="hidden md:block rounded-2xl border overflow-hidden bg-white"
-        style={{ borderColor: "var(--color-cream-300)" }}
+        style={{ borderColor: "rgba(194,150,58,0.12)" }}
       >
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
-              <tr style={{ borderBottom: "1px solid var(--color-cream-300)", background: "var(--color-cream-100)" }}>
+              <tr style={{ borderBottom: "1px solid rgba(194,150,58,0.12)", background: "var(--color-cream-100)" }}>
                 <th
-                  className="text-left px-5 py-3 text-xs font-semibold cursor-pointer select-none hover:opacity-70 transition-opacity"
-                  style={{ color: "var(--color-text-tertiary)" }}
+                  className="text-left px-5 py-3 text-[11px] font-semibold uppercase tracking-[0.2em] cursor-pointer select-none hover:opacity-70 transition-opacity"
+                  style={{ color: "#C2963A" }}
                   onClick={() => toggleSort("name")}
                 >
                   Name
                   <SortIcon active={sortKey === "name"} dir={sortDir} />
                 </th>
-                <th className="text-left px-5 py-3 text-xs font-semibold" style={{ color: "var(--color-text-tertiary)" }}>Email</th>
                 <th
-                  className="text-left px-5 py-3 text-xs font-semibold cursor-pointer select-none hover:opacity-70 transition-opacity"
-                  style={{ color: "var(--color-text-tertiary)" }}
+                  className="text-left px-5 py-3 text-[11px] font-semibold uppercase tracking-[0.2em]"
+                  style={{ color: "#C2963A" }}
+                >
+                  Email
+                </th>
+                <th
+                  className="text-left px-5 py-3 text-[11px] font-semibold uppercase tracking-[0.2em] cursor-pointer select-none hover:opacity-70 transition-opacity"
+                  style={{ color: "#C2963A" }}
                   onClick={() => toggleSort("joined")}
                 >
                   Joined
                   <SortIcon active={sortKey === "joined"} dir={sortDir} />
                 </th>
                 <th
-                  className="text-left px-5 py-3 text-xs font-semibold cursor-pointer select-none hover:opacity-70 transition-opacity"
-                  style={{ color: "var(--color-text-tertiary)" }}
+                  className="text-left px-5 py-3 text-[11px] font-semibold uppercase tracking-[0.2em] cursor-pointer select-none hover:opacity-70 transition-opacity"
+                  style={{ color: "#C2963A" }}
                   onClick={() => toggleSort("status")}
                 >
                   Status
@@ -200,14 +227,18 @@ export default function AdminMembersPage() {
               {filtered.map((m, i) => (
                 <tr
                   key={m.id}
-                  className="transition-colors duration-150 hover:bg-[var(--color-sage-50)]"
-                  style={{ borderBottom: i < filtered.length - 1 ? "1px solid var(--color-cream-200)" : "none" }}
+                  className="transition-colors duration-150"
+                  style={{
+                    borderBottom: i < filtered.length - 1 ? "1px solid rgba(194,150,58,0.08)" : "none",
+                  }}
+                  onMouseEnter={(e) => { (e.currentTarget as HTMLTableRowElement).style.background = "rgba(194,150,58,0.04)"; }}
+                  onMouseLeave={(e) => { (e.currentTarget as HTMLTableRowElement).style.background = ""; }}
                 >
                   <td className="px-5 py-3.5">
                     <div className="flex items-center gap-3">
                       <div
                         className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-medium shrink-0"
-                        style={{ background: "var(--color-sage-100)", color: "var(--color-sage-600)" }}
+                        style={{ background: "rgba(194,150,58,0.10)", color: "#C2963A" }}
                       >
                         {m.name.charAt(0)}
                       </div>
@@ -231,7 +262,7 @@ export default function AdminMembersPage() {
                     <div className="flex items-center justify-end gap-3">
                       <button
                         className="text-xs underline"
-                        style={{ color: "var(--color-sage-700)", textUnderlineOffset: "3px" }}
+                        style={{ color: "#C2963A", textUnderlineOffset: "3px" }}
                       >
                         View
                       </button>
@@ -267,7 +298,7 @@ export default function AdminMembersPage() {
           <button
             onClick={() => { setSearch(""); setStatusFilter("all"); }}
             className="text-xs font-medium underline"
-            style={{ color: "var(--color-sage-700)", textUnderlineOffset: "3px" }}
+            style={{ color: "#C2963A", textUnderlineOffset: "3px" }}
           >
             Reset all filters
           </button>

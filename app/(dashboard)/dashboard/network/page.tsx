@@ -96,9 +96,9 @@ export default function NetworkPage() {
                 onClick={() => setSelectedSpecialty(specialty)}
                 className="px-3 py-1.5 rounded-full text-xs font-medium transition-colors"
                 style={{
-                  background: active ? "var(--color-sage-700)" : "#fff",
+                  background: active ? "#C2963A" : "#fff",
                   color: active ? "#fff" : "var(--color-sage-700)",
-                  border: `1px solid ${active ? "var(--color-sage-700)" : "var(--color-cream-300)"}`,
+                  border: `1px solid ${active ? "#C2963A" : "rgba(194,150,58,0.18)"}`,
                 }}
               >
                 {specialty}
@@ -122,9 +122,9 @@ export default function NetworkPage() {
                 onClick={() => setSort(option.value)}
                 className="px-3 py-1.5 rounded-full text-xs font-medium transition-colors"
                 style={{
-                  background: active ? "var(--color-sage-700)" : "#fff",
+                  background: active ? "#C2963A" : "#fff",
                   color: active ? "#fff" : "var(--color-sage-700)",
-                  border: `1px solid ${active ? "var(--color-sage-700)" : "var(--color-cream-300)"}`,
+                  border: `1px solid ${active ? "#C2963A" : "rgba(194,150,58,0.18)"}`,
                 }}
               >
                 {option.label}
@@ -141,7 +141,7 @@ export default function NetworkPage() {
         <div
           onClick={() => setAcceptingOnly((value) => !value)}
           className="w-10 h-6 rounded-full transition-colors flex items-center px-0.5 cursor-pointer"
-          style={{ background: acceptingOnly ? "var(--color-sage-700)" : "var(--color-cream-400)" }}
+          style={{ background: acceptingOnly ? "#C2963A" : "var(--color-cream-400)" }}
         >
           <div
             className="w-5 h-5 rounded-full bg-white shadow transition-transform"
@@ -171,7 +171,7 @@ export default function NetworkPage() {
             { value: totalReferrals, label: "Referrals this month" },
           ].map((stat) => (
             <Card key={stat.label} className="flex flex-col gap-1">
-              <p className="text-3xl font-light" style={{ fontFamily: "var(--font-serif), Manrope, sans-serif", color: "var(--color-sage-700)" }}>
+              <p className="text-3xl font-light" style={{ fontFamily: "var(--font-serif), Georgia, serif", fontWeight: 300, color: "var(--color-sage-700)" }}>
                 {stat.value}
               </p>
               <p className="text-xs" style={{ color: "var(--color-text-tertiary)" }}>{stat.label}</p>
@@ -199,7 +199,7 @@ export default function NetworkPage() {
             type="button"
             onClick={() => setMobileFiltersOpen(true)}
             className="lg:hidden px-5 py-3 rounded-full text-sm font-medium"
-            style={{ background: "var(--color-sage-700)", color: "#fff" }}
+            style={{ background: "#C2963A", color: "#fff" }}
           >
             Filters
           </button>
@@ -312,9 +312,9 @@ export default function NetworkPage() {
                       onClick={() => setSort(option.value)}
                       className="px-3 py-1.5 rounded-full text-xs font-medium transition-colors"
                       style={{
-                        background: active ? "var(--color-sage-700)" : "var(--color-sage-50)",
+                        background: active ? "#C2963A" : "var(--color-sage-50)",
                         color: active ? "#fff" : "var(--color-sage-700)",
-                        border: active ? "none" : "1px solid var(--color-cream-300)",
+                        border: active ? "none" : "1px solid rgba(194,150,58,0.18)",
                       }}
                     >
                       {option.label}
@@ -440,7 +440,7 @@ export default function NetworkPage() {
         side="right"
         hideAbove="lg"
         background="var(--color-cream-100)"
-        borderColor="rgba(197,200,190,0.7)"
+        borderColor="rgba(194,150,58,0.15)"
         titleColor="var(--color-sage-900)"
         closeColor="var(--color-text-secondary)"
         title={
@@ -466,7 +466,7 @@ export default function NetworkPage() {
               type="button"
               onClick={() => setMobileFiltersOpen(false)}
               className="w-full py-3 rounded-full text-sm font-medium"
-              style={{ background: "var(--color-sage-700)", color: "#fff" }}
+              style={{ background: "#C2963A", color: "#fff" }}
             >
               Show {filteredMembers.length} member{filteredMembers.length !== 1 ? "s" : ""}
             </button>
@@ -477,7 +477,7 @@ export default function NetworkPage() {
                 setMobileFiltersOpen(false);
               }}
               className="w-full py-3 rounded-full text-sm font-medium"
-              style={{ background: "#fff", color: "var(--color-sage-700)", border: "1px solid var(--color-cream-300)" }}
+              style={{ background: "#fff", color: "var(--color-sage-700)", border: "1px solid rgba(194,150,58,0.18)" }}
             >
               Clear filters
             </button>

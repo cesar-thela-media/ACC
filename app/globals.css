@@ -1,286 +1,262 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* Fonts */
   --font-serif: var(--font-serif);
-  --font-sans: var(--font-sans);
+  --font-sans:  var(--font-sans);
 
-  /* Brand palette — sage earth */
-  --color-sage-50:  #F3F6F4;
-  --color-sage-100: #E4EBE6;
-  --color-sage-500: #6B8572;
-  --color-sage-600: #5A7060;
-  --color-sage-700: #4A5D4E;
-  --color-sage-800: #3B4D3F;
-  --color-sage-900: #1B1B1B;
+  /* ── Sage palette (reference-exact) ─────────────────────── */
+  --color-sage-50:  #F2F5F2;
+  --color-sage-100: #D8E0D8;
+  --color-sage-500: #6B8A69;
+  --color-sage-600: #4A5E48;   /* section-2 mid-sage  */
+  --color-sage-700: #3D4F3B;   /* hover/active states  */
+  --color-sage-800: #2D3B2C;   /* hero · footer · CTA  */
+  --color-sage-900: #1A1A1A;   /* body text            */
 
-  /* Surface / Cream palette — botanical sage tint */
-  --color-cream-100: #F8FAF3;
-  --color-cream-200: #ECEFE8;
-  --color-cream-300: #DFE3DA;
-  --color-cream-400: #C5C8BE;
+  /* ── Parchment surfaces ──────────────────────────────────── */
+  --color-cream-100: #F0EDE6;   /* sections 3-5 parchment */
+  --color-cream-200: #E7E3DA;
+  --color-cream-300: #D8D3C8;
+  --color-cream-400: #C2BDB0;
 
-  /* Surface aliases (semantic) */
-  --color-surface:      #F8FAF3;
-  --color-surface-low:  #ECEFE8;
+  /* ── Surface aliases ─────────────────────────────────────── */
+  --color-surface:      #F0EDE6;
+  --color-surface-low:  #E7E3DA;
   --color-surface-card: #FFFFFF;
 
-  /* Text */
-  --color-text-primary:       #1B1B1B;
-  --color-text-secondary:     #444841;
-  --color-text-tertiary:      #75796E;
+  /* ── Text ────────────────────────────────────────────────── */
+  --color-text-primary:       #1A1A1A;
+  --color-text-secondary:     #3D4A3B;
+  --color-text-tertiary:      #7A7A6E;
   --color-text-inverse:       #FFFFFF;
   --color-text-inverse-muted: rgba(255,255,255,0.65);
 
-  /* Accent system */
-  --color-accent-secondary:      #F9D251;
-  --color-accent-secondary-rgb:  249, 210, 81;
-  --color-accent-highlight:      #F9D251;
-  --color-accent-highlight-rgb:  249, 210, 81;
+  /* ── Accent: muted warm amber ────────────────────────────── */
+  --color-accent-highlight:     #C2963A;
+  --color-accent-highlight-rgb: 194, 150, 58;
+  --color-accent-secondary:     #C2963A;
+  --color-accent-secondary-rgb: 194, 150, 58;
 
-  /* Legacy accent aliases */
-  --color-gold:        var(--color-accent-highlight);
-  --color-terracotta:  var(--color-accent-secondary);
-  --color-blush:       rgba(var(--color-accent-secondary-rgb), 0.12);
-  --color-blush-dark:  rgba(var(--color-accent-highlight-rgb), 0.28);
+  /* Legacy aliases */
+  --color-gold:      var(--color-accent-highlight);
+  --color-terracota: var(--color-accent-secondary);
 
-  /* Functional */
+  /* ── Functional ──────────────────────────────────────────── */
   --color-error:   #B54B4B;
   --color-success: #4A7C59;
-  --color-warning: #F9D251;
+  --color-warning: #C2963A;
   --color-info:    #4A6F8C;
 
-  /* Radius */
+  /* ── Radius ──────────────────────────────────────────────── */
   --radius-sm:   6px;
   --radius-md:   10px;
   --radius-lg:   16px;
   --radius-xl:   24px;
   --radius-full: 9999px;
 
-  /* Shadows — sage-tinted ambient */
-  --shadow-xs: 0 1px 3px rgba(74, 93, 78, 0.06);
-  --shadow-sm: 0 2px 8px rgba(74, 93, 78, 0.07);
-  --shadow-md: 0 4px 20px rgba(74, 93, 78, 0.09);
-  --shadow-lg: 0 8px 36px rgba(74, 93, 78, 0.11);
-  --shadow-xl: 0 16px 56px rgba(74, 93, 78, 0.13);
+  /* ── Shadows — warm sage-tinted ──────────────────────────── */
+  --shadow-xs: 0 1px 3px  rgba(45,59,44,0.06);
+  --shadow-sm: 0 2px 8px  rgba(45,59,44,0.08);
+  --shadow-md: 0 4px 20px rgba(45,59,44,0.10);
+  --shadow-lg: 0 8px 36px rgba(45,59,44,0.12);
+  --shadow-xl: 0 16px 56px rgba(45,59,44,0.14);
+  --shadow-card: 0 4px 24px rgba(45,59,44,0.10), 0 1px 4px rgba(45,59,44,0.06);
 }
 
+/* ── :root custom props ──────────────────────────────────────── */
 :root {
-  --color-accent-surface-warm: rgba(var(--color-accent-secondary-rgb), 0.14);
-  --color-accent-surface-soft: rgba(var(--color-accent-secondary-rgb), 0.08);
-  --color-accent-surface-highlight: rgba(var(--color-accent-highlight-rgb), 0.18);
-  --color-admin-sidebar: var(--color-accent-secondary);
-  --color-admin-sidebar-rgb: var(--color-accent-secondary-rgb);
-  --color-hero-tagline: var(--color-sage-500);
-  --color-text-accent-primary: var(--color-sage-600);
-  --color-text-accent-highlight: var(--color-accent-highlight);
+  --color-hero-bg:  #2D3B2C;
+  --color-hero-tagline: #C2963A;
+  --color-section-2-bg: #4A5E48;
+  --color-parchment: #F0EDE6;
+  --color-amber:     #C2963A;
+  --color-amber-rgb: 194, 150, 58;
 
-  /* ─── Typography tokens ────────────────────────────────────── */
-  --text-hero: clamp(2.5rem, 5vw, 4rem);
-  --text-display: clamp(2rem, 4vw, 3rem);
-  --text-heading: clamp(1.5rem, 2.5vw, 2rem);
-  --text-subheading: clamp(1.125rem, 1.5vw, 1.25rem);
-  --text-title: 1rem;
-  --text-body: 0.875rem;
-  --text-small: 0.75rem;
-  --text-tiny: 0.6875rem;
+  --color-admin-sidebar:     #C2963A;
+  --color-admin-sidebar-rgb: 194, 150, 58;
+
+  --color-text-accent-primary:    #4A5E48;
+  --color-text-accent-highlight:  #C2963A;
+
+  /* ── Typography tokens ──────────────────────────────────── */
+  --text-hero:       clamp(2.75rem, 7vw, 6rem);
+  --text-display:    clamp(2rem, 4.5vw, 3.5rem);
+  --text-heading:    clamp(1.5rem, 2.5vw, 2.25rem);
+  --text-subheading: clamp(1.125rem, 1.5vw, 1.375rem);
+  --text-title:      1rem;
+  --text-body:       0.875rem;
+  --text-small:      0.75rem;
+  --text-tiny:       0.6875rem;
 }
 
-/* ─── Typography utility classes ─────────────────────────────────── */
+/* ── Typography utility classes ──────────────────────────────── */
 .text-eyebrow {
-  font-size: var(--text-small);
+  font-size: 11px;
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.22em;
+  color: var(--color-amber);
 }
+
+.text-display-serif {
+  font-family: var(--font-serif), Georgia, serif;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.06;
+}
+
 .text-page-title {
   font-family: var(--font-serif), Georgia, serif;
   font-size: var(--text-display);
-  font-weight: 400;
+  font-weight: 300;
   color: var(--color-text-primary);
 }
+
 .text-section-title {
   font-family: var(--font-serif), Georgia, serif;
   font-size: var(--text-heading);
-  font-weight: 400;
+  font-weight: 300;
   color: var(--color-sage-900);
+  letter-spacing: -0.015em;
+  line-height: 1.15;
 }
+
 .text-card-title {
   font-size: var(--text-title);
   font-weight: 600;
   color: var(--color-sage-800);
 }
+
 .text-body-secondary {
   font-size: var(--text-body);
   color: var(--color-text-secondary);
 }
 
-body {
-  background-color: var(--color-surface);
-  color: var(--color-text-primary);
-  font-family: var(--font-sans), "Segoe UI", Helvetica, Arial, sans-serif;
-  font-size: clamp(0.875rem, 0.8rem + 0.25vw, 1.05rem);
-}
-
 .section-title-strong {
   font-family: var(--font-serif), Georgia, serif;
-  font-weight: 400;
-  letter-spacing: -0.01em;
-  line-height: 1.12;
+  font-weight: 300;
+  letter-spacing: -0.018em;
+  line-height: 1.1;
 }
 
-/* Slower, breath-like transitions on interactive elements */
-button,
-a {
-  transition-duration: 300ms;
+/* ── Base ────────────────────────────────────────────────────── */
+body {
+  background-color: var(--color-parchment);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans), "DM Sans", "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: clamp(0.875rem, 0.82rem + 0.2vw, 1rem);
+  -webkit-font-smoothing: antialiased;
+}
+
+button, a {
+  transition-duration: 280ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ─── Keyframe animations ─────────────────────────────────────────────── */
-
+/* ── Keyframe animations ─────────────────────────────────────── */
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
+  from { opacity: 0; transform: translateY(28px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-
 @keyframes fadeIn {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
-
 @keyframes slideInLeft {
   from { opacity: 0; transform: translateX(-32px); }
   to   { opacity: 1; transform: translateX(0); }
 }
-
 @keyframes slideInRight {
   from { opacity: 0; transform: translateX(32px); }
   to   { opacity: 1; transform: translateX(0); }
 }
-
 @keyframes scaleIn {
   from { opacity: 0; transform: scale(0.93); }
   to   { opacity: 1; transform: scale(1); }
 }
-
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50%       { transform: translateY(-10px); }
 }
-
 @keyframes pulseDot {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50%       { opacity: 0.45; transform: scale(0.75); }
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
 }
-
 @keyframes shimmer {
   0%   { background-position: -600px 0; }
   100% { background-position: 600px 0; }
 }
 
-/* ─── Utility animation classes ───────────────────────────────────────── */
-
 .animate-float     { animation: float 4s ease-in-out infinite; }
 .animate-pulse-dot { animation: pulseDot 2.2s ease-in-out infinite; }
 
-/* ─── Scroll-triggered (data-aos) ────────────────────────────────────── */
-
+/* ── Scroll-triggered (data-aos) ─────────────────────────────── */
 [data-aos] {
   opacity: 0;
-  transform: translateY(28px);
+  transform: translateY(24px);
   transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
               transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
-  /* Safety: if JS never runs, reveal after 3s */
   animation: aosFailsafe 0s 3s forwards;
 }
-
 @keyframes aosFailsafe {
   to { opacity: 1; transform: none; }
 }
-
 [data-aos="fade-in"]     { transform: none; }
-[data-aos="fade-in-up"]  { transform: translateY(28px); }
-[data-aos="slide-left"]  { transform: translateX(-32px); }
-[data-aos="slide-right"] { transform: translateX(32px); }
-[data-aos="scale-in"]    { transform: scale(0.93); }
-
+[data-aos="fade-in-up"]  { transform: translateY(24px); }
+[data-aos="slide-left"]  { transform: translateX(-28px); }
+[data-aos="slide-right"] { transform: translateX(28px); }
+[data-aos="scale-in"]    { transform: scale(0.94); }
 [data-aos].aos-visible {
   opacity: 1 !important;
   transform: none !important;
   animation: none !important;
 }
-
+[data-delay="80"]  { transition-delay: 0.08s; }
 [data-delay="100"] { transition-delay: 0.10s; }
 [data-delay="150"] { transition-delay: 0.15s; }
+[data-delay="180"] { transition-delay: 0.18s; }
 [data-delay="200"] { transition-delay: 0.20s; }
+[data-delay="260"] { transition-delay: 0.26s; }
 [data-delay="300"] { transition-delay: 0.30s; }
+[data-delay="340"] { transition-delay: 0.34s; }
 [data-delay="400"] { transition-delay: 0.40s; }
 [data-delay="500"] { transition-delay: 0.50s; }
-[data-delay="600"] { transition-delay: 0.60s; }
-[data-delay="700"] { transition-delay: 0.70s; }
-[data-delay="800"] { transition-delay: 0.80s; }
 
-/* ─── Accessibility ──────────────────────────────────────────────────── */
-
-@custom-media --motion-ok (prefers-reduced-motion: no-preference);
-
-/* Focus-visible ring for keyboard navigation */
+/* ── Accessibility ───────────────────────────────────────────── */
 :focus-visible {
-  outline: 2px solid var(--color-sage-500);
+  outline: 2px solid var(--color-amber);
   outline-offset: 2px;
   border-radius: var(--radius-sm);
 }
+:focus:not(:focus-visible) { outline: none; }
 
-/* Remove focus ring for mouse clicks (keeps :focus-visible only) */
-:focus:not(:focus-visible) {
-  outline: none;
-}
+/* ── Fluid grid ─────────────────────────────────────────────── */
+.grid-fluid-sm { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+.grid-fluid-md { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.25rem; }
+.grid-fluid-lg { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.5rem; }
 
-/* ─── Fluid grid: auto-fills columns as container widens ──────── */
-.grid-fluid-sm {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 1rem;
-}
-.grid-fluid-md {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1.25rem;
-}
-.grid-fluid-lg {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-  gap: 1.5rem;
-}
-
-/* ─── Fluid container: scales with viewport, capped at ultra-wide ──── */
+/* ── Container ───────────────────────────────────────────────── */
 .container-fluid {
   width: 100%;
-  max-width: min(92vw, 1600px);
+  max-width: min(92vw, 1280px);
   margin-left: auto;
   margin-right: auto;
   padding-left: clamp(1rem, 3vw, 2rem);
   padding-right: clamp(1rem, 3vw, 2rem);
 }
 
-/* ─── Section padding that scales ──── */
+/* ── Section padding ─────────────────────────────────────────── */
 .section-pad {
-  padding-top: clamp(3rem, 6vw, 6rem);
-  padding-bottom: clamp(3rem, 6vw, 6rem);
+  padding-top: clamp(3.5rem, 7vw, 6.5rem);
+  padding-bottom: clamp(3.5rem, 7vw, 6.5rem);
 }
 
-/* Respect reduced motion */
+/* ── Reduced motion ──────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-
-  [data-aos] {
-    opacity: 1 !important;
-    transform: none !important;
-  }
+  [data-aos] { opacity: 1 !important; transform: none !important; }
 }

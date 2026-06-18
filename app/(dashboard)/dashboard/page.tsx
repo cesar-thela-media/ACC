@@ -58,7 +58,7 @@ export default function DashboardPage() {
             className="rounded-2xl px-5 py-4 flex items-center gap-4 transition-all duration-300 hover:-translate-y-0.5 no-underline group"
             style={{
               background: "var(--color-cream-100)",
-              border: "1px solid var(--color-cream-300)",
+              border: "1px solid rgba(194,150,58,0.12)",
             }}
           >
             <span
@@ -135,7 +135,7 @@ export default function DashboardPage() {
               <div
                 key={ev.title}
                 className="flex items-start justify-between gap-4 pb-4 border-b last:border-0 last:pb-0"
-                style={{ borderColor: "rgba(197,200,190,0.5)" }}
+                style={{ borderColor: "rgba(194,150,58,0.12)" }}
               >
                 <div>
                   <p
@@ -185,7 +185,7 @@ export default function DashboardPage() {
               <div
                 key={r.title}
                 className="flex items-center justify-between gap-4 pb-4 border-b last:border-0 last:pb-0"
-                style={{ borderColor: "rgba(197,200,190,0.5)" }}
+                style={{ borderColor: "rgba(194,150,58,0.12)" }}
               >
                 <p
                   className="text-sm"
@@ -203,7 +203,7 @@ export default function DashboardPage() {
       {/* Membership status */}
       <Card
         className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
-        style={{ border: "1px solid rgba(197,200,190,0.65)", background: "var(--color-cream-100)" }}
+        style={{ border: "1px solid rgba(194,150,58,0.15)", background: "var(--color-cream-100)" }}
       >
         <div>
           <p

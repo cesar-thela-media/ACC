@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
-import { Cormorant_Garamond, DM_Sans } from "next/font/google";
+import { Cormorant, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { AosInit } from "@/components/AosInit";
 import { hasClerkCredentials } from "@/lib/env";
 
-const cormorant = Cormorant_Garamond({
+/* Cormorant — ultra-thin high-contrast display serif (weight 300 = hairline) */
+const cormorant = Cormorant({
   variable: "--font-serif",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600"],
@@ -13,6 +14,7 @@ const cormorant = Cormorant_Garamond({
   display: "swap",
 });
 
+/* DM Sans — clean humanist sans for body & UI */
 const dmSans = DM_Sans({
   variable: "--font-sans",
   subsets: ["latin"],
@@ -23,14 +25,12 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "Austin Clinician Circle",
   description:
-    "Austin Clinician Circle is a membership network for licensed clinicians in Austin, TX. Deepen your work. Find your people.",
+    "Austin Clinician Circle — a membership community for licensed clinicians in Austin, TX. Deepen your work. Find your people.",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   const appShell = (
     <>
       <AosInit />

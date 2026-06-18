@@ -100,7 +100,7 @@ export default function ProfilePage() {
           </div>
         </section>
 
-        <hr style={{ borderColor: "rgba(197,200,190,0.5)" }} />
+        <hr style={{ borderColor: "rgba(194,150,58,0.12)" }} />
 
         {/* Basic info */}
         <section className="flex flex-col gap-4">
@@ -113,7 +113,7 @@ export default function ProfilePage() {
           <Input label="City, State" defaultValue="Austin, TX" name="city" hint="Displayed publicly on your profile." />
         </section>
 
-        <hr style={{ borderColor: "rgba(197,200,190,0.5)" }} />
+        <hr style={{ borderColor: "rgba(194,150,58,0.12)" }} />
 
         {/* Credentials */}
         <section className="flex flex-col gap-4">
@@ -128,9 +128,9 @@ export default function ProfilePage() {
                   onClick={() => setLicenseType(l)}
                   className="px-4 py-1.5 rounded-full text-xs font-medium transition-colors"
                   style={{
-                    background: licenseType === l ? "var(--color-sage-700)" : "#fff",
+                    background: licenseType === l ? "#C2963A" : "#fff",
                     color: licenseType === l ? "#fff" : "var(--color-sage-700)",
-                    border: `1px solid ${licenseType === l ? "var(--color-sage-700)" : "var(--color-cream-300)"}`,
+                    border: `1px solid ${licenseType === l ? "#C2963A" : "rgba(194,150,58,0.18)"}`,
                   }}
                 >{l}</button>
               ))}
@@ -140,7 +140,7 @@ export default function ProfilePage() {
           <Input label="Supervising clinician (if applicable)" placeholder="Name, credentials" name="supervisor" />
         </section>
 
-        <hr style={{ borderColor: "rgba(197,200,190,0.5)" }} />
+        <hr style={{ borderColor: "rgba(194,150,58,0.12)" }} />
 
         {/* Bio & specialties */}
         <section className="flex flex-col gap-4">
@@ -166,9 +166,9 @@ export default function ProfilePage() {
                     onClick={() => toggleSpecialty(s)}
                     className="px-3 py-1 rounded-full text-xs font-medium transition-colors"
                     style={{
-                      background: sel ? "var(--color-sage-700)" : "#fff",
+                      background: sel ? "#C2963A" : "#fff",
                       color: sel ? "#fff" : "var(--color-sage-700)",
-                      border: `1px solid ${sel ? "var(--color-sage-700)" : "var(--color-cream-300)"}`,
+                      border: `1px solid ${sel ? "#C2963A" : "rgba(194,150,58,0.18)"}`,
                     }}
                   >{s}</button>
                 );
@@ -177,7 +177,7 @@ export default function ProfilePage() {
           </div>
         </section>
 
-        <hr style={{ borderColor: "rgba(197,200,190,0.5)" }} />
+        <hr style={{ borderColor: "rgba(194,150,58,0.12)" }} />
 
         {/* Availability */}
         <section className="flex flex-col gap-4">
@@ -192,9 +192,9 @@ export default function ProfilePage() {
                   onClick={() => setFormat(f)}
                   className="px-4 py-1.5 rounded-full text-xs font-medium transition-colors"
                   style={{
-                    background: format === f ? "var(--color-sage-700)" : "#fff",
+                    background: format === f ? "#C2963A" : "#fff",
                     color: format === f ? "#fff" : "var(--color-sage-700)",
-                    border: `1px solid ${format === f ? "var(--color-sage-700)" : "var(--color-cream-300)"}`,
+                    border: `1px solid ${format === f ? "#C2963A" : "rgba(194,150,58,0.18)"}`,
                   }}
                 >{f}</button>
               ))}
@@ -216,7 +216,7 @@ export default function ProfilePage() {
               aria-checked={accepting}
               onClick={() => setAccepting((v) => !v)}
               className="relative w-10 h-6 rounded-full transition-colors"
-              style={{ background: accepting ? "var(--color-sage-700)" : "var(--color-cream-400)" }}
+              style={{ background: accepting ? "#C2963A" : "var(--color-cream-400)" }}
             >
               <span
                 className="absolute top-1 left-1 w-4 h-4 rounded-full bg-white transition-transform"

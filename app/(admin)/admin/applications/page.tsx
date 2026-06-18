@@ -96,8 +96,23 @@ export default function AdminApplicationsPage() {
   return (
     <div className="flex flex-col gap-8">
       <div>
-        <p className="text-eyebrow">Admin</p>
-        <h1 className="text-page-title">Applications</h1>
+        <p
+          className="text-[11px] font-medium uppercase tracking-[0.2em] mb-1"
+          style={{ color: "#C2963A" }}
+        >
+          Admin
+        </p>
+        <h1
+          style={{
+            fontFamily: "var(--font-serif), Georgia, serif",
+            fontWeight: 300,
+            fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
+            color: "var(--color-sage-800)",
+            lineHeight: 1.15,
+          }}
+        >
+          Applications
+        </h1>
       </div>
 
       {/* Filter tabs */}
@@ -110,9 +125,9 @@ export default function AdminApplicationsPage() {
               onClick={() => setFilter(f)}
               className="px-3 py-1.5 rounded text-xs font-medium capitalize transition-colors"
               style={{
-                background: filter === f ? "var(--color-sage-700)" : "var(--color-sage-50)",
+                background: filter === f ? "#C2963A" : "var(--color-cream-100)",
                 color: filter === f ? "#fff" : "var(--color-sage-700)",
-                border: filter === f ? "none" : "1px solid var(--color-cream-300)",
+                border: filter === f ? "none" : "1px solid rgba(194,150,58,0.20)",
               }}
             >
               {f === "all" ? "All" : f.charAt(0).toUpperCase() + f.slice(1)} ({count})
@@ -131,23 +146,33 @@ export default function AdminApplicationsPage() {
               key={app.id}
               className="bg-white rounded-2xl border overflow-hidden transition-all duration-200"
               style={{
-                borderColor: "var(--color-cream-300)",
-                boxShadow: isExpanded ? "0 4px 20px rgba(74,93,78,0.08)" : "none",
+                borderColor: "rgba(194,150,58,0.12)",
+                boxShadow: isExpanded ? "0 4px 20px rgba(194,150,58,0.08)" : "none",
               }}
             >
               <button
-                className="w-full text-left px-6 py-5 flex items-start justify-between gap-4 transition-colors duration-150 hover:bg-[var(--color-sage-50)]"
+                className="w-full text-left px-6 py-5 flex items-start justify-between gap-4 transition-colors duration-150"
+                style={{}}
+                onMouseEnter={(e) => { (e.currentTarget as HTMLButtonElement).style.background = "rgba(194,150,58,0.03)"; }}
+                onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.background = ""; }}
                 onClick={() => setExpanded(isExpanded ? null : app.id)}
               >
                 <div className="flex items-center gap-4">
                   <div
                     className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-medium shrink-0"
-                    style={{ background: "var(--color-sage-100)", color: "var(--color-sage-600)" }}
+                    style={{ background: "rgba(194,150,58,0.10)", color: "#C2963A" }}
                   >
                     {app.name.charAt(0)}
                   </div>
                   <div>
-                    <p className="text-base font-semibold" style={{ color: "var(--color-sage-800)" }}>
+                    <p
+                      className="text-base"
+                      style={{
+                        fontFamily: "var(--font-serif), Georgia, serif",
+                        fontWeight: 300,
+                        color: "var(--color-sage-800)",
+                      }}
+                    >
                       {app.name}, {app.credentials}
                     </p>
                     <p className="text-xs mt-0.5" style={{ color: "var(--color-text-tertiary)" }}>
@@ -176,35 +201,59 @@ export default function AdminApplicationsPage() {
               {isExpanded && (
                 <div
                   className="px-6 pb-6 border-t pt-5 flex flex-col gap-5"
-                  style={{ borderColor: "var(--color-cream-200)" }}
+                  style={{ borderColor: "rgba(194,150,58,0.10)" }}
                 >
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
                     <div>
-                      <p className="text-xs font-semibold uppercase tracking-wide mb-1" style={{ color: "var(--color-text-tertiary)" }}>License</p>
+                      <p
+                        className="text-[11px] font-semibold uppercase tracking-[0.2em] mb-1"
+                        style={{ color: "#C2963A" }}
+                      >
+                        License
+                      </p>
                       <p style={{ color: "var(--color-text-primary)" }}>{app.credentials} · {app.licenseNumber}</p>
                     </div>
                     <div>
-                      <p className="text-xs font-semibold uppercase tracking-wide mb-1" style={{ color: "var(--color-text-tertiary)" }}>Format</p>
+                      <p
+                        className="text-[11px] font-semibold uppercase tracking-[0.2em] mb-1"
+                        style={{ color: "#C2963A" }}
+                      >
+                        Format
+                      </p>
                       <p style={{ color: "var(--color-text-primary)" }}>{app.format}</p>
                     </div>
                     <div>
-                      <p className="text-xs font-semibold uppercase tracking-wide mb-1" style={{ color: "var(--color-text-tertiary)" }}>Specialties</p>
+                      <p
+                        className="text-[11px] font-semibold uppercase tracking-[0.2em] mb-1"
+                        style={{ color: "#C2963A" }}
+                      >
+                        Specialties
+                      </p>
                       <div className="flex flex-wrap gap-1.5">
                         {app.specialties.map((s) => <Badge key={s}>{s}</Badge>)}
                       </div>
                     </div>
                   </div>
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-wide mb-2" style={{ color: "var(--color-text-tertiary)" }}>Statement</p>
+                    <p
+                      className="text-[11px] font-semibold uppercase tracking-[0.2em] mb-2"
+                      style={{ color: "#C2963A" }}
+                    >
+                      Statement
+                    </p>
                     <p className="text-sm leading-relaxed" style={{ color: "var(--color-text-secondary)" }}>
                       {app.bio}
                     </p>
                   </div>
                   {status === "pending" && (
                     <div className="flex gap-3">
-                      <Button variant="primary" size="sm" onClick={() => decide(app.id, "approved")}>
+                      <button
+                        onClick={() => decide(app.id, "approved")}
+                        className="inline-flex items-center justify-center px-5 py-2 rounded-full text-sm font-medium transition-opacity hover:opacity-90"
+                        style={{ background: "#C2963A", color: "#fff" }}
+                      >
                         Approve
-                      </Button>
+                      </button>
                       <Button variant="destructive" size="sm" onClick={() => decide(app.id, "rejected")}>
                         Reject
                       </Button>
@@ -238,7 +287,7 @@ export default function AdminApplicationsPage() {
           <button
             onClick={() => setFilter("pending")}
             className="text-xs font-medium underline"
-            style={{ color: "var(--color-sage-700)", textUnderlineOffset: "3px" }}
+            style={{ color: "#C2963A", textUnderlineOffset: "3px" }}
           >
             View pending applications
           </button>

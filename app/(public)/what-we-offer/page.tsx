@@ -107,17 +107,17 @@ export default function WhatWeOfferPage() {
       >
         <div className="container-fluid text-center max-w-5xl">
           <p
-            className="text-xs font-medium uppercase tracking-widest mb-5"
-            style={{ color: "var(--color-sage-600)" }}
+            className="text-[11px] font-semibold uppercase tracking-[0.28em] mb-5"
+            style={{ color: "var(--color-accent-highlight)" }}
           >
             What we offer
           </p>
           <h1
             className="leading-tight mb-8 max-w-2xl mx-auto"
             style={{
-              fontFamily: "var(--font-serif), Manrope, sans-serif",
+              fontFamily: "var(--font-serif), Georgia, serif",
               fontSize: "clamp(2.5rem, 5vw, 3.75rem)",
-              fontWeight: 400,
+              fontWeight: 300,
               color: "var(--color-sage-900)",
             }}
           >
@@ -141,21 +141,21 @@ export default function WhatWeOfferPage() {
           style={{
             background:
               i % 2 === 0
-                ? "var(--color-cream-200)"
-                : "var(--color-cream-100)",
+                ? "var(--color-cream-100)"
+                : "var(--color-sage-800)",
           }}
         >
           <div className="container-fluid">
             <div className="flex flex-col items-center gap-3 mb-10 md:mb-12 text-center">
               <span
                 className="text-2xl"
-                style={{ color: "var(--color-sage-500)" }}
+                style={{ color: i % 2 === 0 ? "var(--color-accent-highlight)" : "rgba(255,255,255,0.5)" }}
               >
                 {section.icon}
               </span>
               <p
-                className="text-xs font-medium uppercase tracking-widest"
-                style={{ color: "var(--color-sage-600)" }}
+                className="text-[11px] font-semibold uppercase tracking-[0.28em]"
+                style={{ color: i % 2 === 0 ? "var(--color-accent-highlight)" : "rgba(255,255,255,0.55)" }}
               >
                 {section.category}
               </p>
@@ -172,13 +172,13 @@ export default function WhatWeOfferPage() {
                 >
                   <h3
                     className="text-base font-semibold mb-3"
-                    style={{ color: "var(--color-sage-800)" }}
+                    style={{ color: i % 2 === 0 ? "var(--color-sage-800)" : "#fff" }}
                   >
                     {item.title}
                   </h3>
                   <p
                     className="text-sm leading-relaxed"
-                    style={{ color: "var(--color-text-secondary)" }}
+                    style={{ color: i % 2 === 0 ? "var(--color-text-secondary)" : "rgba(255,255,255,0.65)" }}
                   >
                     {item.body}
                   </p>
@@ -192,20 +192,22 @@ export default function WhatWeOfferPage() {
       {/* PRICING */}
       <section
         className="py-16 md:py-24"
-        style={{ background: "var(--color-cream-200)" }}
+        style={{ background: "var(--color-cream-100)" }}
       >
         <div className="container-fluid">
           <div className="flex flex-col items-center gap-10 md:gap-12 text-center max-w-5xl mx-auto">
             <div className="max-w-2xl">
               <p
-                className="text-xs font-medium uppercase tracking-widest mb-5"
-                style={{ color: "var(--color-sage-600)" }}
+                className="text-[11px] font-semibold uppercase tracking-[0.28em] mb-5"
+                style={{ color: "var(--color-accent-highlight)" }}
               >
                 Membership
               </p>
               <h2
                 className="section-title-strong mb-6"
                 style={{
+                  fontFamily: "var(--font-serif), Georgia, serif",
+                  fontWeight: 300,
                   fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
                   color: "var(--color-sage-900)",
                 }}
@@ -225,7 +227,7 @@ export default function WhatWeOfferPage() {
                 href="/join"
                 className="inline-flex w-full sm:w-auto items-center justify-center px-8 py-3.5 rounded-full text-sm font-medium hover:opacity-90 transition-opacity"
                 style={{
-                  background: "var(--color-sage-700)",
+                  background: "var(--color-accent-highlight)",
                   color: "#fff",
                 }}
               >
@@ -246,14 +248,16 @@ export default function WhatWeOfferPage() {
       >
         <div className="container-fluid text-center max-w-4xl">
           <p
-            className="text-xs font-medium uppercase tracking-widest mb-5"
-            style={{ color: "var(--color-sage-600)" }}
+            className="text-[11px] font-semibold uppercase tracking-[0.28em] mb-5"
+            style={{ color: "var(--color-accent-highlight)" }}
           >
             Questions
           </p>
           <h2
             className="section-title-strong mb-10 md:mb-14"
             style={{
+              fontFamily: "var(--font-serif), Georgia, serif",
+              fontWeight: 300,
               fontSize: "clamp(1.75rem, 3vw, 2.25rem)",
               color: "var(--color-sage-900)",
             }}

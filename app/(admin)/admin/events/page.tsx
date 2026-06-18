@@ -149,19 +149,47 @@ export default function AdminEventsPage() {
     <div className="flex flex-col gap-8">
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
-          <p className="text-eyebrow">Admin</p>
-          <h1 className="text-page-title">Events</h1>
+          <p
+            className="text-[11px] font-medium uppercase tracking-[0.2em] mb-1"
+            style={{ color: "#C2963A" }}
+          >
+            Admin
+          </p>
+          <h1
+            style={{
+              fontFamily: "var(--font-serif), Georgia, serif",
+              fontWeight: 300,
+              fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
+              color: "var(--color-sage-800)",
+              lineHeight: 1.15,
+            }}
+          >
+            Events
+          </h1>
         </div>
-        <Button variant="primary" size="sm" className="w-full sm:w-auto" onClick={openCreate}>+ Create event</Button>
+        <button
+          onClick={openCreate}
+          className="inline-flex items-center justify-center px-5 py-2 rounded-full text-sm font-medium transition-opacity hover:opacity-90 w-full sm:w-auto"
+          style={{ background: "#C2963A", color: "#fff" }}
+        >
+          + Create event
+        </button>
       </div>
 
       {/* Create / Edit form */}
       {showForm && (
         <div
           className="rounded-2xl border p-6 bg-white flex flex-col gap-5"
-          style={{ borderColor: "var(--color-cream-300)" }}
+          style={{ borderColor: "rgba(194,150,58,0.12)" }}
         >
-          <h2 className="text-base font-semibold" style={{ color: "var(--color-sage-800)" }}>
+          <h2
+            className="text-base"
+            style={{
+              fontFamily: "var(--font-serif), Georgia, serif",
+              fontWeight: 300,
+              color: "var(--color-sage-800)",
+            }}
+          >
             {editId != null ? "Edit event" : "Create new event"}
           </h2>
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
@@ -216,9 +244,9 @@ export default function AdminEventsPage() {
                       onClick={() => setFormCategory(c)}
                       className="px-3 py-1 rounded-full text-xs font-medium transition-colors"
                       style={{
-                        background: formCategory === c ? "var(--color-sage-700)" : "#fff",
+                        background: formCategory === c ? "#C2963A" : "#fff",
                         color: formCategory === c ? "#fff" : "var(--color-sage-700)",
-                        border: `1px solid ${formCategory === c ? "var(--color-sage-700)" : "var(--color-cream-300)"}`,
+                        border: `1px solid ${formCategory === c ? "#C2963A" : "rgba(194,150,58,0.20)"}`,
                       }}
                     >{c}</button>
                   ))}
@@ -243,9 +271,13 @@ export default function AdminEventsPage() {
               placeholder="Event description shown to members"
             />
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-              <Button type="submit" variant="primary" size="sm">
+              <button
+                type="submit"
+                className="inline-flex items-center justify-center px-5 py-2 rounded-full text-sm font-medium transition-opacity hover:opacity-90"
+                style={{ background: "#C2963A", color: "#fff" }}
+              >
                 {editId != null ? "Save changes" : "Create event"}
-              </Button>
+              </button>
               <Button type="button" variant="ghost" size="sm" onClick={() => { setShowForm(false); setEditId(null); }}>
                 Cancel
               </Button>
@@ -254,14 +286,14 @@ export default function AdminEventsPage() {
         </div>
       )}
 
-      {/* Event list */}
+      {/* Mobile event cards */}
       {events.length > 0 && (
         <div className="md:hidden flex flex-col gap-3">
           {sortedEvents.map((ev) => (
             <div
               key={ev.id}
               className="rounded-2xl border bg-white p-4 flex flex-col gap-3"
-              style={{ borderColor: "var(--color-cream-300)" }}
+              style={{ borderColor: "rgba(194,150,58,0.12)" }}
             >
               <div className="flex items-start justify-between gap-3">
                 <div>
@@ -283,7 +315,7 @@ export default function AdminEventsPage() {
               <div className="flex flex-wrap items-center gap-4">
                 <button
                   className="text-xs underline"
-                  style={{ color: "var(--color-sage-700)", textUnderlineOffset: "3px" }}
+                  style={{ color: "#C2963A", textUnderlineOffset: "3px" }}
                   onClick={() => openEdit(ev)}
                 >
                   Edit
@@ -301,38 +333,39 @@ export default function AdminEventsPage() {
         </div>
       )}
 
-      <div className="hidden md:block rounded-2xl border overflow-hidden bg-white" style={{ borderColor: "var(--color-cream-300)" }}>
+      {/* Desktop table */}
+      <div className="hidden md:block rounded-2xl border overflow-hidden bg-white" style={{ borderColor: "rgba(194,150,58,0.12)" }}>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
-              <tr style={{ borderBottom: "1px solid var(--color-cream-300)", background: "var(--color-cream-100)" }}>
+              <tr style={{ borderBottom: "1px solid rgba(194,150,58,0.12)", background: "var(--color-cream-100)" }}>
                 <th
-                  className="text-left px-5 py-3 text-xs font-semibold cursor-pointer select-none hover:opacity-70 transition-opacity"
-                  style={{ color: "var(--color-text-tertiary)" }}
+                  className="text-left px-5 py-3 text-[11px] font-semibold uppercase tracking-[0.2em] cursor-pointer select-none hover:opacity-70 transition-opacity"
+                  style={{ color: "#C2963A" }}
                   onClick={() => toggleSort("title")}
                 >
                   Event
                   <SortIcon active={sortKey === "title"} dir={sortDir} />
                 </th>
                 <th
-                  className="text-left px-5 py-3 text-xs font-semibold cursor-pointer select-none hover:opacity-70 transition-opacity"
-                  style={{ color: "var(--color-text-tertiary)" }}
+                  className="text-left px-5 py-3 text-[11px] font-semibold uppercase tracking-[0.2em] cursor-pointer select-none hover:opacity-70 transition-opacity"
+                  style={{ color: "#C2963A" }}
                   onClick={() => toggleSort("date")}
                 >
                   Date & time
                   <SortIcon active={sortKey === "date"} dir={sortDir} />
                 </th>
                 <th
-                  className="text-left px-5 py-3 text-xs font-semibold cursor-pointer select-none hover:opacity-70 transition-opacity"
-                  style={{ color: "var(--color-text-tertiary)" }}
+                  className="text-left px-5 py-3 text-[11px] font-semibold uppercase tracking-[0.2em] cursor-pointer select-none hover:opacity-70 transition-opacity"
+                  style={{ color: "#C2963A" }}
                   onClick={() => toggleSort("category")}
                 >
                   Category
                   <SortIcon active={sortKey === "category"} dir={sortDir} />
                 </th>
                 <th
-                  className="text-left px-5 py-3 text-xs font-semibold cursor-pointer select-none hover:opacity-70 transition-opacity"
-                  style={{ color: "var(--color-text-tertiary)" }}
+                  className="text-left px-5 py-3 text-[11px] font-semibold uppercase tracking-[0.2em] cursor-pointer select-none hover:opacity-70 transition-opacity"
+                  style={{ color: "#C2963A" }}
                   onClick={() => toggleSort("rsvps")}
                 >
                   RSVPs
@@ -343,7 +376,13 @@ export default function AdminEventsPage() {
             </thead>
             <tbody>
               {sortedEvents.map((ev, i) => (
-                <tr key={ev.id} className="transition-colors duration-150 hover:bg-[var(--color-sage-50)]" style={{ borderBottom: i < events.length - 1 ? "1px solid var(--color-cream-200)" : "none" }}>
+                <tr
+                  key={ev.id}
+                  className="transition-colors duration-150"
+                  style={{ borderBottom: i < events.length - 1 ? "1px solid rgba(194,150,58,0.08)" : "none" }}
+                  onMouseEnter={(e) => { (e.currentTarget as HTMLTableRowElement).style.background = "rgba(194,150,58,0.04)"; }}
+                  onMouseLeave={(e) => { (e.currentTarget as HTMLTableRowElement).style.background = ""; }}
+                >
                   <td className="px-5 py-3.5">
                     <p className="font-medium" style={{ color: "var(--color-text-primary)" }}>{ev.title}</p>
                     <p className="text-xs mt-0.5" style={{ color: "var(--color-text-tertiary)" }}>{ev.format}</p>
@@ -365,7 +404,7 @@ export default function AdminEventsPage() {
                     <div className="flex items-center justify-end gap-3">
                       <button
                         className="text-xs underline"
-                        style={{ color: "var(--color-sage-700)", textUnderlineOffset: "3px" }}
+                        style={{ color: "#C2963A", textUnderlineOffset: "3px" }}
                         onClick={() => openEdit(ev)}
                       >
                         Edit

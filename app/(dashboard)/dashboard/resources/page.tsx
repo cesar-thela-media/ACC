@@ -106,10 +106,10 @@ export default function ResourcesPage() {
                 onClick={() => setCategory(item)}
                 className="px-3 py-1.5 rounded-full text-xs font-medium transition-colors"
                 style={{
-                  background: active ? "var(--color-sage-700)" : "#fff",
+                  background: active ? "#C2963A" : "#fff",
                   color: active ? "#fff" : "var(--color-sage-700)",
                   border: `1px solid ${
-                    active ? "var(--color-sage-700)" : "var(--color-cream-300)"
+                    active ? "#C2963A" : "rgba(194,150,58,0.18)"
                   }`,
                 }}
               >
@@ -137,10 +137,10 @@ export default function ResourcesPage() {
                 onClick={() => setType(item)}
                 className="px-3 py-1.5 rounded-full text-xs font-medium transition-colors"
                 style={{
-                  background: active ? "var(--color-sage-700)" : "#fff",
+                  background: active ? "#C2963A" : "#fff",
                   color: active ? "#fff" : "var(--color-sage-700)",
                   border: `1px solid ${
-                    active ? "var(--color-sage-700)" : "var(--color-cream-300)"
+                    active ? "#C2963A" : "rgba(194,150,58,0.18)"
                   }`,
                 }}
               >
@@ -222,7 +222,7 @@ export default function ResourcesPage() {
             type="button"
             onClick={() => setMobileFiltersOpen(true)}
             className="lg:hidden px-5 py-3 rounded-full text-sm font-medium"
-            style={{ background: "var(--color-sage-700)", color: "#fff" }}
+            style={{ background: "#C2963A", color: "#fff" }}
           >
             Filters
           </button>
@@ -337,7 +337,7 @@ export default function ResourcesPage() {
         side="right"
         hideAbove="lg"
         background="var(--color-cream-100)"
-        borderColor="rgba(197,200,190,0.7)"
+        borderColor="rgba(194,150,58,0.15)"
         titleColor="var(--color-sage-900)"
         closeColor="var(--color-text-secondary)"
         title={
@@ -363,7 +363,7 @@ export default function ResourcesPage() {
               type="button"
               onClick={() => setMobileFiltersOpen(false)}
               className="w-full py-3 rounded-full text-sm font-medium"
-              style={{ background: "var(--color-sage-700)", color: "#fff" }}
+              style={{ background: "#C2963A", color: "#fff" }}
             >
               Show {filtered.length} result{filtered.length !== 1 ? "s" : ""}
             </button>
@@ -374,7 +374,7 @@ export default function ResourcesPage() {
                 setMobileFiltersOpen(false);
               }}
               className="w-full py-3 rounded-full text-sm font-medium"
-              style={{ background: "#fff", color: "var(--color-sage-700)", border: "1px solid var(--color-cream-300)" }}
+              style={{ background: "#fff", color: "var(--color-sage-700)", border: "1px solid rgba(194,150,58,0.18)" }}
             >
               Clear filters
             </button>

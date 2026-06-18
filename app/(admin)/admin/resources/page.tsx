@@ -71,21 +71,49 @@ export default function AdminResourcesPage() {
     <div className="flex flex-col gap-8">
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
-          <p className="text-eyebrow">Admin</p>
-          <h1 className="text-page-title">Resources</h1>
+          <p
+            className="text-[11px] font-medium uppercase tracking-[0.2em] mb-1"
+            style={{ color: "#C2963A" }}
+          >
+            Admin
+          </p>
+          <h1
+            style={{
+              fontFamily: "var(--font-serif), Georgia, serif",
+              fontWeight: 300,
+              fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
+              color: "var(--color-sage-800)",
+              lineHeight: 1.15,
+            }}
+          >
+            Resources
+          </h1>
         </div>
-        <Button variant="primary" size="sm" className="w-full sm:w-auto" onClick={() => setShowForm((v) => !v)}>
+        <button
+          onClick={() => setShowForm((v) => !v)}
+          className="inline-flex items-center justify-center px-5 py-2 rounded-full text-sm font-medium transition-opacity hover:opacity-90 w-full sm:w-auto"
+          style={{ background: "#C2963A", color: "#fff" }}
+        >
           {showForm ? "Cancel" : "+ Upload resource"}
-        </Button>
+        </button>
       </div>
 
       {/* Upload form */}
       {showForm && (
         <div
           className="rounded-2xl border p-6 bg-white flex flex-col gap-5"
-          style={{ borderColor: "var(--color-cream-300)" }}
+          style={{ borderColor: "rgba(194,150,58,0.12)" }}
         >
-          <h2 className="text-base font-semibold" style={{ color: "var(--color-sage-800)" }}>Upload new resource</h2>
+          <h2
+            className="text-base"
+            style={{
+              fontFamily: "var(--font-serif), Georgia, serif",
+              fontWeight: 300,
+              color: "var(--color-sage-800)",
+            }}
+          >
+            Upload new resource
+          </h2>
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
             <Input label="Title" name="title" placeholder="Resource title" required />
             <Textarea label="Description" name="description" rows={3} placeholder="Brief description shown to members" required />
@@ -100,9 +128,9 @@ export default function AdminResourcesPage() {
                       onClick={() => setFormCategory(c)}
                       className="px-3 py-1 rounded-full text-xs font-medium transition-colors"
                       style={{
-                        background: formCategory === c ? "var(--color-sage-700)" : "#fff",
+                        background: formCategory === c ? "#C2963A" : "#fff",
                         color: formCategory === c ? "#fff" : "var(--color-sage-700)",
-                        border: `1px solid ${formCategory === c ? "var(--color-sage-700)" : "var(--color-cream-300)"}`,
+                        border: `1px solid ${formCategory === c ? "#C2963A" : "rgba(194,150,58,0.20)"}`,
                       }}
                     >{c}</button>
                   ))}
@@ -118,9 +146,9 @@ export default function AdminResourcesPage() {
                       onClick={() => setFormType(t)}
                       className="px-3 py-1 rounded-full text-xs font-medium transition-colors"
                       style={{
-                        background: formType === t ? "var(--color-sage-700)" : "#fff",
+                        background: formType === t ? "#C2963A" : "#fff",
                         color: formType === t ? "#fff" : "var(--color-sage-700)",
-                        border: `1px solid ${formType === t ? "var(--color-sage-700)" : "var(--color-cream-300)"}`,
+                        border: `1px solid ${formType === t ? "#C2963A" : "rgba(194,150,58,0.20)"}`,
                       }}
                     >{t}</button>
                   ))}
@@ -131,11 +159,11 @@ export default function AdminResourcesPage() {
               <label className="block text-xs font-medium mb-2" style={{ color: "var(--color-text-secondary)" }}>File</label>
               <div
                 className="border-2 border-dashed rounded-xl p-8 text-center"
-                style={{ borderColor: "var(--color-cream-400)" }}
+                style={{ borderColor: "rgba(194,150,58,0.25)" }}
               >
                 <p className="text-sm" style={{ color: "var(--color-text-tertiary)" }}>
                   Drag & drop a file or{" "}
-                  <button type="button" className="underline" style={{ color: "var(--color-sage-700)", textUnderlineOffset: "3px" }}>
+                  <button type="button" className="underline" style={{ color: "#C2963A", textUnderlineOffset: "3px" }}>
                     browse
                   </button>
                 </p>
@@ -143,9 +171,13 @@ export default function AdminResourcesPage() {
               </div>
             </div>
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-              <Button type="submit" variant="primary" size="sm">
+              <button
+                type="submit"
+                className="inline-flex items-center justify-center px-5 py-2 rounded-full text-sm font-medium transition-opacity hover:opacity-90"
+                style={{ background: "#C2963A", color: "#fff" }}
+              >
                 {submitted ? "Publishing…" : "Publish resource"}
-              </Button>
+              </button>
               <Button type="button" variant="ghost" size="sm" onClick={() => setShowForm(false)}>
                 Cancel
               </Button>
@@ -162,21 +194,21 @@ export default function AdminResourcesPage() {
             onClick={() => setCategory(c)}
             className="px-3 py-1.5 rounded text-xs font-medium transition-colors"
             style={{
-              background: category === c ? "var(--color-sage-700)" : "var(--color-sage-50)",
+              background: category === c ? "#C2963A" : "var(--color-cream-100)",
               color: category === c ? "#fff" : "var(--color-sage-700)",
-              border: category === c ? "none" : "1px solid var(--color-cream-300)",
+              border: category === c ? "none" : "1px solid rgba(194,150,58,0.20)",
             }}
           >{c}</button>
         ))}
       </div>
 
-      {/* Resource table */}
+      {/* Mobile cards */}
       <div className="md:hidden flex flex-col gap-3">
         {sorted.map((r) => (
           <div
             key={r.id}
             className="rounded-2xl border bg-white p-4 flex flex-col gap-3"
-            style={{ borderColor: "var(--color-cream-300)" }}
+            style={{ borderColor: "rgba(194,150,58,0.12)" }}
           >
             <div className="flex items-start justify-between gap-3">
               <div>
@@ -191,7 +223,7 @@ export default function AdminResourcesPage() {
               <span>{r.downloads} downloads</span>
             </div>
             <div className="flex flex-wrap items-center gap-4">
-              <button className="text-xs underline" style={{ color: "var(--color-sage-700)", textUnderlineOffset: "3px" }}>Edit</button>
+              <button className="text-xs underline" style={{ color: "#C2963A", textUnderlineOffset: "3px" }}>Edit</button>
               <button className="text-xs underline" style={{ color: "var(--color-error)", textUnderlineOffset: "3px" }}>Delete</button>
             </div>
           </div>
@@ -205,53 +237,54 @@ export default function AdminResourcesPage() {
           <button
             onClick={() => setCategory("All")}
             className="text-xs font-medium underline"
-            style={{ color: "var(--color-sage-700)", textUnderlineOffset: "3px" }}
+            style={{ color: "#C2963A", textUnderlineOffset: "3px" }}
           >
             View all categories
           </button>
         </div>
       )}
 
-      <div className="hidden md:block rounded-2xl border overflow-hidden bg-white" style={{ borderColor: "var(--color-cream-300)" }}>
+      {/* Desktop table */}
+      <div className="hidden md:block rounded-2xl border overflow-hidden bg-white" style={{ borderColor: "rgba(194,150,58,0.12)" }}>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
-              <tr style={{ borderBottom: "1px solid var(--color-cream-300)", background: "var(--color-cream-100)" }}>
+              <tr style={{ borderBottom: "1px solid rgba(194,150,58,0.12)", background: "var(--color-cream-100)" }}>
                 <th
-                  className="text-left px-5 py-3 text-xs font-semibold cursor-pointer select-none hover:opacity-70 transition-opacity"
-                  style={{ color: "var(--color-text-tertiary)" }}
+                  className="text-left px-5 py-3 text-[11px] font-semibold uppercase tracking-[0.2em] cursor-pointer select-none hover:opacity-70 transition-opacity"
+                  style={{ color: "#C2963A" }}
                   onClick={() => toggleSort("title")}
                 >
                   Title
                   <SortIcon active={sortKey === "title"} dir={sortDir} />
                 </th>
                 <th
-                  className="text-left px-5 py-3 text-xs font-semibold cursor-pointer select-none hover:opacity-70 transition-opacity"
-                  style={{ color: "var(--color-text-tertiary)" }}
+                  className="text-left px-5 py-3 text-[11px] font-semibold uppercase tracking-[0.2em] cursor-pointer select-none hover:opacity-70 transition-opacity"
+                  style={{ color: "#C2963A" }}
                   onClick={() => toggleSort("category")}
                 >
                   Category
                   <SortIcon active={sortKey === "category"} dir={sortDir} />
                 </th>
                 <th
-                  className="text-left px-5 py-3 text-xs font-semibold cursor-pointer select-none hover:opacity-70 transition-opacity"
-                  style={{ color: "var(--color-text-tertiary)" }}
+                  className="text-left px-5 py-3 text-[11px] font-semibold uppercase tracking-[0.2em] cursor-pointer select-none hover:opacity-70 transition-opacity"
+                  style={{ color: "#C2963A" }}
                   onClick={() => toggleSort("type")}
                 >
                   Type
                   <SortIcon active={sortKey === "type"} dir={sortDir} />
                 </th>
                 <th
-                  className="text-left px-5 py-3 text-xs font-semibold cursor-pointer select-none hover:opacity-70 transition-opacity"
-                  style={{ color: "var(--color-text-tertiary)" }}
+                  className="text-left px-5 py-3 text-[11px] font-semibold uppercase tracking-[0.2em] cursor-pointer select-none hover:opacity-70 transition-opacity"
+                  style={{ color: "#C2963A" }}
                   onClick={() => toggleSort("published")}
                 >
                   Published
                   <SortIcon active={sortKey === "published"} dir={sortDir} />
                 </th>
                 <th
-                  className="text-left px-5 py-3 text-xs font-semibold cursor-pointer select-none hover:opacity-70 transition-opacity"
-                  style={{ color: "var(--color-text-tertiary)" }}
+                  className="text-left px-5 py-3 text-[11px] font-semibold uppercase tracking-[0.2em] cursor-pointer select-none hover:opacity-70 transition-opacity"
+                  style={{ color: "#C2963A" }}
                   onClick={() => toggleSort("downloads")}
                 >
                   Downloads
@@ -262,7 +295,13 @@ export default function AdminResourcesPage() {
             </thead>
             <tbody>
               {sorted.map((r, i) => (
-                <tr key={r.id} className="transition-colors duration-150 hover:bg-[var(--color-sage-50)]" style={{ borderBottom: i < sorted.length - 1 ? "1px solid var(--color-cream-200)" : "none" }}>
+                <tr
+                  key={r.id}
+                  className="transition-colors duration-150"
+                  style={{ borderBottom: i < sorted.length - 1 ? "1px solid rgba(194,150,58,0.08)" : "none" }}
+                  onMouseEnter={(e) => { (e.currentTarget as HTMLTableRowElement).style.background = "rgba(194,150,58,0.04)"; }}
+                  onMouseLeave={(e) => { (e.currentTarget as HTMLTableRowElement).style.background = ""; }}
+                >
                   <td className="px-5 py-3.5 font-medium" style={{ color: "var(--color-text-primary)" }}>{r.title}</td>
                   <td className="px-5 py-3.5"><Badge>{r.category}</Badge></td>
                   <td className="px-5 py-3.5 text-xs" style={{ color: "var(--color-text-tertiary)" }}>{r.type}</td>
@@ -270,7 +309,7 @@ export default function AdminResourcesPage() {
                   <td className="px-5 py-3.5" style={{ color: "var(--color-text-secondary)" }}>{r.downloads}</td>
                   <td className="px-5 py-3.5 text-right">
                     <div className="flex items-center justify-end gap-3">
-                      <button className="text-xs underline" style={{ color: "var(--color-sage-700)", textUnderlineOffset: "3px" }}>Edit</button>
+                      <button className="text-xs underline" style={{ color: "#C2963A", textUnderlineOffset: "3px" }}>Edit</button>
                       <button className="text-xs underline" style={{ color: "var(--color-error)", textUnderlineOffset: "3px" }}>Delete</button>
                     </div>
                   </td>

@@ -58,7 +58,7 @@ export default function ComingSoonPage() {
   return (
     <div
       className="min-h-screen flex flex-col relative overflow-hidden"
-      style={{ background: "var(--color-sage-900)" }}
+      style={{ background: "var(--color-sage-800)" }}
     >
       {/* Decorative rings */}
       <div
@@ -75,7 +75,7 @@ export default function ComingSoonPage() {
         className="fixed inset-0 pointer-events-none"
         style={{
           backgroundImage:
-            "radial-gradient(circle at 70% 20%, rgba(var(--color-accent-highlight-rgb), 0.08) 0%, transparent 55%), radial-gradient(circle at 20% 80%, rgba(74,93,78,0.22) 0%, transparent 50%)",
+            "radial-gradient(circle at 70% 20%, rgba(194,150,58,0.10) 0%, transparent 55%), radial-gradient(circle at 20% 80%, rgba(74,94,72,0.22) 0%, transparent 50%)",
         }}
       />
 
@@ -84,14 +84,14 @@ export default function ComingSoonPage() {
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <Link href="/" className="text-center sm:text-left no-underline">
             <p
-              className="text-eyebrow"
+              className="text-[11px] font-semibold uppercase tracking-[0.28em]"
               style={{ color: "rgba(255,255,255,0.34)" }}
             >
               Free guide for therapists
             </p>
             <p
               className="text-base font-semibold transition-opacity hover:opacity-80"
-              style={{ fontFamily: "var(--font-serif), Georgia, serif", color: "#fff" }}
+              style={{ fontFamily: "var(--font-serif), Georgia, serif", fontWeight: 300, color: "#fff" }}
             >
               The Circle
             </p>
@@ -108,7 +108,7 @@ export default function ComingSoonPage() {
             <Link
               href="/join"
               className="inline-flex items-center justify-center px-4 py-2.5 rounded-full text-sm font-medium transition-opacity hover:opacity-90"
-              style={{ background: "var(--color-sage-700)", color: "#fff" }}
+              style={{ background: "var(--color-accent-highlight)", color: "#fff" }}
             >
               Join the circle
             </Link>
@@ -124,8 +124,8 @@ export default function ComingSoonPage() {
           <div>
             {/* Eyebrow */}
             <div className="inline-flex items-center gap-2 mb-6 px-3.5 py-1.5 rounded-full" style={{ background: "var(--color-accent-highlight)", border: "1px solid rgba(27,27,27,0.08)" }}>
-              <span className="w-1.5 h-1.5 rounded-full" style={{ background: "var(--color-text-primary)" }} />
-              <span className="text-xs font-semibold uppercase tracking-widest" style={{ color: "var(--color-text-primary)" }}>
+              <span className="w-1.5 h-1.5 rounded-full" style={{ background: "rgba(255,255,255,0.8)" }} />
+              <span className="text-[11px] font-semibold uppercase tracking-[0.28em]" style={{ color: "#fff" }}>
                 Free guide for Austin therapists
               </span>
             </div>
@@ -135,14 +135,14 @@ export default function ComingSoonPage() {
               style={{
                 fontFamily: "var(--font-serif), Georgia, serif",
                 fontSize: "clamp(2.25rem, 5vw, 3.75rem)",
-                fontWeight: 400,
+                fontWeight: 300,
                 color: "#fff",
                 letterSpacing: "-0.01em",
               }}
             >
               Stop building your
               <br />
-              <em style={{ color: "var(--color-sage-100)", fontStyle: "italic" }}>
+              <em style={{ color: "var(--color-cream-100)", fontStyle: "italic" }}>
                 practice alone.
               </em>
             </h1>
@@ -160,7 +160,7 @@ export default function ComingSoonPage() {
                 <li key={item} className="flex items-start gap-3">
                   <span
                     className="mt-0.5 shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs"
-                    style={{ background: "rgba(var(--color-accent-highlight-rgb), 0.18)", color: "var(--color-text-primary)" }}
+                    style={{ background: "rgba(194,150,58,0.20)", color: "var(--color-accent-highlight)" }}
                   >
                     ✓
                   </span>
@@ -178,7 +178,7 @@ export default function ComingSoonPage() {
                   <div
                     key={init}
                     className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-semibold"
-                    style={{ background: "var(--color-sage-700)", color: "rgba(255,255,255,0.8)", border: "2px solid var(--color-sage-900)" }}
+                    style={{ background: "var(--color-sage-600)", color: "rgba(255,255,255,0.8)", border: "2px solid var(--color-sage-800)" }}
                   >
                     {init}
                   </div>
@@ -205,7 +205,7 @@ export default function ComingSoonPage() {
                 {/* Form card glow */}
                 <div
                   className="absolute -top-20 -right-20 w-48 h-48 rounded-full pointer-events-none"
-                  style={{ background: "rgba(var(--color-accent-highlight-rgb), 0.06)" }}
+                  style={{ background: "rgba(194,150,58,0.07)" }}
                 />
 
                 <p
@@ -282,8 +282,8 @@ export default function ComingSoonPage() {
                     disabled={loading || !firstName.trim() || !email.trim()}
                     className="w-full py-3.5 rounded-full text-sm font-semibold transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                     style={{
-                      background: loading ? "rgba(255,255,255,0.7)" : "#fff",
-                      color: "var(--color-sage-800)",
+                      background: loading ? "rgba(194,150,58,0.7)" : "var(--color-accent-highlight)",
+                      color: "#fff",
                     }}
                   >
                     {loading ? "Sending…" : "Send me the playbook →"}
@@ -326,7 +326,7 @@ export default function ComingSoonPage() {
                 {/* Tripwire offer */}
                 <div className="flex flex-col gap-3">
                   <div className="inline-flex items-center gap-2 self-start px-3 py-1 rounded-full" style={{ background: "var(--color-accent-highlight)", border: "1px solid rgba(27,27,27,0.08)" }}>
-                    <span className="text-xs font-semibold uppercase tracking-widest" style={{ color: "var(--color-text-primary)" }}>
+                    <span className="text-[11px] font-semibold uppercase tracking-[0.28em]" style={{ color: "#fff" }}>
                       One more thing
                     </span>
                   </div>
@@ -334,7 +334,7 @@ export default function ComingSoonPage() {
                     className="text-xl leading-snug"
                     style={{
                       fontFamily: "var(--font-serif), Georgia, serif",
-                      fontWeight: 400,
+                      fontWeight: 300,
                       color: "#fff",
                     }}
                   >
@@ -347,26 +347,26 @@ export default function ComingSoonPage() {
                   {/* Urgency bar */}
                   <div
                     className="rounded-xl p-4 flex flex-col gap-2"
-                    style={{ background: "rgba(var(--color-accent-highlight-rgb), 0.88)", border: "1px solid rgba(27,27,27,0.08)" }}
+                    style={{ background: "rgba(194,150,58,0.85)", border: "1px solid rgba(27,27,27,0.08)" }}
                   >
                     <div className="flex justify-between items-center">
-                      <span className="text-xs font-medium" style={{ color: "rgba(27,27,27,0.62)" }}>
+                      <span className="text-xs font-medium" style={{ color: "rgba(255,255,255,0.7)" }}>
                         Founding spots remaining
                       </span>
-                      <span className="text-sm font-bold" style={{ color: "var(--color-text-primary)" }}>
+                      <span className="text-sm font-bold" style={{ color: "#fff" }}>
                         {SPOTS_REMAINING} of 40
                       </span>
                     </div>
-                    <div className="h-1.5 rounded-full overflow-hidden" style={{ background: "rgba(27,27,27,0.12)" }}>
+                    <div className="h-1.5 rounded-full overflow-hidden" style={{ background: "rgba(0,0,0,0.15)" }}>
                       <div
                         className="h-full rounded-full"
                         style={{
                           width: `${((40 - SPOTS_REMAINING) / 40) * 100}%`,
-                          background: "var(--color-text-primary)",
+                          background: "#fff",
                         }}
                       />
                     </div>
-                    <p className="text-xs" style={{ color: "rgba(27,27,27,0.62)" }}>
+                    <p className="text-xs" style={{ color: "rgba(255,255,255,0.7)" }}>
                       {40 - SPOTS_REMAINING} therapists have already applied
                     </p>
                   </div>
@@ -395,8 +395,8 @@ export default function ComingSoonPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
             <div>
               <p
-                className="text-sm font-semibold mb-3"
-                style={{ fontFamily: "var(--font-serif), Georgia, serif", color: "#fff" }}
+                className="text-sm mb-3"
+                style={{ fontFamily: "var(--font-serif), Georgia, serif", fontWeight: 300, color: "#fff" }}
               >
                 The Circle
               </p>
@@ -406,7 +406,7 @@ export default function ComingSoonPage() {
             </div>
 
             <div>
-              <p className="text-xs font-medium uppercase tracking-widest mb-4" style={{ color: "rgba(255,255,255,0.34)" }}>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.28em] mb-4" style={{ color: "rgba(255,255,255,0.34)" }}>
                 What&apos;s inside the playbook
               </p>
               <div className="flex flex-col gap-2 text-sm" style={{ color: "rgba(255,255,255,0.56)" }}>
@@ -417,7 +417,7 @@ export default function ComingSoonPage() {
             </div>
 
             <div>
-              <p className="text-xs font-medium uppercase tracking-widest mb-4" style={{ color: "rgba(255,255,255,0.34)" }}>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.28em] mb-4" style={{ color: "rgba(255,255,255,0.34)" }}>
                 Next steps
               </p>
               <div className="flex flex-col gap-2.5">

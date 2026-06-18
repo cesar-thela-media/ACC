@@ -32,17 +32,17 @@ export default function WhoWeArePage() {
       >
         <div className="container-fluid text-center">
           <p
-            className="text-xs font-medium uppercase tracking-widest mb-5"
-            style={{ color: "var(--color-sage-600)" }}
+            className="text-[11px] font-semibold uppercase tracking-[0.28em] mb-5"
+            style={{ color: "var(--color-accent-highlight)" }}
           >
             Who we are
           </p>
           <h1
             className="leading-tight max-w-2xl mx-auto"
             style={{
-              fontFamily: "var(--font-serif), Manrope, sans-serif",
+              fontFamily: "var(--font-serif), Georgia, serif",
               fontSize: "clamp(2.5rem, 5vw, 3.75rem)",
-              fontWeight: 400,
+              fontWeight: 300,
               color: "var(--color-sage-900)",
             }}
           >
@@ -58,14 +58,16 @@ export default function WhoWeArePage() {
       >
         <div className="container-fluid text-center">
           <p
-            className="text-xs font-medium uppercase tracking-widest mb-5"
-            style={{ color: "var(--color-sage-600)" }}
+            className="text-[11px] font-semibold uppercase tracking-[0.28em] mb-5"
+            style={{ color: "var(--color-accent-highlight)" }}
           >
             The origin
           </p>
           <h2
             className="section-title-strong mb-10"
             style={{
+              fontFamily: "var(--font-serif), Georgia, serif",
+              fontWeight: 300,
               fontSize: "clamp(1.75rem, 3vw, 2.25rem)",
               color: "var(--color-sage-900)",
             }}
@@ -101,7 +103,7 @@ export default function WhoWeArePage() {
 
       <section
         className="py-16 md:py-24"
-        style={{ background: "var(--color-cream-200)" }}
+        style={{ background: "var(--color-cream-100)" }}
       >
         <div className="container-fluid grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
           <div className="aspect-square rounded-2xl max-w-sm w-full mx-auto md:mx-0 lg:sticky lg:top-24 overflow-hidden">
@@ -114,14 +116,16 @@ export default function WhoWeArePage() {
           </div>
           <div>
             <p
-              className="text-xs font-medium uppercase tracking-widest mb-5"
-              style={{ color: "var(--color-sage-600)" }}
+              className="text-[11px] font-semibold uppercase tracking-[0.28em] mb-5"
+              style={{ color: "var(--color-accent-highlight)" }}
             >
               The founder
             </p>
             <h2
               className="section-title-strong mb-6"
               style={{
+                fontFamily: "var(--font-serif), Georgia, serif",
+                fontWeight: 300,
                 fontSize: "clamp(1.75rem, 3vw, 2.25rem)",
                 color: "var(--color-sage-900)",
               }}
@@ -164,7 +168,7 @@ export default function WhoWeArePage() {
               rel="noopener noreferrer"
               className="inline-block mt-8 text-sm font-medium underline"
               style={{
-                color: "var(--color-sage-700)",
+                color: "var(--color-accent-highlight)",
                 textUnderlineOffset: "4px",
               }}
             >
@@ -176,19 +180,21 @@ export default function WhoWeArePage() {
 
       <section
         className="py-16 md:py-24"
-        style={{ background: "var(--color-cream-200)" }}
+        style={{ background: "var(--color-cream-100)" }}
       >
         <div className="container-fluid">
           <div className="max-w-5xl mx-auto text-center mb-10 md:mb-14">
             <p
-              className="text-xs font-medium uppercase tracking-widest mb-5"
-              style={{ color: "var(--color-sage-600)" }}
+              className="text-[11px] font-semibold uppercase tracking-[0.28em] mb-5"
+              style={{ color: "var(--color-accent-highlight)" }}
             >
               What we believe
             </p>
             <h2
               className="section-title-strong"
               style={{
+                fontFamily: "var(--font-serif), Georgia, serif",
+                fontWeight: 300,
                 fontSize: "clamp(1.75rem, 3vw, 2.25rem)",
                 color: "var(--color-sage-900)",
               }}
@@ -219,12 +225,14 @@ export default function WhoWeArePage() {
 
       <section
         className="py-16 md:py-24 text-center"
-        style={{ background: "var(--color-sage-900)" }}
+        style={{ background: "var(--color-sage-800)" }}
       >
         <div className="max-w-2xl mx-auto px-5 md:px-6">
           <h2
             className="section-title-strong mb-6"
             style={{
+              fontFamily: "var(--font-serif), Georgia, serif",
+              fontWeight: 300,
               fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
               color: "#fff",
             }}
@@ -234,7 +242,7 @@ export default function WhoWeArePage() {
           <Link
             href="/join"
             className="inline-flex w-full sm:w-auto items-center justify-center px-8 py-3.5 rounded-full text-sm font-medium hover:opacity-90 transition-opacity"
-            style={{ background: "#fff", color: "var(--color-sage-700)" }}
+            style={{ background: "var(--color-accent-highlight)", color: "#fff" }}
           >
             Join the circle
           </Link>

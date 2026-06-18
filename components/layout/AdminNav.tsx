@@ -27,17 +27,20 @@ export function AdminNav() {
       <div
         className="md:hidden fixed top-0 left-0 right-0 z-40 h-16 px-4 flex items-center justify-between"
         style={{
-          background: "rgba(74,93,78,0.96)",
-          borderBottom: "1px solid rgba(255,255,255,0.12)",
+          background: "rgba(45,59,44,0.96)",
+          borderBottom: "1px solid rgba(255,255,255,0.10)",
           backdropFilter: "blur(16px)",
         }}
       >
         <div>
-          <p className="text-[11px] font-medium uppercase tracking-[0.24em]" style={{ color: "rgba(255,255,255,0.52)" }}>
-            Admin
+          <p className="text-[11px] font-medium uppercase tracking-[0.24em]" style={{ color: "rgba(255,255,255,0.48)" }}>
+            ACC Admin
           </p>
-          <span className="text-base font-semibold" style={{ fontFamily: "var(--font-serif), Manrope, sans-serif", color: "#fff" }}>
-            The Circle
+          <span
+            className="text-base"
+            style={{ fontFamily: "var(--font-serif), Georgia, serif", fontWeight: 300, color: "#fff" }}
+          >
+            Austin Clinician Circle
           </span>
         </div>
 
@@ -55,25 +58,26 @@ export function AdminNav() {
       <aside
         className="hidden md:flex w-56 shrink-0 h-screen overflow-hidden flex-col py-6 px-4"
         style={{
-          background: "var(--color-sage-700)",
-          borderRight: "1px solid rgba(255, 255, 255, 0.12)",
+          background: "#2D3B2C",
+          borderRight: "1px solid rgba(255, 255, 255, 0.08)",
         }}
       >
         <div className="px-3 mb-6">
           <p
-            className="text-xs font-medium uppercase tracking-widest mb-1"
-            style={{ color: "rgba(255,255,255,0.48)" }}
+            className="text-[11px] font-medium uppercase tracking-[0.24em] mb-1"
+            style={{ color: "rgba(255,255,255,0.40)" }}
           >
-            Admin
+            ACC Admin
           </p>
           <span
-            className="text-base font-semibold"
+            className="text-base"
             style={{
-              fontFamily: "var(--font-serif), Manrope, sans-serif",
+              fontFamily: "var(--font-serif), Georgia, serif",
+              fontWeight: 300,
               color: "#fff",
             }}
           >
-            The Circle
+            Austin Clinician Circle
           </span>
         </div>
 
@@ -86,8 +90,9 @@ export function AdminNav() {
                 href={link.href}
                 className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-300"
                 style={{
-                  background: active ? "rgba(27, 27, 27, 0.22)" : "transparent",
-                  color: active ? "#fff" : "rgba(255,255,255,0.82)",
+                  background: active ? "rgba(194,150,58,0.18)" : "transparent",
+                  color: active ? "#C2963A" : "rgba(255,255,255,0.72)",
+                  borderLeft: active ? "2px solid #C2963A" : "2px solid transparent",
                 }}
               >
                 <span className="text-base leading-none">{link.icon}</span>
@@ -99,12 +104,12 @@ export function AdminNav() {
 
         <div
           className="mt-auto pt-6"
-          style={{ borderTop: "1px solid rgba(255, 255, 255, 0.12)" }}
+          style={{ borderTop: "1px solid rgba(255, 255, 255, 0.08)" }}
         >
           <SignOutAction
             label="Log out"
             className="flex w-full items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 hover:bg-white/10"
-            style={{ color: "rgba(255,255,255,0.68)" }}
+            style={{ color: "rgba(255,255,255,0.52)" }}
           />
         </div>
       </aside>
@@ -112,16 +117,19 @@ export function AdminNav() {
       <MobileSidePanel
         open={mobileOpen}
         onClose={() => setMobileOpen(false)}
-        background="var(--color-sage-700)"
-        borderColor="rgba(255,255,255,0.12)"
+        background="#2D3B2C"
+        borderColor="rgba(255,255,255,0.08)"
         closeColor="rgba(255,255,255,0.72)"
         title={
           <div>
-            <p className="text-[11px] font-medium uppercase tracking-[0.24em] mb-2" style={{ color: "rgba(255,255,255,0.48)" }}>
-              Admin
+            <p className="text-[11px] font-medium uppercase tracking-[0.24em] mb-2" style={{ color: "rgba(255,255,255,0.40)" }}>
+              ACC Admin
             </p>
-            <span className="text-base font-semibold" style={{ fontFamily: "var(--font-serif), Manrope, sans-serif", color: "#fff" }}>
-              The Circle
+            <span
+              className="text-base"
+              style={{ fontFamily: "var(--font-serif), Georgia, serif", fontWeight: 300, color: "#fff" }}
+            >
+              Austin Clinician Circle
             </span>
           </div>
         }
@@ -136,8 +144,9 @@ export function AdminNav() {
                 onClick={() => setMobileOpen(false)}
                 className="flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-medium transition-all duration-300"
                 style={{
-                  background: active ? "rgba(27,27,27,0.22)" : "transparent",
-                  color: active ? "#fff" : "rgba(255,255,255,0.82)",
+                  background: active ? "rgba(194,150,58,0.18)" : "transparent",
+                  color: active ? "#C2963A" : "rgba(255,255,255,0.82)",
+                  borderLeft: active ? "2px solid #C2963A" : "2px solid transparent",
                 }}
               >
                 <span className="text-base leading-none">{link.icon}</span>
@@ -147,12 +156,12 @@ export function AdminNav() {
           })}
         </nav>
 
-        <div className="mt-auto pt-6" style={{ borderTop: "1px solid rgba(255,255,255,0.12)" }}>
+        <div className="mt-auto pt-6" style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}>
           <SignOutAction
             label="Log out"
             onSignedOut={() => setMobileOpen(false)}
             className="flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-medium transition-all duration-300 hover:bg-white/10"
-            style={{ color: "rgba(255,255,255,0.72)" }}
+            style={{ color: "rgba(255,255,255,0.52)" }}
           />
         </div>
       </MobileSidePanel>

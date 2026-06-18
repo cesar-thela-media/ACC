@@ -51,14 +51,8 @@ export function ConsultationScheduler() {
             className="px-3.5 py-1.5 rounded-full text-xs font-medium transition-all duration-200"
             style={
               active === tab
-                ? {
-                    background: "var(--color-accent-highlight)",
-                    color: "#1B1B1B",
-                  }
-                : {
-                    background: "transparent",
-                    color: "var(--color-text-tertiary)",
-                  }
+                ? { background: "#C2963A", color: "#fff" }
+                : { background: "transparent", color: "var(--color-text-tertiary)" }
             }
           >
             {tab}

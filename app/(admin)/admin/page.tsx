@@ -25,10 +25,21 @@ export default function AdminOverviewPage() {
   return (
     <div className="flex flex-col gap-10">
       <div>
-        <p className="text-eyebrow">
+        <p
+          className="text-[11px] font-medium uppercase tracking-[0.2em] mb-1"
+          style={{ color: "#C2963A" }}
+        >
           Admin
         </p>
-        <h1 className="text-page-title">
+        <h1
+          style={{
+            fontFamily: "var(--font-serif), Georgia, serif",
+            fontWeight: 300,
+            fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
+            color: "var(--color-sage-800)",
+            lineHeight: 1.15,
+          }}
+        >
           Overview
         </h1>
       </div>
@@ -37,12 +48,13 @@ export default function AdminOverviewPage() {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {stats.map((s) => (
           <Link key={s.label} href={s.href}>
-            <Card hover className="flex flex-col gap-1 py-5 h-full">
+            <Card hover className="flex flex-col gap-1 py-5 h-full" style={{ background: "var(--color-cream-100)", border: "1px solid rgba(194,150,58,0.12)" }}>
               <p
-                className="text-3xl font-light"
+                className="text-3xl"
                 style={{
-                  fontFamily: "var(--font-serif), Manrope, sans-serif",
-                  color: s.urgent ? "var(--color-error)" : "var(--color-sage-700)",
+                  fontFamily: "var(--font-serif), Georgia, serif",
+                  fontWeight: 300,
+                  color: s.urgent ? "var(--color-error)" : "#C2963A",
                 }}
               >
                 {s.value}
@@ -60,15 +72,22 @@ export default function AdminOverviewPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Pending applications */}
-        <Card className="flex flex-col gap-5">
+        <Card className="flex flex-col gap-5" style={{ background: "#fff", border: "1px solid rgba(194,150,58,0.12)" }}>
           <div className="flex items-center justify-between">
-            <h2 className="text-base font-semibold" style={{ color: "var(--color-sage-800)" }}>
+            <h2
+              className="text-base"
+              style={{
+                fontFamily: "var(--font-serif), Georgia, serif",
+                fontWeight: 300,
+                color: "var(--color-sage-800)",
+              }}
+            >
               Pending applications
             </h2>
             <Link
               href="/admin/applications"
               className="text-xs underline"
-              style={{ color: "var(--color-sage-600)", textUnderlineOffset: "3px" }}
+              style={{ color: "#C2963A", textUnderlineOffset: "3px" }}
             >
               View all
             </Link>
@@ -78,7 +97,7 @@ export default function AdminOverviewPage() {
               <div
                 key={a.name}
                 className="flex items-center justify-between gap-4 pb-3 border-b last:border-0 last:pb-0"
-                style={{ borderColor: "var(--color-cream-300)" }}
+                style={{ borderColor: "rgba(194,150,58,0.12)" }}
               >
                 <div>
                   <p className="text-sm font-medium" style={{ color: "var(--color-text-primary)" }}>
@@ -95,15 +114,22 @@ export default function AdminOverviewPage() {
         </Card>
 
         {/* Recent members */}
-        <Card className="flex flex-col gap-5">
+        <Card className="flex flex-col gap-5" style={{ background: "#fff", border: "1px solid rgba(194,150,58,0.12)" }}>
           <div className="flex items-center justify-between">
-            <h2 className="text-base font-semibold" style={{ color: "var(--color-sage-800)" }}>
+            <h2
+              className="text-base"
+              style={{
+                fontFamily: "var(--font-serif), Georgia, serif",
+                fontWeight: 300,
+                color: "var(--color-sage-800)",
+              }}
+            >
               Recently joined
             </h2>
             <Link
               href="/admin/members"
               className="text-xs underline"
-              style={{ color: "var(--color-sage-600)", textUnderlineOffset: "3px" }}
+              style={{ color: "#C2963A", textUnderlineOffset: "3px" }}
             >
               View all
             </Link>
@@ -113,12 +139,12 @@ export default function AdminOverviewPage() {
               <div
                 key={m.name}
                 className="flex items-center justify-between gap-4 pb-3 border-b last:border-0 last:pb-0"
-                style={{ borderColor: "var(--color-cream-300)" }}
+                style={{ borderColor: "rgba(194,150,58,0.12)" }}
               >
                 <div className="flex items-center gap-3">
                   <div
                     className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-medium shrink-0"
-                    style={{ background: "var(--color-sage-100)", color: "var(--color-sage-600)" }}
+                    style={{ background: "rgba(194,150,58,0.10)", color: "#C2963A" }}
                   >
                     {m.name.charAt(0)}
                   </div>
