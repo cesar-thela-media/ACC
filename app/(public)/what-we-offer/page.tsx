@@ -116,7 +116,7 @@ export default function WhatWeOfferPage() {
             className="leading-tight mb-8 max-w-2xl mx-auto"
             style={{
               fontFamily: "var(--font-serif), Georgia, serif",
-              fontSize: "clamp(2.5rem, 5vw, 3.75rem)",
+              fontSize: "clamp(3rem, 5.5vw, 4.5rem)",
               fontWeight: 400,
               color: "var(--color-sage-900)",
             }}
@@ -124,7 +124,7 @@ export default function WhatWeOfferPage() {
             Everything a thriving private practice needs.
           </h1>
           <p
-            className="text-base md:text-lg leading-relaxed max-w-2xl mx-auto"
+            className="text-lg leading-relaxed max-w-2xl mx-auto"
             style={{ color: "var(--color-text-secondary)" }}
           >
             Membership gives you full access to clinical support, professional
@@ -171,13 +171,13 @@ export default function WhatWeOfferPage() {
                   }
                 >
                   <h3
-                    className="text-base font-semibold mb-3"
+                    className="text-lg font-semibold mb-3"
                     style={{ color: i % 2 === 0 ? "var(--color-sage-800)" : "#fff" }}
                   >
                     {item.title}
                   </h3>
                   <p
-                    className="text-sm leading-relaxed"
+                    className="text-base leading-relaxed"
                     style={{ color: i % 2 === 0 ? "var(--color-text-secondary)" : "rgba(255,255,255,0.65)" }}
                   >
                     {item.body}
@@ -208,7 +208,7 @@ export default function WhatWeOfferPage() {
                 style={{
                   fontFamily: "var(--font-serif), Georgia, serif",
                   fontWeight: 400,
-                  fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
+                  fontSize: "clamp(2rem, 3.8vw, 3rem)",
                   color: "var(--color-sage-900)",
                 }}
               >
@@ -217,7 +217,7 @@ export default function WhatWeOfferPage() {
                 Everything included.
               </h2>
               <p
-                className="text-sm leading-relaxed mb-8"
+                className="text-base leading-relaxed mb-8"
                 style={{ color: "var(--color-text-secondary)" }}
               >
                 A simple membership with full access to consultation,
@@ -258,7 +258,7 @@ export default function WhatWeOfferPage() {
             style={{
               fontFamily: "var(--font-serif), Georgia, serif",
               fontWeight: 400,
-              fontSize: "clamp(1.75rem, 3vw, 2.25rem)",
+              fontSize: "clamp(2rem, 3.8vw, 3rem)",
               color: "var(--color-sage-900)",
             }}
           >
@@ -274,7 +274,7 @@ export default function WhatWeOfferPage() {
                   {faq.q}
                 </h3>
                 <p
-                  className="text-sm leading-relaxed"
+                  className="text-base leading-relaxed"
                   style={{ color: "var(--color-text-secondary)" }}
                 >
                   {faq.a}

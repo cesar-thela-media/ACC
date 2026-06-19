@@ -10,89 +10,158 @@ export const metadata: Metadata = {
 export default function FindAClinicianPage() {
   return (
     <>
+      {/* Hero */}
       <section
-        className="pt-28 md:pt-32 pb-16 md:pb-20"
-        style={{ background: "var(--color-cream-100)" }}
+        style={{
+          background: "#2D3B2C",
+          minHeight: "60vh",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          position: "relative",
+          overflow: "hidden",
+          paddingTop: "5rem",
+          paddingBottom: "5rem",
+        }}
       >
-        <div className="container-fluid text-center max-w-5xl">
+        {/* Amber radial glow */}
+        <div
+          aria-hidden
+          style={{
+            position: "absolute",
+            inset: 0,
+            background:
+              "radial-gradient(ellipse 55% 45% at 50% 50%, rgba(194,150,58,0.07) 0%, transparent 65%)",
+            pointerEvents: "none",
+          }}
+        />
+
+        {/* Concentric rings */}
+        {[50, 35, 22].map((size) => (
+          <div
+            key={size}
+            aria-hidden
+            style={{
+              position: "absolute",
+              width: `${size}vw`,
+              height: `${size}vw`,
+              borderRadius: "50%",
+              border: "1px solid rgba(255,255,255,0.05)",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              pointerEvents: "none",
+            }}
+          />
+        ))}
+
+        <div
+          className="text-center px-5 md:px-6"
+          style={{ position: "relative", zIndex: 1, maxWidth: 720 }}
+        >
           <p
-            className="text-[11px] font-semibold uppercase tracking-[0.28em] mb-5"
-            style={{ color: "var(--color-accent-highlight)" }}
+            className="font-semibold uppercase mb-5"
+            style={{
+              color: "#C2963A",
+              fontSize: 11,
+              letterSpacing: "0.28em",
+            }}
           >
-            Find a clinician
+            Member Directory
           </p>
           <h1
-            className="leading-tight mb-6 max-w-2xl mx-auto"
+            className="leading-tight mb-5"
             style={{
               fontFamily: "var(--font-serif), Georgia, serif",
-              fontSize: "clamp(2rem, 4vw, 3rem)",
+              fontSize: "clamp(3rem, 5.5vw, 4.5rem)",
               fontWeight: 400,
-              color: "var(--color-sage-900)",
+              color: "#ffffff",
             }}
           >
-            Therapist directory coming soon.
+            Find your people in Austin.
           </h1>
           <p
-            className="text-base leading-relaxed max-w-xl mx-auto mb-8"
-            style={{ color: "var(--color-text-secondary)" }}
-          >
-            We are building a trusted network of vetted, licensed clinicians in
-            Austin and across Texas. The public directory will be available after
-            launch.
-          </p>
-          <div
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm"
+            className="text-base leading-relaxed mx-auto mb-8"
             style={{
-              background: "var(--color-sage-800)",
-              color: "#fff",
+              color: "rgba(255,255,255,0.62)",
+              maxWidth: 560,
             }}
           >
-            <span className="w-1.5 h-1.5 rounded-full" style={{ background: "var(--color-accent-highlight)" }} />
-            Launching soon
+            A curated directory of licensed clinicians who share a commitment to
+            community and clinical excellence.
+          </p>
+          <div
+            className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm font-medium"
+            style={{
+              border: "1px solid #C2963A",
+              color: "#C2963A",
+            }}
+          >
+            Coming soon
           </div>
         </div>
       </section>
 
+      {/* CTA section */}
       <section
-        className="pb-28 md:pb-36 text-center"
-        style={{ background: "var(--color-cream-100)" }}
+        style={{
+          background: "#F0EDE6",
+          padding: "clamp(4rem, 8vw, 7rem) 0",
+        }}
       >
-        <div className="max-w-2xl mx-auto px-5 md:px-6">
-          <div
-            className="rounded-2xl border p-8 md:p-10"
+        <div
+          className="mx-auto px-5 md:px-6 text-center"
+          style={{ maxWidth: 680 }}
+        >
+          <p
+            className="font-semibold uppercase mb-4"
             style={{
-              background: "#fff",
-              borderColor: "var(--color-cream-300)",
+              color: "#C2963A",
+              fontSize: 11,
+              letterSpacing: "0.28em",
             }}
           >
-            <span className="text-3xl mb-3 block" style={{ color: "var(--color-accent-highlight)" }}>
-              ◎
-            </span>
-            <h2
-              className="section-title-strong mb-3"
-              style={{
-                fontFamily: "var(--font-serif), Georgia, serif",
-                fontWeight: 400,
-                fontSize: "clamp(1.25rem, 2.5vw, 1.5rem)",
-                color: "var(--color-sage-900)",
-              }}
-            >
-              Are you a licensed therapist?
-            </h2>
-            <p
-              className="text-sm leading-relaxed mb-6"
-              style={{ color: "var(--color-text-secondary)" }}
-            >
-              Join The Circle and get listed in our member directory when it
-              launches. Members can share referrals, connect with colleagues, and
-              be found by potential clients.
-            </p>
+            Are you a licensed therapist?
+          </p>
+          <h2
+            className="leading-tight mb-5"
+            style={{
+              fontFamily: "var(--font-serif), Georgia, serif",
+              fontSize: "clamp(1.8rem, 3.2vw, 2.5rem)",
+              fontWeight: 400,
+              color: "var(--color-sage-900)",
+            }}
+          >
+            Join The Circle. Get listed when it launches.
+          </h2>
+          <p
+            className="text-base leading-relaxed mb-8 mx-auto"
+            style={{
+              color: "var(--color-text-secondary)",
+              maxWidth: 520,
+            }}
+          >
+            Members get a public directory listing, referral network access, and
+            a professional home in Austin&rsquo;s clinical community.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link
               href="/join"
-              className="inline-flex items-center justify-center px-8 py-3.5 rounded-full text-sm font-medium transition-opacity hover:opacity-90"
-              style={{ background: "var(--color-accent-highlight)", color: "#fff" }}
+              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-full text-sm font-medium transition-opacity hover:opacity-90"
+              style={{ background: "#C2963A", color: "#fff" }}
             >
               Apply for membership
+            </Link>
+            <Link
+              href="/what-we-offer"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-full text-sm font-medium transition-opacity hover:opacity-80"
+              style={{
+                border: "1px solid #C2963A",
+                color: "#C2963A",
+                background: "transparent",
+              }}
+            >
+              Learn what&rsquo;s included &rarr;
             </Link>
           </div>
         </div>

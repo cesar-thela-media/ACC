@@ -27,10 +27,20 @@ export default function WhoWeArePage() {
     <>
       {/* Hero */}
       <section
-        className="pt-28 md:pt-32 pb-16 md:pb-20"
-        style={{ background: "var(--color-cream-100)" }}
+        className="pt-28 md:pt-36 pb-20 md:pb-28 text-center relative overflow-hidden"
+        style={{ background: "var(--color-sage-800)" }}
       >
-        <div className="container-fluid text-center">
+        <div
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            inset: 0,
+            background:
+              "radial-gradient(ellipse 55% 48% at 50% 48%, rgba(194,150,58,0.06) 0%, transparent 65%)",
+            pointerEvents: "none",
+          }}
+        />
+        <div className="container-fluid relative">
           <p
             className="text-[11px] font-semibold uppercase tracking-[0.28em] mb-5"
             style={{ color: "var(--color-accent-highlight)" }}
@@ -38,12 +48,12 @@ export default function WhoWeArePage() {
             Who we are
           </p>
           <h1
-            className="leading-tight max-w-2xl mx-auto"
+            className="leading-tight max-w-3xl mx-auto"
             style={{
               fontFamily: "var(--font-serif), Georgia, serif",
-              fontSize: "clamp(2.5rem, 5vw, 3.75rem)",
+              fontSize: "clamp(3rem, 5.5vw, 4.5rem)",
               fontWeight: 400,
-              color: "var(--color-sage-900)",
+              color: "#fff",
             }}
           >
             A professional home and community for therapists
@@ -51,10 +61,10 @@ export default function WhoWeArePage() {
         </div>
       </section>
 
-      {/* Origin */}
+      {/* Origin story */}
       <section
-        className="py-16 md:py-24"
-        style={{ background: "var(--color-cream-100)" }}
+        className="py-20 md:py-28"
+        style={{ background: "var(--color-sage-600)" }}
       >
         <div className="container-fluid text-center">
           <p
@@ -64,19 +74,19 @@ export default function WhoWeArePage() {
             The origin
           </p>
           <h2
-            className="section-title-strong mb-10"
+            className="mb-10 max-w-2xl mx-auto leading-snug"
             style={{
               fontFamily: "var(--font-serif), Georgia, serif",
               fontWeight: 400,
-              fontSize: "clamp(1.75rem, 3vw, 2.25rem)",
-              color: "var(--color-sage-900)",
+              fontSize: "clamp(2rem, 3.8vw, 3rem)",
+              color: "#fff",
             }}
           >
             Why The Circle exists.
           </h2>
           <div
-            className="flex flex-col gap-6 text-sm leading-relaxed max-w-2xl mx-auto text-left"
-            style={{ color: "var(--color-text-secondary)" }}
+            className="flex flex-col gap-6 text-base leading-relaxed max-w-2xl mx-auto text-left"
+            style={{ color: "rgba(255,255,255,0.82)" }}
           >
             <p>
               Most of us didn&apos;t fully anticipate how solo private practice would
@@ -101,12 +111,13 @@ export default function WhoWeArePage() {
         </div>
       </section>
 
+      {/* Founder */}
       <section
-        className="py-16 md:py-24"
+        className="py-20 md:py-28"
         style={{ background: "var(--color-cream-100)" }}
       >
         <div className="container-fluid grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
-          <div className="aspect-square rounded-2xl max-w-sm w-full mx-auto md:mx-0 lg:sticky lg:top-24 overflow-hidden">
+          <div className="aspect-square rounded-2xl max-w-sm w-full mx-auto md:mx-0 lg:sticky lg:top-24 overflow-hidden shadow-lg">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/sarah-arnold.jpeg"
@@ -122,18 +133,18 @@ export default function WhoWeArePage() {
               The founder
             </p>
             <h2
-              className="section-title-strong mb-6"
+              className="mb-6 leading-snug"
               style={{
                 fontFamily: "var(--font-serif), Georgia, serif",
                 fontWeight: 400,
-                fontSize: "clamp(1.75rem, 3vw, 2.25rem)",
-                color: "var(--color-sage-900)",
+                fontSize: "clamp(2rem, 3.8vw, 3rem)",
+                color: "var(--color-sage-800)",
               }}
             >
               Sarah Arnold, LPC-S
             </h2>
             <div
-              className="flex flex-col gap-5 text-sm leading-relaxed"
+              className="flex flex-col gap-5 text-base leading-relaxed"
               style={{ color: "var(--color-text-secondary)" }}
             >
               <p>
@@ -166,7 +177,7 @@ export default function WhoWeArePage() {
               href="https://www.restoredfamily.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block mt-8 text-sm font-medium underline"
+              className="inline-block mt-8 text-base font-medium underline"
               style={{
                 color: "var(--color-accent-highlight)",
                 textUnderlineOffset: "4px",
@@ -178,12 +189,16 @@ export default function WhoWeArePage() {
         </div>
       </section>
 
+      {/* Values */}
       <section
-        className="py-16 md:py-24"
-        style={{ background: "var(--color-cream-100)" }}
+        className="py-20 md:py-28"
+        style={{
+          background: "var(--color-cream-100)",
+          borderTop: "2px solid var(--color-accent-highlight)",
+        }}
       >
         <div className="container-fluid">
-          <div className="max-w-5xl mx-auto text-center mb-10 md:mb-14">
+          <div className="max-w-5xl mx-auto text-center mb-12 md:mb-16">
             <p
               className="text-[11px] font-semibold uppercase tracking-[0.28em] mb-5"
               style={{ color: "var(--color-accent-highlight)" }}
@@ -191,28 +206,40 @@ export default function WhoWeArePage() {
               What we believe
             </p>
             <h2
-              className="section-title-strong"
+              className="leading-snug"
               style={{
                 fontFamily: "var(--font-serif), Georgia, serif",
                 fontWeight: 400,
-                fontSize: "clamp(1.75rem, 3vw, 2.25rem)",
-                color: "var(--color-sage-900)",
+                fontSize: "clamp(2rem, 3.8vw, 3rem)",
+                color: "var(--color-sage-800)",
               }}
             >
               The values that shape The Circle.
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             {values.map((value) => (
-              <div key={value.title} className="text-center md:text-left lg:text-center">
+              <div
+                key={value.title}
+                className="rounded-2xl p-8 flex flex-col gap-4"
+                style={{
+                  background: "#fff",
+                  boxShadow: "0 2px 16px rgba(45,59,44,0.07)",
+                  borderTop: "3px solid var(--color-accent-highlight)",
+                }}
+              >
                 <h3
-                  className="text-base font-semibold mb-3"
-                  style={{ color: "var(--color-sage-800)" }}
+                  className="text-lg leading-snug"
+                  style={{
+                    fontFamily: "var(--font-serif), Georgia, serif",
+                    fontWeight: 600,
+                    color: "var(--color-sage-800)",
+                  }}
                 >
                   {value.title}
                 </h3>
                 <p
-                  className="text-sm leading-relaxed"
+                  className="text-base leading-relaxed"
                   style={{ color: "var(--color-text-secondary)" }}
                 >
                   {value.body}
@@ -223,17 +250,18 @@ export default function WhoWeArePage() {
         </div>
       </section>
 
+      {/* CTA */}
       <section
-        className="py-16 md:py-24 text-center"
+        className="py-20 md:py-28 text-center"
         style={{ background: "var(--color-sage-800)" }}
       >
         <div className="max-w-2xl mx-auto px-5 md:px-6">
           <h2
-            className="section-title-strong mb-6"
+            className="mb-8 leading-snug"
             style={{
               fontFamily: "var(--font-serif), Georgia, serif",
               fontWeight: 400,
-              fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
+              fontSize: "clamp(2rem, 3.8vw, 3rem)",
               color: "#fff",
             }}
           >
@@ -241,7 +269,7 @@ export default function WhoWeArePage() {
           </h2>
           <Link
             href="/join"
-            className="inline-flex w-full sm:w-auto items-center justify-center px-8 py-3.5 rounded-full text-sm font-medium hover:opacity-90 transition-opacity"
+            className="inline-flex w-full sm:w-auto items-center justify-center px-8 py-3.5 rounded-full text-base font-medium hover:opacity-90 transition-opacity"
             style={{ background: "var(--color-accent-highlight)", color: "#fff" }}
           >
             Join the circle

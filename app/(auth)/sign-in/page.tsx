@@ -14,6 +14,23 @@ export default function SignInPage() {
         routing="path"
         signUpUrl="/sign-up"
         fallbackRedirectUrl="/dashboard"
+        appearance={{
+          variables: {
+            colorPrimary: "#C2963A",
+            colorBackground: "#F0EDE6",
+            colorText: "#1A1A1A",
+            colorTextSecondary: "#3D4A3B",
+            colorInputBackground: "#ffffff",
+            colorInputText: "#1A1A1A",
+            borderRadius: "10px",
+            fontFamily: "inherit",
+          },
+          elements: {
+            card: { boxShadow: "0 4px 24px rgba(45,59,44,0.10)", border: "1px solid rgba(194,150,58,0.15)" },
+            formButtonPrimary: { backgroundColor: "#C2963A" },
+            footerActionLink: { color: "#C2963A" },
+          },
+        }}
       />
     </div>
   );

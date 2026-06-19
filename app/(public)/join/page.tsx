@@ -136,7 +136,7 @@ export default function JoinPage() {
           className="mb-10"
           style={{
             fontFamily: "var(--font-serif), Georgia, serif",
-            fontSize: "clamp(2rem, 4vw, 2.75rem)",
+            fontSize: "clamp(2.75rem, 5vw, 3.75rem)",
             fontWeight: 400,
             color: "var(--color-sage-900)",
           }}
