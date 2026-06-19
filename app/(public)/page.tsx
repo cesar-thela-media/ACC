@@ -83,48 +83,49 @@ const benefits = [
 /* ── Corkboard cards ──────────────────────────────────────── */
 /*
   Cluster layout — percentage widths, centered across container.
-  Cluster spans 4% → 96% (symmetric), fully centered at any container width.
-    Card 2  upper-left portrait   [ 4% – 26% ]  row A
-    Card 1  center landscape      [22% – 58% ]  row A  (overlaps Card 2 right ~4%)
-    Card 4  upper-right small     [72% – 96% ]  row A
-    Card 5  lower center-left     [18% – 40% ]  row B
-    Card 3  lower-right landscape [52% – 88% ]  row B
+  Cluster spans 3% → 96%. Card 1 starts after Card 2's right edge so
+  Card 2 is fully readable (no overlap). Cards sit close with 1-5% gaps.
+    Card 2  upper-left portrait   [ 3% – 27% ]  row A
+    Card 1  center landscape      [28% – 66% ]  row A  (1% gap from Card 2)
+    Card 4  upper-right           [68% – 96% ]  row A  (2% gap from Card 1)
+    Card 5  lower center-left     [18% – 42% ]  row B
+    Card 3  lower-right landscape [47% – 85% ]  row B  (5% gap from Card 5)
   z-index: Card 1 highest (5).
 */
 const corkCards = [
   {
-    // Card 1 — center landscape (dominant)
+    // Card 1 — center landscape (dominant) — starts after Card 2 right edge
     quote: "I started dreading Mondays. Not because of my clients — because I was completely alone with the weight of it.",
     author: "Anonymous, PhD", location: "Austin, TX",
-    desktop: { left: "22%", top: "58px", width: "36%" },
+    desktop: { left: "28%", top: "56px", width: "38%" },
     rotation: 1.5,
   },
   {
-    // Card 2 — upper-left portrait
+    // Card 2 — upper-left portrait — fully readable, no overlap from Card 1
     quote: "I went three years without a single peer consultation. I didn't realize how much I was carrying until I talked to another clinician.",
     author: "Anonymous, LPC-S", location: "Austin, TX",
-    desktop: { left: "4%", top: "22px", width: "22%" },
+    desktop: { left: "3%", top: "20px", width: "24%" },
     rotation: -2.5,
   },
   {
     // Card 3 — lower-right landscape
     quote: "The agency had built-in support I never appreciated until it was gone. Private practice felt like flying blind.",
     author: "Anonymous, LCSW", location: "Round Rock, TX",
-    desktop: { left: "52%", top: "268px", width: "36%" },
+    desktop: { left: "47%", top: "262px", width: "38%" },
     rotation: -1.5,
   },
   {
-    // Card 4 — upper-right small square
+    // Card 4 — upper-right
     quote: "I didn't need more CEUs. I needed someone who understood what this work actually costs.",
     author: "Anonymous, LMFT", location: "Cedar Park, TX",
-    desktop: { left: "72%", top: "14px", width: "24%" },
+    desktop: { left: "68%", top: "12px", width: "28%" },
     rotation: 3.5,
   },
   {
-    // Card 5 — lower center-left (tucks under Card 2 bottom-right corner)
+    // Card 5 — lower center-left
     quote: "The first consultation group felt like exhaling for the first time in years.",
     author: "Anonymous, LPC", location: "Austin, TX",
-    desktop: { left: "18%", top: "264px", width: "22%" },
+    desktop: { left: "18%", top: "270px", width: "24%" },
     rotation: -2,
   },
 ];
@@ -392,7 +393,7 @@ export default function HomePage() {
             className="hidden md:block relative"
             data-aos="fade-in"
             data-delay="100"
-            style={{ minHeight: 580 }}
+            style={{ minHeight: 600 }}
           >
             {corkCards.map((card, i) => (
               <div
