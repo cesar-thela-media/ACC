@@ -537,12 +537,59 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Consultation Scheduler */}
-          <div data-aos="fade-in-up" data-delay="80">
-            <p className="text-xs font-medium uppercase tracking-[0.22em] mb-3" style={{ color: "rgba(194,150,58,0.75)" }}>
+          {/* Consultation Scheduler — desktop: browser-chrome product preview */}
+          <div className="hidden md:block" data-aos="fade-in-up" data-delay="80">
+            <p className="text-xs font-medium uppercase tracking-[0.22em] mb-4" style={{ color: "rgba(194,150,58,0.75)" }}>
               Member preview
             </p>
-            <ConsultationScheduler />
+            <div
+              className="rounded-2xl overflow-hidden"
+              style={{
+                boxShadow: "0 28px 72px rgba(45,59,44,0.16), 0 4px 20px rgba(45,59,44,0.08)",
+                border: "1px solid rgba(45,59,44,0.09)",
+              }}
+            >
+              {/* Browser chrome bar */}
+              <div
+                className="h-9 flex items-center px-4 gap-3"
+                style={{ background: "#DEDAD2", borderBottom: "1px solid rgba(45,59,44,0.08)" }}
+              >
+                <div className="flex items-center gap-1.5">
+                  {["rgba(194,80,60,0.75)", "rgba(210,150,40,0.75)", "rgba(60,160,80,0.75)"].map((c, i) => (
+                    <span key={i} className="w-2.5 h-2.5 rounded-full block" style={{ background: c }} />
+                  ))}
+                </div>
+                <div
+                  className="rounded px-3 py-0.5 text-center text-xs"
+                  style={{
+                    background: "rgba(255,255,255,0.50)",
+                    color: "rgba(45,59,44,0.38)",
+                    width: 260,
+                    margin: "0 auto",
+                    letterSpacing: "0.01em",
+                  }}
+                >
+                  The Circle · Member Dashboard
+                </div>
+              </div>
+              <ConsultationScheduler />
+            </div>
+          </div>
+
+          {/* Consultation Scheduler — mobile: editorial text card */}
+          <div
+            className="md:hidden rounded-2xl p-6"
+            style={{ background: "#fff", border: "1px solid rgba(194,150,58,0.14)", boxShadow: "0 2px 12px rgba(45,59,44,0.06)" }}
+          >
+            <p
+              className="text-base mb-2"
+              style={{ fontFamily: "var(--font-serif), Georgia, serif", fontWeight: 400, color: "var(--color-sage-800)" }}
+            >
+              Peer consultation groups, matched to your specialty.
+            </p>
+            <p className="text-sm leading-relaxed" style={{ color: "var(--color-text-secondary)" }}>
+              Browse open groups by specialty — trauma, anxiety, couples, ADHD, and more. Join as a member to see live availability and reserve your spot.
+            </p>
           </div>
         </div>
       </section>
