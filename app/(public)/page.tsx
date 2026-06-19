@@ -81,38 +81,49 @@ const benefits = [
 ];
 
 /* ── Corkboard cards ──────────────────────────────────────── */
-/* Positions tuned for genuine edge-overlap at 1280px container.
-   z-index cascade: Card 1 (dominant center) = highest.
-   No data-aos on individual cards — the container fades in as one. */
+/*
+  Cluster layout at 1280px container (container-fluid, no px offset):
+    Card 2  upper-left portrait   [  0 – 225px ]  row A
+    Card 1  center landscape      [205 – 580px ]  row A  (overlaps Card 2: ~20px)
+    Card 4  upper-right small     [819 – 1039px]  row A  (gap from Card 1; row separation)
+    Card 5  lower center-left     [166 – 394px ]  row B  (below Card 1 left, tucks under Card 2 corner)
+    Card 3  lower-right landscape [576 – 936px ]  row B  (touches Card 1 right, overlaps Card 4 column)
+  Cluster spans 0 → 1039px = 81% of 1280px. z-index: Card 1 highest (5).
+*/
 const corkCards = [
   {
+    // Card 1 — center landscape (dominant)
     quote: "I started dreading Mondays. Not because of my clients — because I was completely alone with the weight of it.",
     author: "Anonymous, PhD", location: "Austin, TX",
-    desktop: { left: "17%", top: "55px",  width: "355px" },
+    desktop: { left: "16%", top: "52px", width: "375px" },
     rotation: 2,
   },
   {
+    // Card 2 — upper-left portrait
     quote: "I went three years without a single peer consultation. I didn't realize how much I was carrying until I talked to another clinician.",
     author: "Anonymous, LPC-S", location: "Austin, TX",
-    desktop: { left: "0%",  top: "20px",  width: "225px" },
+    desktop: { left: "0%", top: "18px", width: "225px" },
     rotation: -3,
   },
   {
+    // Card 3 — lower-right landscape
     quote: "The agency had built-in support I never appreciated until it was gone. Private practice felt like flying blind.",
     author: "Anonymous, LCSW", location: "Round Rock, TX",
-    desktop: { left: "44%", top: "235px", width: "350px" },
+    desktop: { left: "45%", top: "248px", width: "360px" },
     rotation: -1.5,
   },
   {
+    // Card 4 — upper-right small square
     quote: "I didn't need more CEUs. I needed someone who understood what this work actually costs.",
     author: "Anonymous, LMFT", location: "Cedar Park, TX",
-    desktop: { left: "64%", top: "12px",  width: "215px" },
+    desktop: { left: "64%", top: "10px", width: "220px" },
     rotation: 4,
   },
   {
+    // Card 5 — lower center-left portrait (below Card 1 left, tucks under Card 2 bottom corner)
     quote: "The first consultation group felt like exhaling for the first time in years.",
     author: "Anonymous, LPC", location: "Austin, TX",
-    desktop: { left: "5%",  top: "248px", width: "215px" },
+    desktop: { left: "13%", top: "248px", width: "228px" },
     rotation: -2.5,
   },
 ];
@@ -380,7 +391,7 @@ export default function HomePage() {
             className="hidden md:block relative"
             data-aos="fade-in"
             data-delay="100"
-            style={{ minHeight: 480 }}
+            style={{ minHeight: 510 }}
           >
             {corkCards.map((card, i) => (
               <div
@@ -418,19 +429,19 @@ export default function HomePage() {
                 <p
                   style={{
                     fontFamily: "var(--font-serif), Georgia, serif",
-                    fontSize: "clamp(0.85rem, 1.05vw, 0.97rem)",
+                    fontSize: "0.9375rem",
                     fontStyle: "italic",
                     fontWeight: 400,
-                    lineHeight: 1.7,
-                    color: "#1A1A1A",
+                    lineHeight: 1.72,
+                    color: "#1C1C1A",
                   }}
                 >
                   &ldquo;{card.quote}&rdquo;
                 </p>
-                <div style={{ height: "0.5px", background: `rgba(194,150,58,0.3)` }} />
+                <div style={{ height: "0.5px", background: `rgba(194,150,58,0.32)` }} />
                 <div>
-                  <p style={{ fontSize: "11px", fontWeight: 600, color: "#4A5E48", letterSpacing: "0.01em" }}>— {card.author}</p>
-                  <p style={{ fontSize: "10.5px", color: "#9A9A8E", marginTop: 2 }}>{card.location}</p>
+                  <p style={{ fontSize: "11.5px", fontWeight: 600, color: "#4A5E48", letterSpacing: "0.01em" }}>— {card.author}</p>
+                  <p style={{ fontSize: "11px", color: "#9A9A8E", marginTop: 3 }}>{card.location}</p>
                 </div>
               </div>
             ))}
