@@ -27,7 +27,7 @@ export function DashboardNav() {
   return (
     <>
       <div
-        className="md:hidden fixed top-0 left-0 right-0 z-40 h-16 px-4 flex items-center justify-between"
+        className="md:hidden fixed top-0 left-0 right-0 z-40 py-3 px-4 flex items-center justify-between"
         style={{
           background: "rgba(45,59,44,0.96)",
           borderBottom: "1px solid rgba(255,255,255,0.12)",
@@ -42,7 +42,7 @@ export function DashboardNav() {
           <img
             src="/logo.png"
             alt="Austin Clinician Circle"
-            className="h-9 w-auto"
+            className="h-36 w-auto"
           />
         </Link>
 
@@ -72,7 +72,7 @@ export function DashboardNav() {
           <img
             src="/logo.png"
             alt="Austin Clinician Circle"
-            className="h-9 w-auto"
+            className="h-36 w-auto"
           />
         </Link>
 

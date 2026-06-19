@@ -31,7 +31,7 @@ export function Footer() {
               <img
                 src="/logo.png"
                 alt="Austin Clinician Circle"
-                className="h-10 w-auto"
+                className="h-36 w-auto"
               />
             </Link>
             <p className="text-xs mb-6" style={{ color: "rgba(255,255,255,0.48)" }}>
