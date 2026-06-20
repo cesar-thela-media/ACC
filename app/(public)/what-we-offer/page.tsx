@@ -1,75 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-const PARCHMENT = "#F0EDE6";
 const SAGE_800 = "#2D3B2C";
 const AMBER = "#C2963A";
-
-const sections = [
-  {
-    eyebrow: "Clinical",
-    heading: "Support for your hardest cases.",
-    items: [
-      {
-        title: "Monthly case consultation",
-        body: "A structured consultation group meets the first Thursday of every month from 9:00 to 10:30am. Bring your difficult cases, process with trusted peers, and leave with new perspective.",
-      },
-      {
-        title: "Continuing education (CEUs)",
-        body: "Access to continuing education content aligned with your licensure requirements. Curated for practicing clinicians and designed for professional growth.",
-      },
-      {
-        title: "Resource library",
-        body: "A growing library of clinical tools, assessment instruments, psychoeducation handouts, treatment frameworks, and business templates, organized and searchable.",
-      },
-    ],
-  },
-  {
-    eyebrow: "Professional",
-    heading: "Visibility and referrals that matter.",
-    items: [
-      {
-        title: "Clinician directory listing",
-        body: "Your profile in the public directory, searchable by specialty, modality, location, and availability. A trusted source for referrals from clients and colleagues.",
-      },
-      {
-        title: "Referral network",
-        body: "A private network of vetted clinicians. Send and receive referrals confidently, knowing every member has been part of the same professional community.",
-      },
-      {
-        title: "Practice and marketing guidance",
-        body: "Structured guidance on building a sustainable private practice: fee setting, marketing, business systems, and more.",
-      },
-    ],
-  },
-  {
-    eyebrow: "Support",
-    heading: "Sustaining the person behind the work.",
-    items: [
-      {
-        title: "Burnout prevention",
-        body: "Mindfulness practices and burnout prevention structures designed specifically for therapists carrying heavy caseloads. Because your sustainability matters too.",
-      },
-      {
-        title: "Discounted coaching with Sarah",
-        body: "Members receive discounted access to individual coaching sessions with Sarah Arnold, LPC-S for clinical consultation, practice development, or both.",
-      },
-    ],
-  },
-];
-
-const pricingFeatures = [
-  "Monthly case consultation group",
-  "CEU trainings each month",
-  "Curated clinical resource library",
-  "Public directory listing",
-  "Trusted clinician referral network",
-  "Marketing and practice guidance",
-  "Discounted coaching with Sarah",
-  "Mindfulness and burnout resources",
-  "Professional Will designation",
-  "Private online community",
-];
+const PARCHMENT = "#F0EDE6";
 
 const faqs = [
   {
@@ -94,15 +28,6 @@ const faqs = [
   },
 ];
 
-function AmberCheck() {
-  return (
-    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style={{ flexShrink: 0, marginTop: 2 }}>
-      <circle cx="8" cy="8" r="8" fill="rgba(194,150,58,0.72)" />
-      <path d="M4.5 8l2.5 2.5 4.5-5" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
 export const metadata: Metadata = {
   title: "What We Offer | The Circle",
   description:
@@ -112,272 +37,95 @@ export const metadata: Metadata = {
 export default function WhatWeOfferPage() {
   return (
     <>
-      {/* Hero */}
-      <section
-        className="relative overflow-hidden text-center"
-        style={{ background: SAGE_800, padding: "clamp(5rem,10vw,9rem) 1.5rem clamp(3rem,6vw,5rem)" }}
-      >
-        <div
-          aria-hidden="true"
-          style={{
-            position: "absolute",
-            inset: 0,
-            background: "radial-gradient(ellipse 55% 48% at 50% 48%, rgba(194,150,58,0.07) 0%, transparent 65%)",
-            pointerEvents: "none",
-          }}
-        />
-        <div className="relative container-fluid">
+      {/* Hero — emotional pull */}
+      <section style={{ background: SAGE_800, padding: "clamp(3rem,6vw,5rem) 0" }}>
+        <div className="container-fluid text-center max-w-3xl mx-auto">
           <p className="text-[11px] font-medium uppercase tracking-[0.28em] mb-5" style={{ color: AMBER }}>
             What we offer
           </p>
           <h1
-            className="leading-tight mb-6 max-w-2xl mx-auto"
-            style={{
-              fontFamily: "var(--font-serif), Georgia, serif",
-              fontSize: "clamp(2.5rem, 5.5vw, 4.5rem)",
-              fontWeight: 400,
-              color: "#fff",
-            }}
+            className="leading-tight mb-5"
+            style={{ fontFamily: "var(--font-serif), Georgia, serif", fontSize: "clamp(2rem, 4.5vw, 3.5rem)", fontWeight: 400, color: "#fff" }}
           >
-            Everything a thriving private practice needs.
+            The support you&apos;ve been missing since you left the agency.
           </h1>
-          <p
-            className="text-[0.9375rem] leading-relaxed max-w-xl mx-auto"
-            style={{ color: "rgba(255,255,255,0.68)" }}
-          >
-            Membership gives you full access to clinical support, professional
-            development, and community.
+          <p className="text-base leading-relaxed max-w-xl mx-auto" style={{ color: "rgba(255,255,255,0.58)" }}>
+            One membership. Every tool, every connection, every resource you need to build a private practice that feels sustainable.
           </p>
         </div>
       </section>
 
-      {/* Benefit sections */}
-      {sections.map((sec, i) => (
-        <section
-          key={sec.eyebrow}
-          style={{
-            background: PARCHMENT,
-            padding: "clamp(2.5rem,5vw,4rem) 0",
-            borderTop: `1px solid rgba(194,150,58,0.12)`,
-          }}
-        >
-          <div className="container-fluid">
-            <div className="mb-8">
-              <p className="text-[11px] font-medium uppercase tracking-[0.28em] mb-3" style={{ color: AMBER }}>
-                {sec.eyebrow}
-              </p>
-              <h2
-                style={{
-                  fontFamily: "var(--font-serif), Georgia, serif",
-                  fontWeight: 400,
-                  fontSize: "clamp(1.6rem, 2.8vw, 2.25rem)",
-                  letterSpacing: "-0.016em",
-                  lineHeight: 1.18,
-                  color: SAGE_800,
-                }}
-              >
-                {sec.heading}
-              </h2>
-            </div>
-            <div
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
-            >
-              {sec.items.map((item) => (
-                <div
-                  key={item.title}
-                  className="rounded-2xl p-6 flex flex-col gap-3"
-                  style={{
-                    background: "#fff",
-                    border: `1px solid rgba(194,150,58,0.12)`,
-                    boxShadow: "0 2px 12px rgba(45,59,44,0.06)",
-                  }}
-                >
-                  <div style={{ width: 20, height: 1.5, background: AMBER, borderRadius: 1 }} />
-                  <h3
-                    className="text-base leading-snug"
-                    style={{
-                      fontFamily: "var(--font-serif), Georgia, serif",
-                      fontWeight: 400,
-                      color: SAGE_800,
-                    }}
-                  >
-                    {item.title}
-                  </h3>
-                  <p
-                    className="text-sm leading-relaxed"
-                    style={{ color: "var(--color-text-secondary)" }}
-                  >
-                    {item.body}
-                  </p>
+      {/* Benefits — large emotional cards */}
+      <section style={{ background: PARCHMENT, padding: "clamp(2.5rem,5vw,4rem) 0" }}>
+        <div className="container-fluid max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              { label: "01", title: "You talk through cases with people who get it.", body: "Monthly case consultation with a small, trusted group of clinicians. Bring your hardest sessions and leave with perspective you can actually use." },
+              { label: "02", title: "You stop Googling for handouts at 10pm.", body: "A searchable library of clinical tools, assessments, and templates — organized by specialty and ready when you are." },
+              { label: "03", title: "You send referrals without second-guessing.", body: "A vetted network of clinicians you know and trust. Because the best referrals come from real professional relationships." },
+              { label: "04", title: "You stay sharp without sitting through irrelevant CEUs.", body: "Continuing education designed for practicing clinicians — practical, relevant, and actually worth your Saturday morning." },
+              { label: "05", title: "You get found by the clients who need you.", body: "Your profile in our public directory, searchable by specialty, modality, and availability. A trusted source for client referrals." },
+              { label: "06", title: "You have someone to call when it feels heavy.", body: "Discounted one-on-one coaching with Sarah Arnold, LPC-S — for clinical guidance, practice strategy, or just a grounded conversation." },
+            ].map((item) => (
+              <div key={item.label} className="rounded-2xl p-7 flex gap-5" style={{ background: "#fff", border: "1px solid rgba(194,150,58,0.12)", boxShadow: "0 2px 12px rgba(45,59,44,0.05)" }}>
+                <span className="text-2xl shrink-0" style={{ fontFamily: "var(--font-serif), Georgia, serif", fontWeight: 400, color: AMBER, lineHeight: 1 }}>{item.label}</span>
+                <div>
+                  <h3 className="text-base font-semibold mb-2 leading-snug" style={{ color: SAGE_800 }}>{item.title}</h3>
+                  <p className="text-sm leading-relaxed" style={{ color: "var(--color-text-secondary)" }}>{item.body}</p>
                 </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      ))}
-
-      {/* Pricing */}
-      <section
-        style={{
-          background: PARCHMENT,
-          padding: "clamp(2.5rem,5vw,4rem) 0",
-          borderTop: `1px solid rgba(194,150,58,0.12)`,
-        }}
-      >
-        <div className="container-fluid">
-          <div className="text-center mb-8">
-            <p className="text-[11px] font-medium uppercase tracking-[0.28em] mb-3" style={{ color: AMBER }}>
-              Membership
-            </p>
-            <h2
-              style={{
-                fontFamily: "var(--font-serif), Georgia, serif",
-                fontWeight: 400,
-                fontSize: "clamp(1.8rem, 3vw, 2.5rem)",
-                letterSpacing: "-0.018em",
-                lineHeight: 1.18,
-                color: "#1A1A1A",
-              }}
-            >
-              Simple, all-inclusive pricing.
-            </h2>
-          </div>
-
-          <div
-            className="max-w-3xl mx-auto rounded-2xl overflow-hidden"
-            style={{ background: "#fff", boxShadow: "0 4px 28px rgba(45,59,44,0.09)", border: `1px solid rgba(194,150,58,0.12)` }}
-          >
-            <div className="grid grid-cols-1 md:grid-cols-[190px,1fr]">
-              <div
-                className="flex flex-col items-center justify-center"
-                style={{ padding: "2.5rem 1.5rem", borderRight: `1px solid rgba(194,150,58,0.12)` }}
-              >
-                <div className="flex items-baseline gap-1">
-                  <span
-                    style={{
-                      fontFamily: "var(--font-serif), Georgia, serif",
-                      fontSize: "clamp(3rem, 7vw, 5rem)",
-                      fontWeight: 400,
-                      letterSpacing: "-0.03em",
-                      lineHeight: 1,
-                      color: "#1A1A1A",
-                    }}
-                  >
-                    $79
-                  </span>
-                  <span style={{ fontSize: 13, color: "#7A7A6E", alignSelf: "flex-end", paddingBottom: 4 }}>/month</span>
-                </div>
-                <p className="text-xs mt-2 text-center" style={{ color: "#9A9A8E" }}>Billed monthly · Cancel anytime</p>
-              </div>
-              <div style={{ padding: "2rem" }}>
-                <div className="md:hidden" style={{ height: "0.5px", background: `rgba(194,150,58,0.3)`, marginBottom: "1.5rem" }} />
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2.5" style={{ marginBottom: "1.75rem" }}>
-                  {pricingFeatures.map((feature) => (
-                    <div key={feature} className="flex items-start gap-2">
-                      <AmberCheck />
-                      <span style={{ fontSize: 13, color: "#3D4A3B" }}>{feature}</span>
-                    </div>
-                  ))}
-                </div>
-                <Link
-                  href="/join"
-                  className="block text-center w-full rounded-full text-sm font-medium"
-                  style={{ background: AMBER, color: "#fff", padding: "0.85rem 1.5rem" }}
-                >
-                  Apply for membership
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section
-        style={{
-          background: PARCHMENT,
-          padding: "clamp(2.5rem,5vw,4rem) 0",
-          borderTop: `1px solid rgba(194,150,58,0.12)`,
-        }}
-      >
-        <div className="container-fluid max-w-4xl">
-          <p className="text-[11px] font-medium uppercase tracking-[0.28em] mb-4" style={{ color: AMBER }}>
-            Questions
-          </p>
-          <h2
-            className="mb-10"
-            style={{
-              fontFamily: "var(--font-serif), Georgia, serif",
-              fontWeight: 400,
-              fontSize: "clamp(1.8rem, 3vw, 2.5rem)",
-              letterSpacing: "-0.018em",
-              lineHeight: 1.18,
-              color: SAGE_800,
-            }}
-          >
-            Frequently asked questions.
-          </h2>
-          <div className="flex flex-col">
-            {faqs.map((faq, i) => (
-              <div
-                key={faq.q}
-                className="py-6"
-                style={{ borderTop: i === 0 ? `1px solid rgba(194,150,58,0.18)` : `1px solid rgba(194,150,58,0.12)` }}
-              >
-                <h3
-                  className="text-[0.9375rem] font-medium mb-2.5"
-                  style={{ color: SAGE_800 }}
-                >
-                  {faq.q}
-                </h3>
-                <p
-                  className="text-sm leading-relaxed"
-                  style={{ color: "var(--color-text-secondary)" }}
-                >
-                  {faq.a}
-                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section
-        className="text-center relative overflow-hidden"
-        style={{ background: SAGE_800, padding: "clamp(2.5rem,5vw,4.5rem) 1.5rem" }}
-      >
-        <div
-          aria-hidden="true"
-          style={{
-            position: "absolute",
-            inset: 0,
-            background: "radial-gradient(ellipse 55% 45% at 50% 50%, rgba(194,150,58,0.07) 0%, transparent 65%)",
-            pointerEvents: "none",
-          }}
-        />
-        <div className="relative max-w-2xl mx-auto">
-          <h2
-            className="mb-8"
-            style={{
-              fontFamily: "var(--font-serif), Georgia, serif",
-              fontWeight: 400,
-              fontSize: "clamp(1.8rem, 3.2vw, 2.75rem)",
-              color: "#fff",
-              lineHeight: 1.18,
-            }}
-          >
-            Ready to join?
+      {/* Pricing — compact */}
+      <section style={{ background: SAGE_800, padding: "clamp(2.5rem,5vw,4rem) 0" }}>
+        <div className="container-fluid text-center max-w-xl mx-auto">
+          <h2 className="mb-4" style={{ fontFamily: "var(--font-serif), Georgia, serif", fontSize: "clamp(1.6rem, 3vw, 2rem)", fontWeight: 400, color: "#fff" }}>
+            One membership. Everything included.
           </h2>
-          <Link
-            href="/join"
-            className="inline-flex w-full sm:w-auto items-center justify-center rounded-full text-sm font-medium hover:opacity-90 transition-opacity"
-            style={{ background: AMBER, color: "#fff", padding: "0.85rem 2.25rem" }}
-          >
+          <div className="flex items-baseline justify-center gap-2 mb-6">
+            <span style={{ fontFamily: "var(--font-serif), Georgia, serif", fontSize: "clamp(3rem, 6vw, 4rem)", fontWeight: 400, color: "#fff", lineHeight: 1 }}>$79</span>
+            <span style={{ color: "rgba(255,255,255,0.5)", fontSize: 14 }}>/month</span>
+          </div>
+          <div className="grid grid-cols-2 gap-x-8 gap-y-2 text-sm mb-8 max-w-md mx-auto">
+            {["Monthly case consultation","CEU trainings","Clinical resource library","Public directory listing","Referral network","Practice guidance","Coaching with Sarah","Burnout resources"].map((f) => (
+              <div key={f} className="flex items-center gap-2">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="rgba(194,150,58,0.5)" strokeWidth="1.2"/><path d="M5 8l2 2 4-4" stroke="#C2963A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                <span style={{ color: "rgba(255,255,255,0.7)", textAlign: "left" }}>{f}</span>
+              </div>
+            ))}
+          </div>
+          <Link href="/join" className="inline-flex items-center justify-center rounded-full text-sm font-medium px-8 py-3.5 transition-opacity hover:opacity-90" style={{ background: AMBER, color: "#fff" }}>
             Apply for membership
           </Link>
+        </div>
+      </section>
+
+      {/* FAQs */}
+      <section style={{ background: PARCHMENT, padding: "clamp(2.5rem,5vw,4rem) 0" }}>
+        <div className="container-fluid max-w-2xl mx-auto">
+          <div className="text-center mb-10">
+            <p className="text-[11px] font-medium uppercase tracking-[0.28em] mb-3" style={{ color: AMBER }}>FAQ</p>
+            <h2 className="leading-tight" style={{ fontFamily: "var(--font-serif), Georgia, serif", fontSize: "clamp(1.6rem, 3vw, 2rem)", fontWeight: 400, color: SAGE_800 }}>
+              You probably have questions.
+            </h2>
+          </div>
+          <div className="flex flex-col gap-3">
+            {faqs.map((faq) => (
+              <details key={faq.q} className="rounded-2xl p-5 group" style={{ background: "#fff", border: "1px solid rgba(194,150,58,0.12)" }}>
+                <summary className="text-sm font-semibold cursor-pointer list-none flex items-center justify-between" style={{ color: SAGE_800 }}>
+                  {faq.q}
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="transition-transform group-open:rotate-45"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                </summary>
+                <p className="text-sm leading-relaxed mt-3" style={{ color: "var(--color-text-secondary)" }}>{faq.a}</p>
+              </details>
+            ))}
+          </div>
         </div>
       </section>
     </>
   );
 }
+
