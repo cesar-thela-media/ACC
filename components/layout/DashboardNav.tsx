@@ -52,7 +52,7 @@ export function DashboardNav() {
           <img
             src="/logo.png"
             alt="Austin Clinician Circle"
-            className="h-14 w-auto"
+            className="h-16 w-auto"
           />
         </Link>
 
@@ -82,7 +82,7 @@ export function DashboardNav() {
           <img
             src="/logo.png"
             alt="Austin Clinician Circle"
-            className="h-16 w-auto"
+            className="h-20 w-auto"
           />
         </Link>
 

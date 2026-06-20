@@ -40,13 +40,13 @@ export function PublicNav() {
             borderBottom: onDark ? "none" : "1px solid rgba(194,150,58,0.14)",
           }}
         >
-          <div className="max-w-[90rem] mx-auto px-6 py-1 flex items-center justify-between gap-8">
+          <div className="max-w-[90rem] mx-auto px-6 py-1.5 flex items-center justify-between gap-8">
             {/* Logo */}
             <Link href="/" className="shrink-0" aria-label="Austin Clinician Circle">
               <img
                 src="/logo.png"
                 alt="Austin Clinician Circle"
-                className="h-16 w-auto transition-all duration-300"
+                className="h-20 w-auto transition-all duration-300"
                 style={{
                   filter: onDark ? "none" : "brightness(0) saturate(100%) invert(15%) sepia(3%) saturate(685%) hue-rotate(60deg) brightness(95%) contrast(89%)",
                 }}

@@ -48,7 +48,7 @@ export function AdminNav() {
             <img
               src="/logo.png"
               alt="Austin Clinician Circle"
-              className="h-14 w-auto mt-0.5"
+              className="h-16 w-auto mt-0.5"
             />
           </Link>
         </div>
@@ -82,7 +82,7 @@ export function AdminNav() {
             <img
               src="/logo.png"
               alt="Austin Clinician Circle"
-              className="h-16 w-auto"
+              className="h-20 w-auto"
             />
           </Link>
         </div>
