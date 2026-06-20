@@ -23,6 +23,11 @@ export default async function FreeDashboardPage() {
 
   return (
     <div className="flex flex-col gap-8 max-w-4xl">
+      {/* Tier badge */}
+      <div className="flex items-center gap-3">
+        <Badge variant="default">Free tier</Badge>
+        <span className="text-xs" style={{ color: "var(--color-text-tertiary)" }}>Limited access</span>
+      </div>
       {/* Welcome banner */}
       <Card className="p-6 md:p-8 flex flex-col md:flex-row gap-6 items-start" style={{ background: SAGE, border: "none" }}>
         <div className="flex-1">
@@ -34,10 +39,10 @@ export default async function FreeDashboardPage() {
             You have access to The Private Practice Playbook, a practical guide for building a sustainable practice. Upgrade to unlock the full Circle.
           </p>
           <div className="flex flex-wrap gap-3">
-            <a href="#" className="inline-flex items-center gap-2 rounded-full text-sm font-medium px-5 py-2.5 transition-opacity hover:opacity-90" style={{ background: AMBER, color: "#fff" }}>
+            <Link href="/playbook" className="inline-flex items-center gap-2 rounded-full text-sm font-medium px-5 py-2.5 transition-opacity hover:opacity-90" style={{ background: AMBER, color: "#fff" }}>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
               Download your playbook
-            </a>
+            </Link>
             <Link href="/join" className="inline-flex items-center rounded-full text-sm font-medium px-5 py-2.5 transition-opacity hover:opacity-90" style={{ border: "1px solid rgba(255,255,255,0.25)", color: "rgba(255,255,255,0.8)" }}>
               Upgrade to full access →
             </Link>
