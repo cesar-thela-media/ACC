@@ -244,7 +244,7 @@ button, a {
 /* ── Container ───────────────────────────────────────────────── */
 .container-fluid {
   width: 100%;
-  max-width: min(92vw, 1280px);
+  max-width: 1440px;
   margin-left: auto;
   margin-right: auto;
   padding-left: clamp(1rem, 3vw, 2rem);
